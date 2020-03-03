@@ -17,11 +17,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Siniflar/dersler.cpp \
+    Siniflar/notlar.cpp \
     Siniflar/ogrenciprofil.cpp \
+    Siniflar/ogretmenprofil.cpp \
+    Siniflar/okul_sinif.cpp \
     kutuphane.cpp
 
 HEADERS += \
+    Siniflar/dersler.h \
+    Siniflar/notlar.h \
     Siniflar/ogrenciprofil.h \
+    Siniflar/ogretmenprofil.h \
+    Siniflar/okul_sinif.h \
     kutuphane_global.h \
     kutuphane.h
 
