@@ -1,9 +1,10 @@
 #ifndef DERSLER_H
 #define DERSLER_H
-
 #include <QObject>
+#include <memory>
+#include "kutuphane_global.h"
 
-class Dersler : public QObject
+class KUTUPHANE_EXPORT Dersler : public QObject
 {
     Q_OBJECT
 public:
