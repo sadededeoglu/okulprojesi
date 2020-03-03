@@ -22,6 +22,7 @@ SOURCES += \
     Siniflar/ogrenciprofil.cpp \
     Siniflar/ogretmenprofil.cpp \
     Siniflar/okul_sinif.cpp \
+    Siniflar/temelverisinifi.cpp \
     kutuphane.cpp
 
 HEADERS += \
@@ -30,6 +31,7 @@ HEADERS += \
     Siniflar/ogrenciprofil.h \
     Siniflar/ogretmenprofil.h \
     Siniflar/okul_sinif.h \
+    Siniflar/temelverisinifi.h \
     kutuphane_global.h \
     kutuphane.h
 

@@ -3,12 +3,13 @@
 #include <QObject>
 #include <memory>
 #include "kutuphane_global.h"
+#include "temelverisinifi.h"
 
-class KUTUPHANE_EXPORT OgrenciProfil : public QObject
+class KUTUPHANE_EXPORT OgrenciProfil : public TemelVeriSinifi
 {
     Q_OBJECT
 public:
-private:
+    typedef std::shared_ptr<OgrenciProfil>ptr;
 public:
     explicit OgrenciProfil(QObject *parent = nullptr);
 
