@@ -7,6 +7,7 @@ class KUTUPHANE_EXPORT Kutuphane
 {
 public:
     Kutuphane();
+
 };
 
 #endif // KUTUPHANE_H
