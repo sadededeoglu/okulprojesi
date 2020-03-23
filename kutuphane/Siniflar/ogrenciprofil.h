@@ -26,7 +26,7 @@ public:
     typedef std::shared_ptr<OgrenciProfil>ptr;
 
 public:
-    explicit OgrenciProfil(QObject *parent = nullptr);
+    explicit OgrenciProfil(QObject *parent = nullptr); //var sayılan ilklendirici sanırım
 
     IdTuru sinifId() const;
     void setSinifId(const IdTuru &sinifId);

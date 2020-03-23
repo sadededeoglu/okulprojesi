@@ -1,6 +1,8 @@
 #include "ogrenciprofil.h"
+#include<qmath.h>
 
-OgrenciProfil::OgrenciProfil(QObject *parent) : QObject(parent)
-{
+
+OgrenciProfil::OgrenciProfil(QObject *parent) : QObject(parent){
+
 
 }
