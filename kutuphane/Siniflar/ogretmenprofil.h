@@ -15,10 +15,10 @@ private:
     Metin _ogretmenSoyadi;
     Metin _ogretmenAdresi;
 signals:
-    void sicilNoDegisti(const PozitifTamsayi &ogrenciNo);
-    void OgretmenAdiDegisti(const Metin &ogrenciAdi);
-    void OgretmenSoyadiDegisti(const Metin &ogrenciSoyadi);
-    void OgretmenAdresi(const Metin &ogrenciAdresi);
+    void sicilNoDegisti(const PozitifTamsayi &sicilNo);
+    void OgretmenAdiDegisti(const Metin &ogretmenAdi);
+    void OgretmenSoyadiDegisti(const Metin &ogretmenSoyadi);
+    void OgretmenAdresiDegisti(const Metin &ogretmenAdresi);
 public:
     typedef std::shared_ptr<OgretmenProfil>ptr;
 public:
@@ -36,6 +36,26 @@ public:
     void setOgretmenSoyadi(const Metin &ogretmenSoyadi);
     Metin ogretmenAdresi() const;
     void setOgretmenAdresi(const Metin &ogretmenAdresi);
+
+
+    static ptr yeni() {return std::make_shared<OgretmenProfil>();}
+
+    ptr Kopyala (){
+        ptr kopyalanan = OgretmenProfil::yeni();
+        kopyalanan->_sicilNo = this->_sicilNo;
+        kopyalanan->_ogretmenId = this->_ogretmenId;
+        kopyalanan->_ogretmenAdi = this->_ogretmenAdi;
+        kopyalanan->_ogretmenAdresi = this->_ogretmenAdresi;
+        kopyalanan->_ogretmenSoyadi = this->_ogretmenSoyadi;
+    return kopyalanan; }
+
+    void VeriAktar(ptr diger){
+        this->_sicilNo = diger->_sicilNo;
+        this->_ogretmenId = diger->_ogretmenId;
+        this->_ogretmenAdi = diger->_ogretmenAdi;
+        this->_ogretmenAdresi = diger->_ogretmenAdresi;
+        this->_ogretmenSoyadi = diger->_ogretmenSoyadi;
+    }
 };
 
 #endif // OGRETMENPROFIL_H

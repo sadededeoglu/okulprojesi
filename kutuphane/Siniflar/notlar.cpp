@@ -1,6 +1,6 @@
 #include "notlar.h"
 
-IdTuru Notlar::dersId() const
+Notlar::IdTuru Notlar::dersId() const
 {
     return _dersId;
 }
@@ -10,7 +10,7 @@ void Notlar::setDersId(const IdTuru &dersId)
     _dersId = dersId;
 }
 
-IdTuru Notlar::ogrenciId() const
+Notlar::IdTuru Notlar::ogrenciId() const
 {
     return _ogrenciId;
 }
@@ -20,7 +20,7 @@ void Notlar::setOgrenciId(const IdTuru &ogrenciId)
     _ogrenciId = ogrenciId;
 }
 
-IdTuru Notlar::notId() const
+Notlar::IdTuru Notlar::notId() const
 {
     return _notId;
 }
@@ -30,17 +30,19 @@ void Notlar::setNotId(const IdTuru &notId)
     _notId = notId;
 }
 
-PozitifTamsayi Notlar::ogrenciNot() const
+Notlar::PozitifTamsayi Notlar::ogrenciNot() const
 {
     return _ogrenciNot;
 }
 
 void Notlar::setOgrenciNot(const PozitifTamsayi &ogrenciNot)
 {
+    if(this->_ogrenciNot !=ogrenciNot){
     _ogrenciNot = ogrenciNot;
+    OgrenciNotDegisti(_ogrenciNot);}
 }
 
-Notlar::Notlar(QObject *parent) : QObject(parent)
+Notlar::Notlar(QObject *parent) :TemelVeriSinifi(parent)
 {
-    
+    this->_ogrenciNot=0;
 }

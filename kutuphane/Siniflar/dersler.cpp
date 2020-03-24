@@ -1,16 +1,43 @@
 #include "dersler.h"
 
-std::shared_ptr<Dersler> Dersler::getPtr() const
+
+Dersler::PozitifTamsayi Dersler::yil() const
 {
-    return ptr;
+    return _yil;
 }
 
-void Dersler::setPtr(const std::shared_ptr<Dersler> &value)
+void Dersler::setYil(const PozitifTamsayi &yil)
 {
-    ptr = value;
+    if(this->_yil !=yil){
+        _yil=yil;
+        YilDegisti(_yil);}
 }
 
-IdTuru Dersler::DersId() const
+Dersler::Metin Dersler::DersAdi() const
+{
+    return _DersAdi;
+}
+
+void Dersler::setDersAdi(const Metin &DersAdi)
+{
+    if(this->_DersAdi !=DersAdi){
+    _DersAdi = DersAdi;
+    DersAdiDegisti(_DersAdi);}
+}
+
+Dersler::Metin Dersler::donem() const
+{
+    return _donem;
+}
+
+void Dersler::setDonem(const Metin &donem)
+{
+    if(this->_donem !=donem){
+    _donem = donem;
+    DonemDegisti(_donem);}
+}
+
+Dersler::IdTuru Dersler::DersId() const
 {
     return _DersId;
 }
@@ -20,37 +47,10 @@ void Dersler::setDersId(const IdTuru &DersId)
     _DersId = DersId;
 }
 
-PozitifTamsayi Dersler::yil() const
+Dersler::Dersler(QObject *parent) :TemelVeriSinifi(parent)
 {
-    return _yil;
-}
+ this->_yil=0;
+ this->_donem="";
+ this->_DersAdi="";
 
-void Dersler::setYil(const PozitifTamsayi &yil)
-{
-    _yil = yil;
-}
-
-Metin Dersler::DersAdi() const
-{
-    return _DersAdi;
-}
-
-void Dersler::setDersAdi(const Metin &DersAdi)
-{
-    _DersAdi = DersAdi;
-}
-
-Metin Dersler::dönem() const
-{
-    return _dönem;
-}
-
-void Dersler::setDönem(const Metin &dönem)
-{
-    _dönem = dönem;
-}
-
-Dersler::Dersler(QObject *parent) : QObject(parent)
-{
-    
 }

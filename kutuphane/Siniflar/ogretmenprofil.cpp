@@ -1,6 +1,6 @@
 #include "ogretmenprofil.h"
 
-IdTuru OgretmenProfil::ogretmenId() const
+OgretmenProfil::IdTuru OgretmenProfil::ogretmenId() const
 {
     return _ogretmenId;
 }
@@ -10,47 +10,66 @@ void OgretmenProfil::setOgretmenId(const IdTuru &ogretmenId)
     _ogretmenId = ogretmenId;
 }
 
-PozitifTamsayi OgretmenProfil::sicilNo() const
+OgretmenProfil::PozitifTamsayi OgretmenProfil::sicilNo() const
 {
     return _sicilNo;
 }
 
 void OgretmenProfil::setSicilNo(const PozitifTamsayi &sicilNo)
 {
-    _sicilNo = sicilNo;
+    if(this->_sicilNo != sicilNo){
+        _sicilNo = sicilNo;
+        sicilNoDegisti(this->_sicilNo);
+    }
+
 }
 
-Metin OgretmenProfil::ogretmenAdi() const
+OgretmenProfil::Metin OgretmenProfil::ogretmenAdi() const
 {
     return _ogretmenAdi;
 }
 
 void OgretmenProfil::setOgretmenAdi(const Metin &ogretmenAdi)
 {
-    _ogretmenAdi = ogretmenAdi;
+    if(this->_ogretmenAdi != ogretmenAdi){
+        _ogretmenAdi = ogretmenAdi;
+        OgretmenAdiDegisti(this->_ogretmenAdi);
+    }
+
 }
 
-Metin OgretmenProfil::ogretmenSoyadi() const
+OgretmenProfil::Metin OgretmenProfil::ogretmenSoyadi() const
 {
     return _ogretmenSoyadi;
 }
 
 void OgretmenProfil::setOgretmenSoyadi(const Metin &ogretmenSoyadi)
 {
-    _ogretmenSoyadi = ogretmenSoyadi;
+    if(this->_ogretmenSoyadi != ogretmenSoyadi){
+        _ogretmenSoyadi = ogretmenSoyadi;
+        OgretmenSoyadiDegisti(this->_ogretmenSoyadi);
+    }
+
 }
 
-Metin OgretmenProfil::ogretmenAdresi() const
+OgretmenProfil::Metin OgretmenProfil::ogretmenAdresi() const
 {
     return _ogretmenAdresi;
 }
 
 void OgretmenProfil::setOgretmenAdresi(const Metin &ogretmenAdresi)
 {
-    _ogretmenAdresi = ogretmenAdresi;
+    if(this->_ogretmenAdresi != ogretmenAdresi){
+        _ogretmenAdresi = ogretmenAdresi;
+        OgretmenAdresiDegisti(this->_ogretmenAdresi);
+    }
+
 }
 
-OgretmenProfil::OgretmenProfil(QObject *parent) : QObject(parent)
+OgretmenProfil::OgretmenProfil(QObject *parent) :TemelVeriSinifi(parent)
 {
-    
+    this->_sicilNo=0;
+    this->_ogretmenAdi="";
+    this->_ogretmenSoyadi="";
+    this->_ogretmenAdresi="";
 }

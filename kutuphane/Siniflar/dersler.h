@@ -12,11 +12,11 @@ private:
     IdTuru _DersId;
     PozitifTamsayi _yil;
     Metin _DersAdi;
-    Metin _dönem;
+    Metin _donem;
 signals:
-    void YilDegisti(const PozitifTamsayi &ogrenciNo);
-    void DersAdiDegisti(const Metin &ogrenciAdi);
-    void DonemDegisti(const Metin &ogrenciSoyadi);
+    void YilDegisti(const PozitifTamsayi &yil);
+    void DersAdiDegisti(const Metin &DersAdi);
+    void DonemDegisti(const Metin &Donem);
 
 public:
     typedef std::shared_ptr<Dersler>ptr;
@@ -26,18 +26,30 @@ public:
 
     IdTuru DersId() const;
     void setDersId(const IdTuru &DersId);
-
     PozitifTamsayi yil() const;
     void setYil(const PozitifTamsayi &yil);
-
     Metin DersAdi() const;
     void setDersAdi(const Metin &DersAdi);
+    Metin donem() const;
+    void setDonem(const Metin &donem);
 
-    Metin dönem() const;
-    void setDönem(const Metin &dönem);
+    static ptr yeni() {return std::make_shared<Dersler>();}
 
-signals:
+    ptr kopyala(){
+        ptr kopyalanan=Dersler::yeni();
+        kopyalanan->_yil=this->_yil;
+        kopyalanan->_donem=this->_donem;
+        kopyalanan->_DersId=this->_DersId;
+        kopyalanan->_DersAdi=this->_DersAdi;
+     return kopyalanan; }
 
+    void VeriAktar(ptr diger){
+        this->_yil=diger->_yil;
+        this->_donem=diger->_donem;
+        this->_DersId=diger->_DersId;
+        this->_DersAdi=diger->_DersAdi;
+
+    }
 };
 
 #endif // DERSLER_H

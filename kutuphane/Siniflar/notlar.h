@@ -14,7 +14,7 @@ private:
     IdTuru _notId;
     PozitifTamsayi _ogrenciNot;
 signals:
-    void NotDegisti(const PozitifTamsayi &ogrenciNo);
+    void OgrenciNotDegisti(const PozitifTamsayi &ogrenciNot);
 
 public:
     typedef std::shared_ptr<Notlar>ptr;
@@ -34,7 +34,24 @@ public:
     PozitifTamsayi ogrenciNot() const;
     void setOgrenciNot(const PozitifTamsayi &ogrenciNot);
 
-signals:
+     static ptr yeni() {return std::make_shared<Notlar>();}
+
+     ptr kopyala(){
+         ptr kopyalanan=Notlar::yeni();
+         kopyalanan->_notId=this->_notId;
+         kopyalanan->_dersId=this->_dersId;
+         kopyalanan->_ogrenciId=this->_ogrenciId;
+         kopyalanan->_ogrenciNot=this->_ogrenciNot;
+
+         return kopyalanan;
+     }
+
+     void VeriAktar(ptr diger){
+         this->_notId=diger->_notId;
+         this->_dersId=diger->_dersId;
+         this->_ogrenciId=diger->_ogrenciId;
+         this->_ogrenciNot=diger->_ogrenciNot;
+     }
 
 };
 

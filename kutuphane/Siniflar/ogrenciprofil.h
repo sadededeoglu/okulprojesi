@@ -28,23 +28,7 @@ public:
 public:
     explicit OgrenciProfil(QObject *parent = nullptr); //var sayılan ilklendirici sanırım
 
-    IdTuru sinifId() const;
-    void setSinifId(const IdTuru &sinifId);
 
-    IdTuru ogrenciId() const;
-    void setOgrenciId(const IdTuru &ogrenciId);
-
-    PozitifTamsayi ogrenciNo() const;
-    void setOgrenciNo(const PozitifTamsayi &ogrenciNo);
-
-    Metin ogrenciAdi() const;
-    void setOgrenciAdi(const Metin &ogrenciAdi);
-
-    Metin ogrenciSoyadi() const;
-    void setOgrenciSoyadi(const Metin &ogrenciSoyadi);
-
-    Metin ogrenciAdresi() const;
-    void setOgrenciAdresi(const Metin &ogrenciAdresi);
 
     static ptr yeni() {return std::make_shared<OgrenciProfil>();}
 
@@ -55,7 +39,8 @@ public:
         kopyalanan->_ogrenciNo = this->_ogrenciNo;
         kopyalanan->_ogrenciAdi = this->_ogrenciAdi;
         kopyalanan->_ogrenciAdresi = this->_ogrenciAdresi;
-        kopyalanan->_ogrenciSoyadi = this->_ogrenciSoyadi; }
+        kopyalanan->_ogrenciSoyadi = this->_ogrenciSoyadi;
+     return kopyalanan;}
 
     void VeriAktar(ptr diger){
         this->_sinifId = diger->_sinifId;
@@ -64,6 +49,20 @@ public:
         this->_ogrenciAdi = diger->_ogrenciAdi;
         this->_ogrenciAdresi = diger->_ogrenciAdresi;
         this->_ogrenciSoyadi = diger->_ogrenciSoyadi;  }
+
+
+    IdTuru sinifId() const;
+    void setSinifId(const IdTuru &sinifId);
+    IdTuru ogrenciId() const;
+    void setOgrenciId(const IdTuru &ogrenciId);
+    PozitifTamsayi ogrenciNo() const;
+    void setOgrenciNo(const PozitifTamsayi &ogrenciNo);
+    Metin ogrenciAdi() const;
+    void setOgrenciAdi(const Metin &ogrenciAdi);
+    Metin ogrenciSoyadi() const;
+    void setOgrenciSoyadi(const Metin &ogrenciSoyadi);
+    Metin ogrenciAdresi() const;
+    void setOgrenciAdresi(const Metin &ogrenciAdresi);
 };
 
 #endif // OGRENCIPROFIL_H
