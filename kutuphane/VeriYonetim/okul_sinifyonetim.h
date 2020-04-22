@@ -1,7 +1,9 @@
 #ifndef OKUL_SINIFYONETIM_H
 #define OKUL_SINIFYONETIM_H
-
 #include <QObject>
+#include <QObject>
+#include "veriyonetim.h"
+#include "Siniflar/okul_sinif.h"
 
 class Okul_sinifyonetim : public QObject
 {

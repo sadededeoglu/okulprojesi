@@ -23,7 +23,14 @@ SOURCES += \
     Siniflar/ogretmenprofil.cpp \
     Siniflar/okul_sinif.cpp \
     Siniflar/temelverisinifi.cpp \
-    kutuphane.cpp
+    VeriYonetim/dersleryonetim.cpp \
+    VeriYonetim/notlaryonetim.cpp \
+    VeriYonetim/ogrenciyonetim.cpp \
+    VeriYonetim/ogretmenyonetim.cpp \
+    VeriYonetim/okul_sinifyonetim.cpp \
+    VeriYonetim/veriyonetim.cpp \
+    kutuphane.cpp \
+    veritabani.cpp
 
 HEADERS += \
     Siniflar/dersler.h \
@@ -32,8 +39,15 @@ HEADERS += \
     Siniflar/ogretmenprofil.h \
     Siniflar/okul_sinif.h \
     Siniflar/temelverisinifi.h \
+    VeriYonetim/dersleryonetim.h \
+    VeriYonetim/notlaryonetim.h \
+    VeriYonetim/ogrenciyonetim.h \
+    VeriYonetim/ogretmenyonetim.h \
+    VeriYonetim/okul_sinifyonetim.h \
+    VeriYonetim/veriyonetim.h \
     kutuphane_global.h \
-    kutuphane.h
+    kutuphane.h \
+    veritabani.h
 
 # Default rules for deployment.
 unix {

@@ -1,7 +1,8 @@
 #ifndef DERSLERYONETIM_H
 #define DERSLERYONETIM_H
-
 #include <QObject>
+#include "veriyonetim.h"
+#include "Siniflar/dersler.h"
 
 class DerslerYonetim : public QObject
 {
