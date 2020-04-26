@@ -4,8 +4,10 @@
 #include <QObject>
 #include "veriyonetim.h"
 #include "Siniflar/notlar.h"
+#include "kutuphane_global.h"
+#include <Siniflar/notlar.h>
 
-class Notlaryonetim : public QObject
+class KUTUPHANE_EXPORT Notlaryonetim : public QObject , public VeriYonetim<Notlar>
 {
     Q_OBJECT
 public:

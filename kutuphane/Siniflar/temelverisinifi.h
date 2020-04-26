@@ -15,8 +15,6 @@ public:
     typedef unsigned int PozitifTamsayi;
     typedef int tamsayi;
 
-
-
 public:
     explicit TemelVeriSinifi(QObject *parent = nullptr);
 
