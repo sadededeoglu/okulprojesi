@@ -7,7 +7,7 @@
 #include "kutuphane_global.h"
 #include <Siniflar/notlar.h>
 
-class KUTUPHANE_EXPORT Notlaryonetim : public QObject , public VeriYonetim<Notlar>
+class KUTUPHANE_EXPORT Notlaryonetim : public QObject , public Veriyonetim<Notlar>
 {
     Q_OBJECT
 public:

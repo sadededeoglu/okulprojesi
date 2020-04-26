@@ -4,7 +4,7 @@
 #include <QVector>
 #include <functional>
 
-template <class T> class VeriYonetim
+template <class T> class Veriyonetim
 {
 
 public:
@@ -17,7 +17,7 @@ public:
     typedef std::function<bool(Pointer)> FiltreFonksiyonu;
 
 public:
-    VeriYonetim();
+    Veriyonetim();
 };
 
 #endif // VERIYONETIM_H
