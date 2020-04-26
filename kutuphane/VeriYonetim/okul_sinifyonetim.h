@@ -5,7 +5,7 @@
 #include "veriyonetim.h"
 #include "Siniflar/okul_sinif.h"
 
-class Okul_sinifyonetim : public QObject
+class KUTUPHANE_EXPORT Okul_sinifyonetim : public QObject, public Veriyonetim<Okul_sinif>
 {
     Q_OBJECT
 public:

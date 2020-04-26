@@ -5,7 +5,7 @@
 #include "veriyonetim.h"
 #include "Siniflar/ogretmenprofil.h"
 
-class Ogretmenyonetim : public QObject
+class KUTUPHANE_EXPORT Ogretmenyonetim : public QObject, public Veriyonetim<OgretmenProfil>
 {
     Q_OBJECT
 public:

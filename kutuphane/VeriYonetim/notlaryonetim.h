@@ -1,11 +1,9 @@
 #ifndef NOTLARYONETIM_H
 #define NOTLARYONETIM_H
 #include <QObject>
-#include <QObject>
 #include "veriyonetim.h"
 #include "Siniflar/notlar.h"
 #include "kutuphane_global.h"
-#include <Siniflar/notlar.h>
 
 class KUTUPHANE_EXPORT Notlaryonetim : public QObject , public Veriyonetim<Notlar>
 {

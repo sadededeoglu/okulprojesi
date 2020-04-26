@@ -18,6 +18,9 @@ public:
 
 public:
     Veriyonetim();
+
+
+
 };
 
 #endif // VERIYONETIM_H
