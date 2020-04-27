@@ -23,9 +23,69 @@
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menudosya">
+    <property name="title">
+     <string>dosya</string>
+    </property>
+    <addaction name="actiona"/>
+    <addaction name="actionkaydet"/>
+    <addaction name="action_k"/>
+   </widget>
+   <widget class="QMenu" name="menudersler">
+    <property name="title">
+     <string>dersler</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menunolar">
+    <property name="title">
+     <string>nolar</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_renci">
+    <property name="title">
+     <string>öğrenci</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuogrenci">
+    <property name="title">
+     <string>ogrenci</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menus_n_f">
+    <property name="title">
+     <string>sınıf</string>
+    </property>
+   </widget>
+   <addaction name="menudosya"/>
+   <addaction name="menudersler"/>
+   <addaction name="menunolar"/>
+   <addaction name="menu_renci"/>
+   <addaction name="menuogrenci"/>
+   <addaction name="menus_n_f"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actiona">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
+   </property>
+   <property name="text">
+    <string>aç</string>
+   </property>
+  </action>
+  <action name="actionkaydet">
+   <property name="text">
+    <string>kaydet</string>
+   </property>
+  </action>
+  <action name="action_k">
+   <property name="text">
+    <string>çık</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="kaynaklar.qrc"/>
+ </resources>
  <connections/>
 </ui>

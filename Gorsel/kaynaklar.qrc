@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/resimler">
+        <file>resimler/3d bar chart.png</file>
+        <file alias="cık.png">resimler/Close file.png</file>
+    </qresource>
+</RCC>
