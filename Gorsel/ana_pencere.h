@@ -15,6 +15,13 @@ public:
     Ana_Pencere(QWidget *parent = nullptr);
     ~Ana_Pencere();
 
+public slots:
+    virtual void close(); //isyan edilecek kısım alt enter ilk secenek
+
+private slots:
+
+    void on_actionyeni_ogrenci_ekle_triggered();
+
 private:
     Ui::Ana_Pencere *ui;
 };

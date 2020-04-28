@@ -16,14 +16,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    formlar/veriGiris/yeniogrencigiris.cpp \
     main.cpp \
     ana_pencere.cpp
 
 HEADERS += \
-    ana_pencere.h
+    ana_pencere.h \
+    formlar/veriGiris/yeniogrencigiris.h
 
 FORMS += \
-    ana_pencere.ui
+    ana_pencere.ui \
+    formlar/veriGiris/yeniogrencigiris.ui
 
 TRANSLATIONS += \
     Gorsel_en_US.ts

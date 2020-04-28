@@ -33,7 +33,7 @@
     <property name="title">
      <string>dosya</string>
     </property>
-    <addaction name="actiona"/>
+    <addaction name="actionac"/>
     <addaction name="actionkaydet"/>
     <addaction name="actioncik"/>
    </widget>
@@ -51,6 +51,7 @@
     <property name="title">
      <string>öğrenci</string>
     </property>
+    <addaction name="actionyeni_ogrenci_ekle"/>
    </widget>
    <widget class="QMenu" name="menuogrenci">
     <property name="title">
@@ -70,7 +71,7 @@
    <addaction name="menus_n_f"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actiona">
+  <action name="actionac">
    <property name="icon">
     <iconset resource="kaynaklar.qrc">
      <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
@@ -87,6 +88,11 @@
   <action name="actioncik">
    <property name="text">
     <string>cık</string>
+   </property>
+  </action>
+  <action name="actionyeni_ogrenci_ekle">
+   <property name="text">
+    <string>yeni_ogrenci_ekle</string>
    </property>
   </action>
  </widget>
