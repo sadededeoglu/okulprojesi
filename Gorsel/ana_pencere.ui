@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>256</height>
+    <width>505</width>
+    <height>345</height>
    </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>Ana_Pencere</string>
+  </property>
+  <property name="toolTip">
+   <string>sadoramo</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -19,7 +25,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>392</width>
+     <width>505</width>
      <height>20</height>
     </rect>
    </property>
@@ -29,7 +35,7 @@
     </property>
     <addaction name="actiona"/>
     <addaction name="actionkaydet"/>
-    <addaction name="action_k"/>
+    <addaction name="actioncik"/>
    </widget>
    <widget class="QMenu" name="menudersler">
     <property name="title">
@@ -70,7 +76,7 @@
      <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
    </property>
    <property name="text">
-    <string>aç</string>
+    <string>ac</string>
    </property>
   </action>
   <action name="actionkaydet">
@@ -78,14 +84,31 @@
     <string>kaydet</string>
    </property>
   </action>
-  <action name="action_k">
+  <action name="actioncik">
    <property name="text">
-    <string>çık</string>
+    <string>cık</string>
    </property>
   </action>
  </widget>
  <resources>
   <include location="kaynaklar.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actioncik</sender>
+   <signal>triggered()</signal>
+   <receiver>Ana_Pencere</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

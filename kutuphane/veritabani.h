@@ -46,10 +46,9 @@ kendisi dönüştürücüsü olacak paramerte almayacak
 1. si statik nesne olusacak birden fazla kodun nesneye olsmasını saglar
 
 connect (kaynak nesnenin adresi,kaynak nesnenin fonksiyonu, hedef nesne, onun fonksiyonu)
+---------
 
-*/
 
-    /*
 #include <iostream>
 #include <math.h>
 
@@ -96,7 +95,35 @@ int main()
     cout<<"SONUC : "<<adim5<<endl;
 
 }
-standart sapma bu*/
+standart sapma bu
+------
+görsel kısım ;
+
+kaynaklara sağ tuş yap open in editor e tıkla ordan yeni simge ekleniyor
+
+çalısmanın üstünde sağ tusa basıp add tool bar a tıklayınca menülerden birini istersek bir
+kısa yol butonu yapabiliyoruz
+
+window modal: kendisi açıkken diğer sekmelerle erişimi engelliyor
+aplıcal modal: bununla islem yapana kadar diğerlerine dokunmak yok
+non modal: diğerlerine karsmıyo
+enable: bunu acmadıgımız surece içindeki seyler pasıf hale geçiyor
+geometri:sekli
+font:yazı tipi
+cursor: nesnenin üstüne gelince mause değişiyor
+focus: bilgi girşinin aktif oldugu nesneyi gösterir bilgi girişinin nasıl girileceğini seçtirir
+contex meni: sağ tus menüsü
+custom:kodu bizim yazmamız
+accept drop: sürükle bırak ı destekliyor mu? bunun için kod yazman lazım
+opacidy: saydamlık
+ttool tip: fareyle ürerine gelince üstünde cıkaracak metin falan
+short cut: ctrl a ya basınca mesela ac yapar. kısa yol
+
+
+
+
+
+*/
 };
 
 #endif // VERITABANI_H
