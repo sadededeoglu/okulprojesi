@@ -9,7 +9,7 @@ template <class T> class Veriyonetim
 
 public:
     typedef T Veri;
-    typedef typename T::Ptr Pointer;
+    typedef typename T::ptr Pointer;
     typedef typename T::IdTuru IdTuru;
     typedef typename T::PozitifTamsayi PozitifTamsayi;
     typedef typename T::Tamsayi Tamsayi;
