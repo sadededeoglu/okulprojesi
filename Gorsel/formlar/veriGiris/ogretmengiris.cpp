@@ -51,8 +51,8 @@ void ogretmenGiris::setDegisiklik(bool Degisiklik)
 void ogretmenGiris::reject()
 {
     if(_Degisiklik){
-        auto cevap = QMessageBox::question(this ,"bilgi degisikligi var",
-                                      "değişiklikleri kaydetmeden çıkmakta emin misin",
+        auto cevap = QMessageBox::question(this ,tr("bilgi degisikligi var"),
+                                     tr( "değişiklikleri kaydetmeden çıkmakta emin misin"),
                                            QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
 
         if(cevap==QMessageBox::No){

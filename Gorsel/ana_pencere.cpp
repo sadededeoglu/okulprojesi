@@ -24,7 +24,7 @@ void Ana_Pencere::close()
 {
 //close yapınca pat diye kapatılmasın diye yazıldı
 
-   auto cevap= QMessageBox::question(this,"çıkış onayı","çıkacak mısın",
+   auto cevap= QMessageBox::question(this,tr("çıkış onayı"),tr("çıkacak mısın"),
                           QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
 
     if(cevap==QMessageBox::Yes){
