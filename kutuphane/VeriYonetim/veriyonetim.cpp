@@ -1,6 +1,8 @@
 #include "veriyonetim.h"
 
-VeriYonetim::VeriYonetim()
+veriYonetim::veriYonetim()
 {
 
 }
+
+//bu cpp yi silince hata alıyorum ama market otomasyonunda böyle bir cpp yok. nerde hata yaptıgımızı bulamadım.

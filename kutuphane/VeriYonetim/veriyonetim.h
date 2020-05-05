@@ -12,7 +12,7 @@ public:
     typedef typename T::ptr Pointer;
     typedef typename T::IdTuru IdTuru;
     typedef typename T::PozitifTamsayi PozitifTamsayi;
-    typedef typename T::Tamsayi Tamsayi;
+    typedef typename T::tamsayi tamsayi;
     typedef QVector<Pointer> Liste;
     typedef std::function<bool(Pointer)> FiltreFonksiyonu;
 
