@@ -31,7 +31,7 @@
    </property>
    <widget class="QMenu" name="menudosya">
     <property name="title">
-     <string>dosya</string>
+     <string>Dosya,</string>
     </property>
     <addaction name="actionac"/>
     <addaction name="actionkaydet"/>
@@ -41,27 +41,31 @@
     <property name="title">
      <string>dersler</string>
     </property>
+    <addaction name="actiondersEkle"/>
    </widget>
    <widget class="QMenu" name="menunolar">
     <property name="title">
-     <string>nolar</string>
+     <string>Notlar</string>
     </property>
+    <addaction name="actionnotEkle"/>
    </widget>
    <widget class="QMenu" name="menu_renci">
     <property name="title">
      <string>öğrenci</string>
     </property>
-    <addaction name="actionyeni_ogrenci_ekle"/>
+    <addaction name="actionOgrenciEkle"/>
    </widget>
    <widget class="QMenu" name="menuogrenci">
     <property name="title">
-     <string>ogrenci</string>
+     <string>Öğretmen</string>
     </property>
+    <addaction name="actionogretmenEkle"/>
    </widget>
    <widget class="QMenu" name="menus_n_f">
     <property name="title">
      <string>sınıf</string>
     </property>
+    <addaction name="actionsinifEkle"/>
    </widget>
    <addaction name="menudosya"/>
    <addaction name="menudersler"/>
@@ -90,9 +94,29 @@
     <string>cık</string>
    </property>
   </action>
-  <action name="actionyeni_ogrenci_ekle">
+  <action name="actionOgrenciEkle">
    <property name="text">
-    <string>yeni_ogrenci_ekle</string>
+    <string>OgrenciEkle</string>
+   </property>
+  </action>
+  <action name="actiondersEkle">
+   <property name="text">
+    <string>ders ekle</string>
+   </property>
+  </action>
+  <action name="actionnotEkle">
+   <property name="text">
+    <string>Not Ekle</string>
+   </property>
+  </action>
+  <action name="actionogretmenEkle">
+   <property name="text">
+    <string>Öğretmen Ekle</string>
+   </property>
+  </action>
+  <action name="actionsinifEkle">
+   <property name="text">
+    <string>Sınıf Ekle</string>
    </property>
   </action>
  </widget>

@@ -20,7 +20,17 @@ public slots:
 
 private slots:
 
-    void on_actionyeni_ogrenci_ekle_triggered();
+
+
+    void on_actionOgrenciEkle_triggered();
+
+    void on_actiondersEkle_triggered();
+
+    void on_actionnotEkle_triggered();
+
+    void on_actionogretmenEkle_triggered();
+
+    void on_actionsinifEkle_triggered();
 
 private:
     Ui::Ana_Pencere *ui;

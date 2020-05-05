@@ -1,8 +1,11 @@
 #include "ana_pencere.h"
 #include "ui_ana_pencere.h"
+#include <QMessageBox>  //kapatırken mesaj;
+#include <formlar/veriGiris/dersgiris.h>
+#include <formlar/veriGiris/notgiris.h>
+#include <formlar/veriGiris/ogretmengiris.h>
 #include <formlar/veriGiris/yeniogrencigiris.h>
-//kapatırken mesaj;
-#include <QMessageBox>
+#include <formlar/veriGiris/sinifgiris.h>
 
 
 Ana_Pencere::Ana_Pencere(QWidget *parent)
@@ -31,9 +34,40 @@ void Ana_Pencere::close()
 }
 
 //yeni orgren giris sıgnal yerinde sağ tus yapıp goto slot sonra triggerd a cift tıkladım geldi burası
-void Ana_Pencere::on_actionyeni_ogrenci_ekle_triggered()
+//void Ana_Pencere::on_actionyeni_ogrenci_ekle_triggered()
+//{
+//    yeniOgrenciGiris form;
+//    //diyalogların görünebilmesi için
+//    form.exec();
+//}
+
+
+void Ana_Pencere::on_actionOgrenciEkle_triggered()
 {
     yeniOgrenciGiris form;
-    //diyalogların görünebilmesi için
+    form.exec();
+}
+
+void Ana_Pencere::on_actiondersEkle_triggered()
+{
+    dersGiris form;
+    form.exec();
+}
+
+void Ana_Pencere::on_actionnotEkle_triggered()
+{
+    notGiris form;
+    form.exec();
+}
+
+void Ana_Pencere::on_actionogretmenEkle_triggered()
+{
+    ogretmenGiris form;
+    form.exec();
+}
+
+void Ana_Pencere::on_actionsinifEkle_triggered()
+{
+    sinifGiris form;
     form.exec();
 }
