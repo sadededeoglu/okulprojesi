@@ -16,16 +16,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    formlar/veriGiris/dersgiris.cpp \
+    formlar/veriGiris/notgiris.cpp \
+    formlar/veriGiris/ogretmengiris.cpp \
+    formlar/veriGiris/sinifgiris.cpp \
     formlar/veriGiris/yeniogrencigiris.cpp \
     main.cpp \
     ana_pencere.cpp
 
 HEADERS += \
     ana_pencere.h \
+    formlar/veriGiris/dersgiris.h \
+    formlar/veriGiris/notgiris.h \
+    formlar/veriGiris/ogretmengiris.h \
+    formlar/veriGiris/sinifgiris.h \
     formlar/veriGiris/yeniogrencigiris.h
 
 FORMS += \
     ana_pencere.ui \
+    formlar/veriGiris/dersgiris.ui \
+    formlar/veriGiris/notgiris.ui \
+    formlar/veriGiris/ogretmengiris.ui \
+    formlar/veriGiris/sinifgiris.ui \
     formlar/veriGiris/yeniogrencigiris.ui
 
 TRANSLATIONS += \
