@@ -19,7 +19,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="ogretmenad">
+        <widget class="QLabel" name="ogretmenadi_label">
          <property name="text">
           <string>Öğretmen Adı</string>
          </property>
@@ -33,7 +33,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="ogretmensoyad_2">
+        <widget class="QLabel" name="ogretmensoyad_label">
          <property name="text">
           <string>Öğretmen Soyadı</string>
          </property>
@@ -47,7 +47,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="sicil">
+        <widget class="QLabel" name="sicil_label">
          <property name="text">
           <string>Sicil Numarası</string>
          </property>
@@ -61,7 +61,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QLabel" name="adres_2">
+        <widget class="QLabel" name="adres_label">
          <property name="text">
           <string>Adres</string>
          </property>
@@ -151,5 +151,88 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>ogretmenadi</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>25</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ogretmensoyad</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sicilno</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>adres</sender>
+   <signal>textChanged()</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>186</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sicilno</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>GorselDegisti()</slot>
+ </slots>
 </ui>
