@@ -28,7 +28,6 @@ SOURCES += \
     VeriYonetim/ogrenciyonetim.cpp \
     VeriYonetim/ogretmenyonetim.cpp \
     VeriYonetim/okul_sinifyonetim.cpp \
-    VeriYonetim/veriyonetim.cpp \
     kutuphane.cpp \
     veritabani.cpp
 

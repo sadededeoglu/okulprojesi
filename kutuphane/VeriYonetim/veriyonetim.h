@@ -17,9 +17,9 @@ public:
     typedef std::function<bool(Pointer)> FiltreFonksiyonu;
 
 public:
-    Veriyonetim();
+    Veriyonetim() {}
 
-
+//burdaki erorlar büyük harf yüzündenmiş hallettim
 
 };
 
