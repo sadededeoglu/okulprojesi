@@ -31,7 +31,7 @@
    </property>
    <widget class="QMenu" name="menudosya">
     <property name="title">
-     <string>Dosya,</string>
+     <string>Dosya</string>
     </property>
     <addaction name="actionac"/>
     <addaction name="actionkaydet"/>
@@ -78,23 +78,35 @@
   <action name="actionac">
    <property name="icon">
     <iconset resource="kaynaklar.qrc">
-     <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
+     <normaloff>:/resimler/resimler/accept_button.png</normaloff>:/resimler/resimler/accept_button.png</iconset>
    </property>
    <property name="text">
     <string>ac</string>
    </property>
   </action>
   <action name="actionkaydet">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/accept_button.png</normaloff>:/resimler/resimler/accept_button.png</iconset>
+   </property>
    <property name="text">
     <string>kaydet</string>
    </property>
   </action>
   <action name="actioncik">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/cık.png</normaloff>:/resimler/cık.png</iconset>
+   </property>
    <property name="text">
     <string>cık</string>
    </property>
   </action>
   <action name="actionOgrenciEkle">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/resimler</normaloff>:/resimler/resimler/resimler</iconset>
+   </property>
    <property name="text">
     <string>OgrenciEkle</string>
    </property>
@@ -110,6 +122,10 @@
    </property>
   </action>
   <action name="actionogretmenEkle">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/resimler</normaloff>:/resimler/resimler/resimler</iconset>
+   </property>
    <property name="text">
     <string>Öğretmen Ekle</string>
    </property>

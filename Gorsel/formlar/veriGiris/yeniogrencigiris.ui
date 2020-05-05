@@ -34,12 +34,20 @@
        <property name="text">
         <string>EKLE</string>
        </property>
+       <property name="icon">
+        <iconset resource="../../kaynaklar.qrc">
+         <normaloff>:/resimler/resimler/resimler</normaloff>:/resimler/resimler/resimler</iconset>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_2">
        <property name="text">
         <string>VAZGEÇ</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../kaynaklar.qrc">
+         <normaloff>:/resimler/resimler/okulOtomasyonu</normaloff>:/resimler/resimler/okulOtomasyonu</iconset>
        </property>
       </widget>
      </item>
@@ -128,6 +136,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../kaynaklar.qrc"/>
+ </resources>
  <connections/>
 </ui>

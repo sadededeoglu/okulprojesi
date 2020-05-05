@@ -3,5 +3,7 @@
         <file>resimler/3d bar chart.png</file>
         <file alias="cık.png">resimler/Close file.png</file>
         <file>resimler/accept_button.png</file>
+        <file>resimler/okulOtomasyonu</file>
+        <file>resimler/resimler</file>
     </qresource>
 </RCC>
