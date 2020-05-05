@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>655</width>
-    <height>425</height>
+    <width>397</width>
+    <height>385</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>yeni_ogrenci_giris</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>60</x>
