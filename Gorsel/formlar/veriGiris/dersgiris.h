@@ -1,6 +1,6 @@
 #ifndef DERSGIRIS_H
 #define DERSGIRIS_H
-
+#include<Siniflar/dersler.h>
 #include <QDialog>
 
 namespace Ui {

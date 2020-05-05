@@ -19,56 +19,59 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="ogretmenad">
          <property name="text">
           <string>Öğretmen Adı</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="ogretmenadi"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="ogretmensoyad_2">
          <property name="text">
           <string>Öğretmen Soyadı</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="ogretmensoyad"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="sicil">
          <property name="text">
           <string>Sicil Numarası</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="sicilno"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="adres_2">
          <property name="text">
           <string>Adres</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="plainTextEdit"/>
+        <widget class="QPlainTextEdit" name="adres"/>
        </item>
       </layout>
      </item>
@@ -90,7 +93,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="ekle">
        <property name="text">
         <string>EKLE</string>
        </property>
@@ -101,7 +104,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="vazgec">
        <property name="text">
         <string>VAZGEÇ</string>
        </property>
@@ -131,5 +134,22 @@
  <resources>
   <include location="../../kaynaklar.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>vazgec</sender>
+   <signal>released()</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>241</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>226</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

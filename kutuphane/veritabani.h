@@ -120,7 +120,7 @@ ttool tip: fareyle ürerine gelince üstünde cıkaracak metin falan
 short cut: ctrl a ya basınca mesela ac yapar. kısa yol
 
 
-
+shift+f4 tasarım ve header arası geçiş yapar
 
 
 */

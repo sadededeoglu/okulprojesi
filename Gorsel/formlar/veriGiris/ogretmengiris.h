@@ -1,6 +1,6 @@
 #ifndef OGRETMENGIRIS_H
 #define OGRETMENGIRIS_H
-
+#include<Siniflar/ogretmenprofil.h>
 #include <QDialog>
 
 namespace Ui {
@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::ogretmenGiris *ui;
+
+    OgretmenProfil _OgretmenProfil; //bunun ilklendiricisi cpp de eklenecek ama vt düzenlenmesi lazım
 };
 
 #endif // OGRETMENGIRIS_H

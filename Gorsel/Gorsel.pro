@@ -50,3 +50,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     kaynaklar.qrc
+
+unix|win32: LIBS += -L$$OUT_PWD/../kutuphane/ -lkutuphane
+
+INCLUDEPATH += $$PWD/../kutuphane
+DEPENDPATH += $$PWD/../kutuphane
