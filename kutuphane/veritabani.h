@@ -1,13 +1,15 @@
 #ifndef VERITABANI_H
 #define VERITABANI_H
 #include <QObject>
+#include <kutuphane_global.h>
 #include <VeriYonetim/dersleryonetim.h>
 #include <VeriYonetim/notlaryonetim.h>
 #include <VeriYonetim/ogrenciyonetim.h>
 #include <VeriYonetim/ogretmenyonetim.h>
 #include <VeriYonetim/okul_sinifyonetim.h>
 
-class VeriTabani : public QObject
+
+class KUTUPHANE_EXPORT VeriTabani : public QObject
 {
     Q_OBJECT
     private:
