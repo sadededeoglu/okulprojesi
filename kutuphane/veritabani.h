@@ -32,7 +32,9 @@ public:
     Ogretmenyonetim &ogretmen();
     Okul_sinifyonetim &okulSinif();
 
-signals:// video ile birlikte eklenecek
+signals:
+    void OgretmenEklendi(OgretmenProfil::ptr ogretmeneklendi);
+    void OgretmenSilindi(OgretmenProfil::ptr ogretmensilindi);
 
 
     /*const lar vardı silindi basına & geldi sonrasına sınyalleri eklenecek

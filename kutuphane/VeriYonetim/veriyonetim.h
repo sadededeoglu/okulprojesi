@@ -36,13 +36,13 @@ public:
 
     void ekle(Pointer veri) {
 
-        Filtre fonksiyon = [veri](Pointer v) ->bool {
-            return v->id() == veri->id();
+        Filtre fonksiyon = [veri](Pointer gecici) ->bool {
+           return gecici->Id() == veri->Id();
         };
 
         PozitifTamsayi elemanSayisi = this->filtreyeUyanElemanSayisi(fonksiyon);
         if (elemanSayisi == 0 ) {
-            auto gecici = veri->kopyala();
+            auto gecici = veri->Kopyala();
             _sonId++;
             gecici->setId(_sonId);
             _veriler.append(gecici);

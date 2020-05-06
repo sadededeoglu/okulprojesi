@@ -1,9 +1,11 @@
 #include "veritabani.h"
-//eklenecek yer var
+
 
 VeriTabani::VeriTabani(QObject *parent) : QObject(parent)
 {
+connect(&_ogretmen, &Ogretmenyonetim::OgretmenEklendi, this,&VeriTabani::OgretmenEklendi);
 
+//hepsi için tek tek aynı connect mi acılacak?
 }
 
 Okul_sinifyonetim &VeriTabani::okulSinif()

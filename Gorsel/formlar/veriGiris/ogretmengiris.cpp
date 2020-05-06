@@ -9,12 +9,9 @@ ogretmenGiris::ogretmenGiris(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //NEDEN HATA VERİYOR BURASI BULAMADIM;
+    _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
 
- //  _OgretmenProfil = VeriTabani::veritabani().ogretmen().yeni();
-    //TODO
-
-
+    _Degisiklik = false;
 }
 
 ogretmenGiris::~ogretmenGiris()
@@ -57,7 +54,7 @@ void ogretmenGiris::reject()
 {
     if(_Degisiklik){
         auto cevap = QMessageBox::question(this ,tr("bilgi degisikligi var"),
-                                     tr( "değişiklikleri kaydetmeden çıkmakta emin misin"),
+                                           tr( "değişiklikleri kaydetmeden çıkmakta emin misin"),
                                            QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
 
         if(cevap==QMessageBox::No){
@@ -65,4 +62,23 @@ void ogretmenGiris::reject()
         }
     }
     QDialog::reject();
+}
+
+void ogretmenGiris::on_ekle_clicked()
+{
+    veriGuncelle();
+    VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil);
+
+    auto cevap = QMessageBox::question(this ,tr("Ogretmen Kaydı Tamamlandı"),
+                                       tr( "Yeni Bir Ogretmen Tanımlamak İster misiniz?"),
+                                       QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+
+    if(cevap== QMessageBox::Yes){
+        _Ogretmenprofil= VeriTabani::veritabani().ogretmen().yeni();
+        GorselGuncelle();
+        ui->ogretmenadi->setFocus();
+        setDegisiklik(false);
+    }else{
+        accept();
+    }
 }

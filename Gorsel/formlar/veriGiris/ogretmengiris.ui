@@ -6,79 +6,90 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>244</width>
-    <height>267</height>
+    <width>506</width>
+    <height>408</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>287</width>
+    <height>221</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>ÖĞRETMEN EKLE</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="ogretmenadi_label">
-         <property name="text">
-          <string>Öğretmen Adı</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="ogretmenadi"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="ogretmensoyad_label">
-         <property name="text">
-          <string>Öğretmen Soyadı</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="ogretmensoyad"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="sicil_label">
-         <property name="text">
-          <string>Sicil Numarası</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="sicilno"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QLabel" name="adres_label">
-         <property name="text">
-          <string>Adres</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPlainTextEdit" name="adres"/>
-       </item>
-      </layout>
-     </item>
-    </layout>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="ogretmenadi_label">
+     <property name="text">
+      <string>Öğretmen Adı</string>
+     </property>
+     <property name="buddy">
+      <cstring>ogretmenadi</cstring>
+     </property>
+    </widget>
    </item>
-   <item row="1" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="ogretmenadi"/>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="ogretmensoyad_label">
+     <property name="text">
+      <string>Öğretmen Soyadı</string>
+     </property>
+     <property name="buddy">
+      <cstring>ogretmensoyad</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="ogretmensoyad"/>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QLabel" name="sicil_label">
+     <property name="text">
+      <string>Sicil Numarası</string>
+     </property>
+     <property name="buddy">
+      <cstring>spinBox</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QSpinBox" name="spinBox"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="adres_label">
+     <property name="text">
+      <string>Adres</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>adres</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QPlainTextEdit" name="adres"/>
+   </item>
+   <item row="9" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
@@ -86,7 +97,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>419</width>
          <height>20</height>
         </size>
        </property>
@@ -121,7 +132,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>385</width>
          <height>20</height>
         </size>
        </property>
@@ -131,19 +142,27 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>ogretmenadi</tabstop>
+  <tabstop>ogretmensoyad</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>adres</tabstop>
+  <tabstop>ekle</tabstop>
+  <tabstop>vazgec</tabstop>
+ </tabstops>
  <resources>
   <include location="../../kaynaklar.qrc"/>
  </resources>
  <connections>
   <connection>
    <sender>vazgec</sender>
-   <signal>released()</signal>
+   <signal>clicked()</signal>
    <receiver>ogretmenGiris</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>195</x>
-     <y>241</y>
+     <x>369</x>
+     <y>391</y>
     </hint>
     <hint type="destinationlabel">
      <x>226</x>
@@ -158,8 +177,8 @@
    <slot>GorselDegisti()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>130</x>
-     <y>25</y>
+     <x>173</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>25</x>
@@ -174,28 +193,12 @@
    <slot>GorselDegisti()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>156</x>
-     <y>54</y>
+     <x>199</x>
+     <y>96</y>
     </hint>
     <hint type="destinationlabel">
      <x>4</x>
      <y>152</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sicilno</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>ogretmenGiris</receiver>
-   <slot>GorselDegisti()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>177</x>
-     <y>88</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>7</x>
-     <y>199</y>
     </hint>
    </hints>
   </connection>
@@ -206,28 +209,12 @@
    <slot>GorselDegisti()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>186</x>
-     <y>144</y>
+     <x>229</x>
+     <y>295</y>
     </hint>
     <hint type="destinationlabel">
      <x>7</x>
      <y>131</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sicilno</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>ogretmenGiris</receiver>
-   <slot>GorselDegisti()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>113</x>
-     <y>80</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>7</x>
-     <y>103</y>
     </hint>
    </hints>
   </connection>

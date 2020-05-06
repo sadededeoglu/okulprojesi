@@ -22,6 +22,10 @@ public:
 public slots:
      void GorselDegisti();
      void reject() override; //otomatik olarak rejekte isyan ediyoruz.
+
+private slots:
+     void on_ekle_clicked();
+
 private:
 
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
@@ -30,6 +34,8 @@ private:
 
     Ui::ogretmenGiris *ui;
     OgretmenProfil _OgretmenProfil;
+    OgretmenProfil::ptr _Ogretmenprofil; //TODO
+//üstündekinin normalde olmaması lazım onu silince hata alıyorum nerden bulamadım
 
     //bunun ilklendiricisi cpp de eklenecek ama vt düzenlenmesi lazım
 
