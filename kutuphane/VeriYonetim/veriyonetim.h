@@ -90,7 +90,19 @@ public:
             }
         }
         Pointer sonuc(nullptr);
+        return sonuc;
     }
+
+    Pointer sonuncuyuBul(Filtre f) const {
+        for (auto eleman = _veriler.rbegin(); eleman != _veriler.rend(); eleman++){
+            if (f(*eleman)) {
+              return (*eleman)->kopyala();
+            }
+        }
+        Pointer sonuc(nullptr);
+        return sonuc;
+    }
+
 };
 
 #endif // VERIYONETIM_H
