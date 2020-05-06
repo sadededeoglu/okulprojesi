@@ -9,6 +9,11 @@ ogretmenGiris::ogretmenGiris(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //NEDEN HATA VERİYOR BURASI BULAMADIM;
+
+ //  _OgretmenProfil = VeriTabani::veritabani().ogretmen().yeni();
+    //TODO
+
 
 }
 

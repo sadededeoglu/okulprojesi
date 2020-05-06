@@ -29,8 +29,10 @@ private:
     bool _Degisiklik;
 
     Ui::ogretmenGiris *ui;
+    OgretmenProfil _OgretmenProfil;
 
-    OgretmenProfil _OgretmenProfil; //bunun ilklendiricisi cpp de eklenecek ama vt düzenlenmesi lazım
+    //bunun ilklendiricisi cpp de eklenecek ama vt düzenlenmesi lazım
+
 };
 
 #endif // OGRETMENGIRIS_H
