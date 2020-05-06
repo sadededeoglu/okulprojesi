@@ -12,7 +12,7 @@ public:
     explicit DerslerYonetim(QObject *parent = nullptr);
 
 signals:
-
+//eklenecek
 
 
 };

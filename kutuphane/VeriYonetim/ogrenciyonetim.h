@@ -11,7 +11,7 @@ class KUTUPHANE_EXPORT Ogrenciyonetim : public QObject, public Veriyonetim<Ogren
 public:
     explicit Ogrenciyonetim(QObject *parent = nullptr);
 
-signals:
+signals://eklenecek
 
 };
 

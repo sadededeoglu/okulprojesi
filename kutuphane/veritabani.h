@@ -27,10 +27,13 @@ public:
     static VeriTabani & veritabani();
 
     DerslerYonetim &dersler();
-    Notlaryonetim &notmlar();
+    Notlaryonetim &notlar();
     Ogrenciyonetim &ogrenci();
     Ogretmenyonetim &ogretmen();
     Okul_sinifyonetim &okulSinif();
+
+signals:// video ile birlikte eklenecek
+
 
     /*const lar vardı silindi basına & geldi sonrasına sınyalleri eklenecek
 

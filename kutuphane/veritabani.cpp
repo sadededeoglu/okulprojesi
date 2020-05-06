@@ -1,4 +1,5 @@
 #include "veritabani.h"
+//eklenecek yer var
 
 VeriTabani::VeriTabani(QObject *parent) : QObject(parent)
 {
@@ -20,7 +21,7 @@ Ogrenciyonetim &VeriTabani::ogrenci()
     return _ogrenci;
 }
 
-Notlaryonetim &VeriTabani::notmlar()
+Notlaryonetim &VeriTabani::notlar()
 {
     return _notmlar;
 }

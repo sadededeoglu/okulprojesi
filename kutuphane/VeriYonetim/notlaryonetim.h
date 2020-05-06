@@ -11,7 +11,7 @@ class KUTUPHANE_EXPORT Notlaryonetim : public QObject , public Veriyonetim<Notla
 public:
     explicit Notlaryonetim(QObject *parent = nullptr);
 
-signals:
+signals://eklenecek
 
 };
 

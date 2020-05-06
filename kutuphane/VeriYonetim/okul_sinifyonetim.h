@@ -11,7 +11,8 @@ class KUTUPHANE_EXPORT Okul_sinifyonetim : public QObject, public Veriyonetim<Ok
 public:
     explicit Okul_sinifyonetim(QObject *parent = nullptr);
 
-signals:
+signals://eklenecek
+
 
 };
 
