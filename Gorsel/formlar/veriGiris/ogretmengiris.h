@@ -33,9 +33,7 @@ private:
     bool _Degisiklik;
 
     Ui::ogretmenGiris *ui;
-    OgretmenProfil _OgretmenProfil;
-    OgretmenProfil::ptr _Ogretmenprofil; //TODO
-//üstündekinin normalde olmaması lazım onu silince hata alıyorum nerden bulamadım
+    OgretmenProfil::ptr _Ogretmenprofil;
 
     //bunun ilklendiricisi cpp de eklenecek ama vt düzenlenmesi lazım
 

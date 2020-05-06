@@ -21,17 +21,18 @@ ogretmenGiris::~ogretmenGiris()
 
 void ogretmenGiris::GorselGuncelle() // nesnesindeki bilgileri ekrana aktarır. görsele ulasmak için ui. yaz
 {
-    ui->ogretmenadi->setText(_OgretmenProfil.ogretmenAdi());
-    ui->ogretmensoyad->setText(_OgretmenProfil.ogretmenSoyadi());
+    ui->ogretmenadi->setText(_Ogretmenprofil->ogretmenAdi());
+    ui->ogretmensoyad->setText(_Ogretmenprofil->ogretmenSoyadi());
     //ui->sicilno->setText(_OgretmenProfil.sicilNo()); olmadı nasıl olacak?
-    ui->adres->setPlainText(_OgretmenProfil.ogretmenAdresi());
+    ui->adres->setPlainText(_Ogretmenprofil->ogretmenAdresi());
+
 }
 
 void ogretmenGiris::veriGuncelle()  //ekrandaki bilgiyi nesneye aktarma
 {
-    _OgretmenProfil.setOgretmenAdi(ui->ogretmenadi->text());
-    _OgretmenProfil.setOgretmenSoyadi(ui->ogretmensoyad->text());
-    _OgretmenProfil.setOgretmenAdresi(ui->adres->document()->toPlainText());
+    _Ogretmenprofil->setOgretmenAdi(ui->ogretmenadi->text());
+    _Ogretmenprofil->setOgretmenSoyadi(ui->ogretmensoyad->text());
+    _Ogretmenprofil->setOgretmenAdresi(ui->adres->document()->toPlainText());
 }
 
 void ogretmenGiris::GorselDegisti()
