@@ -15,6 +15,10 @@ public:
     typedef QVector<Pointer> Liste;
     typedef std::function<bool(Pointer)> Filtre;
 
+protected:
+    Liste _veriler;
+    IdTuru _sonId;
+
 public:
     Veriyonetim() { _sonId = 0; }
 
@@ -87,14 +91,6 @@ public:
         }
         Pointer sonuc(nullptr);
     }
-
-
-
-protected:
-    Liste _veriler;
-    IdTuru _sonId;
-    //burdaki erorlar büyük harf yüzündenmiş hallettim
-
 };
 
 #endif // VERIYONETIM_H
