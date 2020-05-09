@@ -1,14 +1,77 @@
 #include "yeniogrencigiris.h"
 #include "ui_yeniogrencigiris.h"
 
+#include <veritabani.h>
+#include <QMessageBox>
+
 yeniOgrenciGiris::yeniOgrenciGiris(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::yeniOgrenciGiris)
 {
     ui->setupUi(this);
+
+    _ogrenci = VeriTabani::veritabani().ogrenci().yeni();
+
+    _degisiklikVar = false;
 }
 
 yeniOgrenciGiris::~yeniOgrenciGiris()
 {
     delete ui;
 }
+
+OgrenciProfil::ptr yeniOgrenciGiris::ogrenci() const
+{
+    return _ogrenci;
+}
+
+void yeniOgrenciGiris::setOgrenci(const OgrenciProfil::ptr &ogrenci)
+{
+    _ogrenci = ogrenci;
+}
+
+void yeniOgrenciGiris::GorselGuncelle()
+{
+   ui->lineEdit_OgrenciAdi->setText(_ogrenci->ogrenciAdi());
+   ui->lineEdit_OgrenciSoyadi->setText(_ogrenci->ogrenciSoyadi());
+   ui->plainTextEdit_OgrenciAdresi->setPlainText(_ogrenci->ogrenciAdresi());
+   //TODO gorsel guncelle kısmındaki ogrenci no hata veriyor , yapılacak
+   //ui->lineEdit_OgrenciNumarasi->setText(_ogrenci->ogrenciNo());
+
+}
+
+void yeniOgrenciGiris::VeriGuncelle()
+{
+    _ogrenci->setOgrenciAdi(ui->lineEdit_OgrenciAdi->text());
+    _ogrenci->setOgrenciSoyadi(ui->lineEdit_OgrenciSoyadi->text());
+    _ogrenci->setOgrenciAdresi(ui->plainTextEdit_OgrenciAdresi->document()->toPlainText());
+    //TODO veri guncelle kısmındaki ogrenci no hata veriyor , yapılacak
+    //_ogrenci->setOgrenciNo(ui->lineEdit_OgrenciNumarasi->text());
+}
+
+bool yeniOgrenciGiris::degisiklikVar() const
+{
+    return _degisiklikVar;
+}
+
+void yeniOgrenciGiris::setDegisiklikVar(bool degisiklikVar)
+{
+    _degisiklikVar = degisiklikVar;
+}
+
+void yeniOgrenciGiris::GorselDegisti()
+{
+    setDegisiklikVar(true);
+}
+
+void yeniOgrenciGiris::reject()
+{
+    if(_degisiklikVar){
+        auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+        if (cevap == QMessageBox::No) {
+            return;
+        }
+    }
+    QDialog::reject();
+}
+

@@ -1,8 +1,8 @@
 #ifndef OGRETMENGIRIS_H
 #define OGRETMENGIRIS_H
+
 #include<Siniflar/ogretmenprofil.h>
 #include <QDialog>
-#include <qmessagebox.h>
 
 namespace Ui {
 class ogretmenGiris;

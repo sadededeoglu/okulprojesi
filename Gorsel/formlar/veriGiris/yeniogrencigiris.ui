@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>251</width>
-    <height>235</height>
+    <width>353</width>
+    <height>339</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_Ekle">
        <property name="text">
         <string>EKLE</string>
        </property>
@@ -41,7 +41,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_Vazgec">
        <property name="text">
         <string>VAZGEÇ</string>
        </property>
@@ -75,56 +75,56 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QLabel" name="label">
+            <widget class="QLabel" name="label_OgrenciAdi">
              <property name="text">
               <string>Öğrenci Adı</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit"/>
+            <widget class="QLineEdit" name="lineEdit_OgrenciAdi"/>
            </item>
           </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QLabel" name="label_2">
+            <widget class="QLabel" name="label_OgrenciSoyadi">
              <property name="text">
               <string>Öğrenci Soyadı</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_2"/>
+            <widget class="QLineEdit" name="lineEdit_OgrenciSoyadi"/>
            </item>
           </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLabel" name="label_3">
+            <widget class="QLabel" name="label_OgrenciNumarasi">
              <property name="text">
               <string>Öğrenci Numarası</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_3"/>
+            <widget class="QLineEdit" name="lineEdit_OgrenciNumarasi"/>
            </item>
           </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QLabel" name="label_4">
+            <widget class="QLabel" name="label_OgrenciAdresi">
              <property name="text">
               <string>Öğrenci Adresi</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit"/>
+            <widget class="QPlainTextEdit" name="plainTextEdit_OgrenciAdresi"/>
            </item>
           </layout>
          </item>
@@ -139,5 +139,89 @@
  <resources>
   <include location="../../kaynaklar.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>lineEdit_OgrenciAdi</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>yeniOgrenciGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>34</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_OgrenciSoyadi</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>yeniOgrenciGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>49</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_OgrenciNumarasi</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>yeniOgrenciGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plainTextEdit_OgrenciAdresi</sender>
+   <signal>textChanged()</signal>
+   <receiver>yeniOgrenciGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Vazgec</sender>
+   <signal>clicked()</signal>
+   <receiver>yeniOgrenciGiris</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>232</x>
+     <y>322</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>GorselDegisti()</slot>
+ </slots>
 </ui>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>198</width>
-    <height>140</height>
+    <width>302</width>
+    <height>227</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_Ekle">
        <property name="text">
         <string>EKLE</string>
        </property>
@@ -41,7 +41,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_Vazgec">
        <property name="text">
         <string>VAZGEÇ</string>
        </property>
@@ -71,42 +71,42 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="label_DersAdi">
          <property name="text">
           <string>Ders Adı</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="lineEdit_DersAdi"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_DersYili">
          <property name="text">
           <string>Ders Yılı</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="lineEdit_DersYili"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_Donem">
          <property name="text">
           <string>Dönem</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="lineEdit_Donem"/>
        </item>
       </layout>
      </item>
@@ -117,5 +117,73 @@
  <resources>
   <include location="../../kaynaklar.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>lineEdit_DersAdi</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>dersGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>48</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_DersYili</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>dersGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>66</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_Donem</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>dersGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>91</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Vazgec</sender>
+   <signal>clicked()</signal>
+   <receiver>dersGiris</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>171</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>262</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>GorselDegisti()</slot>
+ </slots>
 </ui>
