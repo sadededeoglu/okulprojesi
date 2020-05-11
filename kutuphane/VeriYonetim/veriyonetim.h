@@ -102,7 +102,6 @@ public:
         Pointer sonuc(nullptr);
         return sonuc;
     }
-
 };
 
 #endif // VERIYONETIM_H

@@ -62,3 +62,18 @@ void dersGiris::reject()
     QDialog::reject();
 }
 
+
+void dersGiris::on_pushButton_Ekle_clicked()
+{
+    VeriGuncelle();
+    VeriTabani::veritabani().dersler().ekle(this->_ders);
+    auto cevap = QMessageBox::question(this , "Ders Kaydı Tamamlandı" , "Yeni Bir Ders Koymak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+    if (cevap == QMessageBox::Yes){
+        _ders = VeriTabani::veritabani().dersler().yeni();
+        GorselGuncelle();
+        ui->lineEdit_DersAdi->setFocus();
+        setDegisiklikVar(false);
+    } else {
+        accept();
+    }
+}

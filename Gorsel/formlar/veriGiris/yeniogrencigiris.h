@@ -28,6 +28,9 @@ public slots:
     void GorselDegisti();
     void reject() override;
 
+private slots:
+    void on_pushButton_Ekle_clicked();
+
 private:
     Ui::yeniOgrenciGiris *ui;
 

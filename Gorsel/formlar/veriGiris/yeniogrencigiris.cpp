@@ -75,3 +75,18 @@ void yeniOgrenciGiris::reject()
     QDialog::reject();
 }
 
+
+void yeniOgrenciGiris::on_pushButton_Ekle_clicked()
+{
+    VeriGuncelle();
+    VeriTabani::veritabani().ogrenci().ekle(this->_ogrenci);
+    auto cevap = QMessageBox::question(this , "Öğrenci Kaydı Tamamlandı" , "Yeni Bir Öğrenci Tanımlamak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+    if (cevap == QMessageBox::Yes) {
+        _ogrenci = VeriTabani::veritabani().ogrenci().yeni();
+        GorselGuncelle();
+        ui->lineEdit_OgrenciAdi->setFocus();
+        setDegisiklikVar(false);
+    } else {
+        accept();
+    }
+}
