@@ -42,7 +42,7 @@ public:
 
         PozitifTamsayi elemanSayisi = this->filtreyeUyanElemanSayisi(fonksiyon);
         if (elemanSayisi == 0 ) {
-            auto gecici = veri->Kopyala();
+            auto gecici = veri->kopyala();
             _sonId++;
             gecici->setId(_sonId);
             _veriler.append(gecici);
@@ -104,4 +104,5 @@ public:
     }
 };
 
+// eleman eklendi fonksiyonu eklenecek
 #endif // VERIYONETIM_H

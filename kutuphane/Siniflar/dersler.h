@@ -24,8 +24,8 @@ public:
 public:
     explicit Dersler(QObject *parent = nullptr);
 
-    IdTuru DersId() const;
-    void setDersId(const IdTuru &DersId);
+    IdTuru Id() const;
+    void setId(const IdTuru &DersId);
     PozitifTamsayi yil() const;
     void setYil(const PozitifTamsayi &yil);
     Metin DersAdi() const;

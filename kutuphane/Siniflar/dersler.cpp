@@ -37,12 +37,12 @@ void Dersler::setDonem(const Metin &donem)
     DonemDegisti(_donem);}
 }
 
-Dersler::IdTuru Dersler::DersId() const
+Dersler::IdTuru Dersler::Id() const
 {
     return _DersId;
 }
 
-void Dersler::setDersId(const IdTuru &DersId)
+void Dersler::setId(const IdTuru &DersId)
 {
     _DersId = DersId;
 }
