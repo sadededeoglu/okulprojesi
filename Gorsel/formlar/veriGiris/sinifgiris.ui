@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>sinifGiris</class>
- <widget name="sinifGiris" class="QDialog">
+ <widget class="QDialog" name="sinifGiris">
   <property name="geometry">
    <rect>
     <x>0</x>
