@@ -7,6 +7,8 @@ notGiris::notGiris(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //ıd isteme burda olmaya baslıyor sonundaaaaaa
+
     /*9. ders 21.47 ye kadar izledim
 
     //ara pointer isteyip bool döndürür
