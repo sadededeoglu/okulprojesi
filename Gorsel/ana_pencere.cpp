@@ -1,4 +1,5 @@
 #include "ana_pencere.h"
+#include<veritabani.h>
 #include "ui_ana_pencere.h"
 #include <QMessageBox>  //kapatırken mesaj;
 #include <formlar/veriGiris/dersgiris.h>
@@ -53,9 +54,32 @@ void Ana_Pencere::on_actiondersEkle_triggered()
     dersGiris form;
     form.exec();
 }
-
+//asağıdaki islemlerin aynısını sınıf sayısı için de yap yapılmadı TODO
 void Ana_Pencere::on_actionnotEkle_triggered()
-{
+{//bu ikisi 0 ise hata vermeli
+    auto OgrenciSayisi = VeriTabani::veritabani().ogrenci().filtreyeUyanElemanSayisi(
+                [](OgrenciProfil::ptr){return true;});
+
+    auto SinifSayisi = VeriTabani::veritabani().okulSinif().filtreyeUyanElemanSayisi(
+                [](Okul_sinif::ptr){return true;});
+
+    while (OgrenciSayisi==0) {
+        auto cevap= QMessageBox::question(this,tr("müsteri yok"),tr("yeni müsteri tanımla"),
+                               QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
+
+        if(cevap==QMessageBox::No){
+            QMessageBox::critical(this,tr("kapatılıyor"),tr("müsteri yok"),
+                                  QMessageBox::Ok,
+                                  QMessageBox::Ok);
+            return;
+        }
+        on_actionOgrenciEkle_triggered();
+
+        //ogrenci sayısını güncellemeden kapatmasın diye yeniden güncelliyorum
+        auto OgrenciSayisi = VeriTabani::veritabani().ogrenci().filtreyeUyanElemanSayisi(
+                    [](OgrenciProfil::ptr){return true;});
+    }
+
     notGiris form;
     form.exec();
 }
