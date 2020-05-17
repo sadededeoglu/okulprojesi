@@ -40,7 +40,50 @@ signals:
 
     /*const lar vardı silindi basına & geldi sonrasına sınyalleri eklenecek
 
-benden notlar;
+8. video notlar
+
+simdi sanırım görsel kısım su sekılde olacak
+
+öğretmen gir ,bilgilerini gir ,cıkarken sor: baska eklemek istiyor musunuz? okul sınıf kısmında
+ismi tutuluyor
+
+dersler gir, ders adı ve dönemi girince onu neyle baglayacağiz bir fikrim yok
+
+öğrenci gir, bilgilerini gir,girilen bilgiler diğer ogreci görselde saklanıyor. sonra eğer not
+girmek istersek onun için ayrı pencere acıyoruz. önce ogrencinin kayıtlı olması gerekiyor
+
+notlar gir, girerken kayıtlı olan öğrencinin ismini cagırabiliyoruz zaten sadece not giriliyor bu sınıfa
+
+okul sınıf da sadece sınıfın adını, sorumlu hocanın adını ve yıl  tutuyor bi olayı yok
+
+
+      yani burdan yola cıkarsak
+
+  öğretmen gir ,bilgilerini gir ,cıkarken sor: baska eklemek istiyor musunuz? hayır
+
+  öğrenci gir, bilgilerini gir, sor= not eklemek istiyormusunuz? evet= dersler kısmına baglanacak
+
+  dersin ismi eklenince not kısmına geçiş olacak? dersi hangi öğrenci alıyor hangisi almıyor gibi bir sorunumuz var mı?
+
+  notunu gir . burdan standart sapma regresyon buraya mı eklenecek? yoksa ilerleyen yerlerde mi göreceğiz?
+
+  yada hiç bunları eklemeyız
+
+  ana sayfaya hepsi için ayrı bir yer ekledik . önce öğrenci kaydı, sonra sınıfı, (sınıf bilinince
+  öğretmeni ve aldıgı dersleri de belli olacak) cıkan ders ismine göre de notu girilecek.
+
+  girilen notlar listede kayıtta oldugu için standart s. kısmı orda yapılacak. ama bunlar nasıl cıktı olarak verilecek.
+
+
+
+
+
+
+
+
+
+
+
  virtual demek kodlar bende değil diğer cocuk sınıfında, bu fnksıyona isyan edilebilir =0 dersek
 
 bir sınıftan 1 tane nesne olusturulsun baska olusturulmasın.
