@@ -35,8 +35,7 @@ void yeniOgrenciGiris::GorselGuncelle()
    ui->lineEdit_OgrenciAdi->setText(_ogrenci->ogrenciAdi());
    ui->lineEdit_OgrenciSoyadi->setText(_ogrenci->ogrenciSoyadi());
    ui->plainTextEdit_OgrenciAdresi->setPlainText(_ogrenci->ogrenciAdresi());
-   //TODO gorsel guncelle kısmındaki ogrenci no hata veriyor , yapılacak
-   //ui->lineEdit_OgrenciNumarasi->setText(_ogrenci->ogrenciNo());
+   ui->spinBox_OgrenciNumarasi->setValue(_ogrenci->ogrenciNo());
 
 }
 
@@ -46,7 +45,7 @@ void yeniOgrenciGiris::VeriGuncelle()
     _ogrenci->setOgrenciSoyadi(ui->lineEdit_OgrenciSoyadi->text());
     _ogrenci->setOgrenciAdresi(ui->plainTextEdit_OgrenciAdresi->document()->toPlainText());
     //TODO veri guncelle kısmındaki ogrenci no hata veriyor , yapılacak
-    //_ogrenci->setOgrenciNo(ui->lineEdit_OgrenciNumarasi->text());
+    //_ogrenci->setOgrenciNo(ui->plainTextEdit_OgrenciAdresi.)
 }
 
 bool yeniOgrenciGiris::degisiklikVar() const

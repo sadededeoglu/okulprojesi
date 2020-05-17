@@ -110,7 +110,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_OgrenciNumarasi"/>
+            <widget class="QSpinBox" name="spinBox_OgrenciNumarasi"/>
            </item>
           </layout>
          </item>
@@ -169,22 +169,6 @@
     <hint type="destinationlabel">
      <x>49</x>
      <y>311</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_OgrenciNumarasi</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>yeniOgrenciGiris</receiver>
-   <slot>GorselDegisti()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>204</x>
-     <y>84</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>70</x>
-     <y>318</y>
     </hint>
    </hints>
   </connection>
