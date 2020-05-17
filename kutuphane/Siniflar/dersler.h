@@ -12,7 +12,7 @@ private:
     IdTuru _DersId;
     PozitifTamsayi _yil;
     Metin _DersAdi;
-    Metin _donem;
+    PozitifTamsayi _donem;
 signals:
     void YilDegisti(const PozitifTamsayi &yil);
     void DersAdiDegisti(const Metin &DersAdi);
@@ -30,8 +30,8 @@ public:
     void setYil(const PozitifTamsayi &yil);
     Metin DersAdi() const;
     void setDersAdi(const Metin &DersAdi);
-    Metin donem() const;
-    void setDonem(const Metin &donem);
+    PozitifTamsayi donem() const;
+    void setDonem(const PozitifTamsayi &donem);
 
     static ptr yeni() {return std::make_shared<Dersler>();}
 

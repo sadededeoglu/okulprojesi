@@ -36,7 +36,6 @@ void yeniOgrenciGiris::GorselGuncelle()
    ui->lineEdit_OgrenciSoyadi->setText(_ogrenci->ogrenciSoyadi());
    ui->plainTextEdit_OgrenciAdresi->setPlainText(_ogrenci->ogrenciAdresi());
    ui->spinBox_OgrenciNumarasi->setValue(_ogrenci->ogrenciNo());
-
 }
 
 void yeniOgrenciGiris::VeriGuncelle()
@@ -44,8 +43,7 @@ void yeniOgrenciGiris::VeriGuncelle()
     _ogrenci->setOgrenciAdi(ui->lineEdit_OgrenciAdi->text());
     _ogrenci->setOgrenciSoyadi(ui->lineEdit_OgrenciSoyadi->text());
     _ogrenci->setOgrenciAdresi(ui->plainTextEdit_OgrenciAdresi->document()->toPlainText());
-    //TODO veri guncelle kısmındaki ogrenci no hata veriyor , yapılacak
-    //_ogrenci->setOgrenciNo(ui->plainTextEdit_OgrenciAdresi.)
+    _ogrenci->setOgrenciNo(ui->spinBox_OgrenciNumarasi->value());
 }
 
 bool yeniOgrenciGiris::degisiklikVar() const

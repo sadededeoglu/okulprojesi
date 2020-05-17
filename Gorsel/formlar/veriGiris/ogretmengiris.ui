@@ -26,12 +26,12 @@
       <string>Öğretmen Adı</string>
      </property>
      <property name="buddy">
-      <cstring>ogretmenadi</cstring>
+      <cstring>lineEdit_ogretmenadi</cstring>
      </property>
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QLineEdit" name="ogretmenadi"/>
+    <widget class="QLineEdit" name="lineEdit_ogretmenadi"/>
    </item>
    <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="ogretmensoyad_label">
@@ -39,12 +39,12 @@
       <string>Öğretmen Soyadı</string>
      </property>
      <property name="buddy">
-      <cstring>ogretmensoyad</cstring>
+      <cstring>lineEdit_ogretmensoyad</cstring>
      </property>
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="QLineEdit" name="ogretmensoyad"/>
+    <widget class="QLineEdit" name="lineEdit_ogretmensoyad"/>
    </item>
    <item row="4" column="0" colspan="2">
     <widget class="QLabel" name="sicil_label">
@@ -52,12 +52,12 @@
       <string>Sicil Numarası</string>
      </property>
      <property name="buddy">
-      <cstring>spinBox</cstring>
+      <cstring>spinBox_SicilNumarasi</cstring>
      </property>
     </widget>
    </item>
    <item row="5" column="1">
-    <widget class="QSpinBox" name="spinBox"/>
+    <widget class="QSpinBox" name="spinBox_SicilNumarasi"/>
    </item>
    <item row="6" column="0">
     <widget class="QLabel" name="adres_label">
@@ -68,12 +68,9 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <property name="buddy">
-      <cstring>adres</cstring>
+      <cstring>plainTextEdit_adres</cstring>
      </property>
     </widget>
-   </item>
-   <item row="6" column="1">
-    <widget class="QPlainTextEdit" name="adres"/>
    </item>
    <item row="9" column="1">
     <spacer name="verticalSpacer">
@@ -140,13 +137,15 @@
      </item>
     </layout>
    </item>
+   <item row="8" column="1">
+    <widget class="QPlainTextEdit" name="plainTextEdit_adres"/>
+   </item>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>ogretmenadi</tabstop>
-  <tabstop>ogretmensoyad</tabstop>
-  <tabstop>spinBox</tabstop>
-  <tabstop>adres</tabstop>
+  <tabstop>lineEdit_ogretmenadi</tabstop>
+  <tabstop>lineEdit_ogretmensoyad</tabstop>
+  <tabstop>spinBox_SicilNumarasi</tabstop>
   <tabstop>ekle</tabstop>
   <tabstop>vazgec</tabstop>
  </tabstops>
@@ -171,7 +170,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>ogretmenadi</sender>
+   <sender>lineEdit_ogretmenadi</sender>
    <signal>textChanged(QString)</signal>
    <receiver>ogretmenGiris</receiver>
    <slot>GorselDegisti()</slot>
@@ -187,7 +186,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>ogretmensoyad</sender>
+   <sender>lineEdit_ogretmensoyad</sender>
    <signal>textChanged(QString)</signal>
    <receiver>ogretmenGiris</receiver>
    <slot>GorselDegisti()</slot>
@@ -203,7 +202,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>adres</sender>
+   <sender>plainTextEdit_adres</sender>
    <signal>textChanged()</signal>
    <receiver>ogretmenGiris</receiver>
    <slot>GorselDegisti()</slot>

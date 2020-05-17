@@ -18,7 +18,14 @@ public:
 public:
     explicit TemelVeriSinifi(QObject *parent = nullptr);
 
+    IdTuru Id() const;
+    void setId(const IdTuru &Id);
+
 signals:
+    void IdDegisti(const IdTuru &Id);
+
+protected:
+    IdTuru _Id;
 
 };
 

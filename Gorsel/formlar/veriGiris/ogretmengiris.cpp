@@ -21,18 +21,18 @@ ogretmenGiris::~ogretmenGiris()
 
 void ogretmenGiris::GorselGuncelle() // nesnesindeki bilgileri ekrana aktarır. görsele ulasmak için ui. yaz
 {
-    ui->ogretmenadi->setText(_Ogretmenprofil->ogretmenAdi());
-    ui->ogretmensoyad->setText(_Ogretmenprofil->ogretmenSoyadi());
-    //ui->sicilno->setText(_OgretmenProfil.sicilNo()); olmadı nasıl olacak?
-    ui->adres->setPlainText(_Ogretmenprofil->ogretmenAdresi());
-
+    ui->lineEdit_ogretmenadi->setText(_Ogretmenprofil->ogretmenAdi());
+    ui->lineEdit_ogretmensoyad->setText(_Ogretmenprofil->ogretmenSoyadi());
+    ui->plainTextEdit_adres->setPlainText(_Ogretmenprofil->ogretmenAdresi());
+    ui->spinBox_SicilNumarasi->setValue(_Ogretmenprofil->sicilNo());
 }
 
 void ogretmenGiris::veriGuncelle()  //ekrandaki bilgiyi nesneye aktarma
 {
-    _Ogretmenprofil->setOgretmenAdi(ui->ogretmenadi->text());
-    _Ogretmenprofil->setOgretmenSoyadi(ui->ogretmensoyad->text());
-    _Ogretmenprofil->setOgretmenAdresi(ui->adres->document()->toPlainText());
+    _Ogretmenprofil->setOgretmenAdi(ui->lineEdit_ogretmenadi->text());
+    _Ogretmenprofil->setOgretmenSoyadi(ui->lineEdit_ogretmensoyad->text());
+    _Ogretmenprofil->setOgretmenAdresi(ui->plainTextEdit_adres->document()->toPlainText());
+    _Ogretmenprofil->setSicilNo(ui->spinBox_SicilNumarasi->value());
 }
 
 void ogretmenGiris::GorselDegisti()
@@ -77,7 +77,7 @@ void ogretmenGiris::on_ekle_clicked()
     if(cevap== QMessageBox::Yes){
         _Ogretmenprofil= VeriTabani::veritabani().ogretmen().yeni();
         GorselGuncelle();
-        ui->ogretmenadi->setFocus();
+        ui->lineEdit_ogretmenadi->setFocus();
         setDegisiklik(false);
     }else{
         accept();

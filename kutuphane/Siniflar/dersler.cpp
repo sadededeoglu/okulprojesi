@@ -25,12 +25,12 @@ void Dersler::setDersAdi(const Metin &DersAdi)
     DersAdiDegisti(_DersAdi);}
 }
 
-Dersler::Metin Dersler::donem() const
+Dersler::PozitifTamsayi Dersler::donem() const
 {
     return _donem;
 }
 
-void Dersler::setDonem(const Metin &donem)
+void Dersler::setDonem(const PozitifTamsayi &donem)
 {
     if(this->_donem !=donem){
     _donem = donem;
@@ -50,7 +50,7 @@ void Dersler::setId(const IdTuru &DersId)
 Dersler::Dersler(QObject *parent) :TemelVeriSinifi(parent)
 {
  this->_yil=0;
- this->_donem="";
+ this->_donem=0;
  this->_DersAdi="";
 
 }

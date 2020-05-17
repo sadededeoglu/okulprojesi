@@ -92,7 +92,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_DersYili"/>
+        <widget class="QSpinBox" name="spinBox_DersYili"/>
        </item>
       </layout>
      </item>
@@ -106,7 +106,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_Donem"/>
+        <widget class="QSpinBox" name="spinBox_Donem"/>
        </item>
       </layout>
      </item>
@@ -131,38 +131,6 @@
     <hint type="destinationlabel">
      <x>48</x>
      <y>190</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_DersYili</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>dersGiris</receiver>
-   <slot>GorselDegisti()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>145</x>
-     <y>63</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>66</x>
-     <y>201</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_Donem</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>dersGiris</receiver>
-   <slot>GorselDegisti()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>173</x>
-     <y>93</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>91</x>
-     <y>194</y>
     </hint>
    </hints>
   </connection>
