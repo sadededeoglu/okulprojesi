@@ -35,7 +35,8 @@ public:
 signals:
     void OgretmenEklendi(OgretmenProfil::ptr ogretmeneklendi);
     void OgretmenSilindi(OgretmenProfil::ptr ogretmensilindi);
-
+    void OgrenciEklendi(OgrenciProfil::ptr ogrenciEklendi);
+    void OgrenciSilindi(OgrenciProfil::ptr ogrenciSilindi);
 
     /*const lar vardı silindi basına & geldi sonrasına sınyalleri eklenecek
 
