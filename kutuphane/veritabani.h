@@ -75,6 +75,11 @@ okul sınıf da sadece sınıfın adını, sorumlu hocanın adını ve yıl  tut
   girilen notlar listede kayıtta oldugu için standart s. kısmı orda yapılacak. ama bunlar nasıl cıktı olarak verilecek.
 
 
+hocanın projesindeki ürün =öğrenci oluyor sanırım
+
+
+notlar kısmında öğrenci adı ve dersi combobox olacak ordan sececeğiz
+
 
 
 
