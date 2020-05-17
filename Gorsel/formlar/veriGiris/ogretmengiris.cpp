@@ -2,6 +2,7 @@
 #include "ui_ogretmengiris.h"
 #include <veritabani.h>
 #include <qmessagebox.h>
+#include<Siniflar/ogretmenprofil.h>
 
 ogretmenGiris::ogretmenGiris(QWidget *parent) :
     QDialog(parent),
@@ -12,6 +13,20 @@ ogretmenGiris::ogretmenGiris(QWidget *parent) :
     _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
 
     _Degisiklik = false;
+
+    /*9. ders 21.47 ye kadar izledim
+
+    //ara pointer isteyip bool döndürür
+
+    auto tumOgretmenler=
+            VeriTabani::veritabani().ogretmen().ara([](OgretmenProfil::ptr){return true;});
+
+    for(auto Ogretmen:tumOgretmenler){
+     //burda combobox kullanıor neden?
+        //1 gösterilecek metin ve ekstra veri isteyebilir
+       // ui->comboboxogretmen
+
+    } */
 }
 
 ogretmenGiris::~ogretmenGiris()
