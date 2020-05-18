@@ -9,7 +9,7 @@ class KUTUPHANE_EXPORT Notlar : public TemelVeriSinifi
 {
     Q_OBJECT
 private:
-    IdTuru _dersId;
+    IdTuru _DersId;
     IdTuru _ogrenciId;
     IdTuru _notId;
     PozitifTamsayi _ogrenciNot;
@@ -39,7 +39,7 @@ public:
      ptr kopyala(){
          ptr kopyalanan=Notlar::yeni();
          kopyalanan->_notId=this->_notId;
-         kopyalanan->_dersId=this->_dersId;
+         kopyalanan->_DersId=this->_DersId;
          kopyalanan->_ogrenciId=this->_ogrenciId;
          kopyalanan->_ogrenciNot=this->_ogrenciNot;
 
@@ -48,7 +48,7 @@ public:
 
      void VeriAktar(ptr diger){
          this->_notId=diger->_notId;
-         this->_dersId=diger->_dersId;
+         this->_DersId=diger->_DersId;
          this->_ogrenciId=diger->_ogrenciId;
          this->_ogrenciNot=diger->_ogrenciNot;
      }

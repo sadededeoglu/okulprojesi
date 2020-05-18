@@ -85,33 +85,6 @@
    </item>
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_snf">
-       <property name="text">
-        <string>sınıf</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QComboBox" name="comboBox_sinif"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_ogrenci">
-       <property name="text">
-        <string>ogrenci</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="comboBox_ogrenci"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_ders">
-       <property name="text">
-        <string>ders</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="1">
       <widget class="QComboBox" name="comboBox_ders"/>
      </item>
@@ -121,6 +94,9 @@
         <string>not</string>
        </property>
       </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_sinif"/>
      </item>
      <item row="3" column="1">
       <widget class="QSpinBox" name="spinBox_not">
@@ -136,13 +112,6 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
-      <widget class="QSpinBox" name="spinBox_ort">
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="5" column="0">
       <widget class="QLabel" name="label_ssapma">
        <property name="text">
@@ -152,6 +121,37 @@
      </item>
      <item row="5" column="1">
       <widget class="QSpinBox" name="spinBox_ssapma">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_snf">
+       <property name="text">
+        <string>sınıf</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_ders">
+       <property name="text">
+        <string>ders</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_ogrenci">
+       <property name="text">
+        <string>ogrenci</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_ogrenci"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QSpinBox" name="spinBox_ort">
        <property name="readOnly">
         <bool>true</bool>
        </property>
@@ -175,5 +175,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>comboBox_sinif</sender>
+   <signal>textActivated(QString)</signal>
+   <receiver>notGiris</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>388</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

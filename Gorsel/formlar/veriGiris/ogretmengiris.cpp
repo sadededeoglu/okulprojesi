@@ -1,7 +1,7 @@
 #include "ogretmengiris.h"
-#include "ui_ogretmengiris.h"
 #include <veritabani.h>
 #include <qmessagebox.h>
+#include "ui_ogretmengiris.h"
 #include<Siniflar/ogretmenprofil.h>
 
 ogretmenGiris::ogretmenGiris(QWidget *parent) :
@@ -9,12 +9,8 @@ ogretmenGiris::ogretmenGiris(QWidget *parent) :
     ui(new Ui::ogretmenGiris)
 {
     ui->setupUi(this);
-
     _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
-
     _Degisiklik = false;
-
-
 }
 
 ogretmenGiris::~ogretmenGiris()

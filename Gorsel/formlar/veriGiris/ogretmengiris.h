@@ -1,6 +1,5 @@
 #ifndef OGRETMENGIRIS_H
 #define OGRETMENGIRIS_H
-
 #include<Siniflar/ogretmenprofil.h>
 #include <QDialog>
 
