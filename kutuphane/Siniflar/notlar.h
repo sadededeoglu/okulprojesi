@@ -23,7 +23,7 @@ public:
     explicit Notlar(QObject *parent = nullptr);
 
     IdTuru dersId() const;
-    void setDersId(const IdTuru &dersId);
+    void setDersId(const IdTuru &DersId);
 
     IdTuru ogrenciId() const;
     void setOgrenciId(const IdTuru &ogrenciId);

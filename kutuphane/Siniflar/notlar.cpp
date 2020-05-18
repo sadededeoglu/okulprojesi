@@ -4,12 +4,12 @@
 
 Notlar::IdTuru Notlar::dersId() const
 {
-    return _dersId;
+    return _DersId;
 }
 
-void Notlar::setDersId(const IdTuru &dersId)
+void Notlar::setDersId(const IdTuru &DersId)
 {
-    _dersId = dersId;
+    _DersId = DersId;
 }
 
 Notlar::IdTuru Notlar::ogrenciId() const

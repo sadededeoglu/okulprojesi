@@ -1,6 +1,5 @@
 #include "yeniogrencigiris.h"
 #include "ui_yeniogrencigiris.h"
-
 #include <veritabani.h>
 #include <QMessageBox>
 

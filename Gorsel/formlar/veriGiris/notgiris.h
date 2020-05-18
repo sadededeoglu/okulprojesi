@@ -1,6 +1,7 @@
 #ifndef NOTGIRIS_H
 #define NOTGIRIS_H
 #include <Siniflar/notlar.h>
+#include<Siniflar/ogrenciprofil.h>
 #include <QDialog>
 
 namespace Ui {
@@ -23,11 +24,17 @@ public slots:
     void reject() override;
     void on_ekle_clicked();
 
+private slots:
+    void on_label_siniflink_linkActivated(const QString &link);
+
 private:
 
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
     void veriGuncelle();
     bool _Degisiklik;
+
+    void Ogrencicomboboxdoldur();
+
     Ui::notGiris *ui;
     Notlar::ptr _Notlar;
 };

@@ -1,16 +1,26 @@
 #include "notgiris.h"
 #include "ui_notgiris.h"
 #include <veritabani.h>
+#include <algorithm>
 #include <qmessagebox.h>
 #include<Siniflar/notlar.h>
+#include<Siniflar/ogrenciprofil.h>
+#include<formlar/veriGiris/notgiris.h>
+#include<formlar/veriGiris/sinifgiris.h>
+#include<formlar/veriGiris/yeniogrencigiris.h>
 
-notGiris::notGiris(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::notGiris)
+
+notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
 {
     ui->setupUi(this);
+
+    this->Ogrencicomboboxdoldur();
+
     _Notlar= VeriTabani::veritabani().notlar().yeni();
     _Degisiklik=false;
+
+    //tüm sınıflar kısmı yapılacak TODO ve link kısmı da yapılacak
+
 }
 
 notGiris::~notGiris()
@@ -49,18 +59,29 @@ void notGiris::veriGuncelle()
 
 }
 
-//ıd isteme burda olmaya baslıyor sonundaaaaaa
+void notGiris::Ogrencicomboboxdoldur()
+{
+    auto tumOgrenciler=
+            VeriTabani::veritabani().ogrenci().ara([](OgrenciProfil::ptr){return true;});
 
-/*9. ders 21.47 ye kadar izledim
+    //alfabe sırası
+    std::sort(tumOgrenciler.begin(),tumOgrenciler.end(),[](OgrenciProfil::ptr a, OgrenciProfil::ptr b){
 
-//ara pointer isteyip bool döndürür
+        if(a->ogrenciAdi()==b->ogrenciAdi()){
+            return a->ogrenciSoyadi()<b->ogrenciSoyadi();}
+        return a->ogrenciAdi()<b->ogrenciAdi();
+    });
 
-auto tumOgretmenler=
-        VeriTabani::veritabani().ogretmen().ara([](OgretmenProfil::ptr){return true;});
+    ui->comboBox_ogrenci->clear();//önceden olanları siliyor
+    ui->comboBox_ogrenci->addItem(tr("ogrenci sec"),-1);
+    for(auto OgrenciProfil:tumOgrenciler){  //adıtem 2 parametre ister. gösterilecek metin,veri
+        ui->comboBox_ogrenci->addItem(OgrenciProfil->ogrenciAdi()+" "+OgrenciProfil->ogrenciSoyadi(),OgrenciProfil->ogrenciId());
+    }
+}
 
-for(auto Ogretmen:tumOgretmenler){
- //burda combobox kullanıor neden?
-    //1 gösterilecek metin ve ekstra veri isteyebilir
-   // ui->comboboxogretmen
-
-} */
+void notGiris::on_label_siniflink_linkActivated(const QString &link)
+{
+    sinifGiris form;
+    form.exec();
+    this->Ogrencicomboboxdoldur();
+}
