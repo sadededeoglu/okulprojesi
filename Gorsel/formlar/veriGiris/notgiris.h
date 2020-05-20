@@ -16,6 +16,7 @@ public:
     explicit notGiris(QWidget *parent = nullptr);
     ~notGiris();
 
+
     bool Degisiklik() const;
     void setDegisiklik(bool Degisiklik);
 
@@ -30,7 +31,7 @@ private slots:
 private:
 
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
-    void veriGuncelle();
+    void VeriGuncelle();
     bool _Degisiklik;
 
     void Ogrencicomboboxdoldur();

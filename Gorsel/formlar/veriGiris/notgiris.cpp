@@ -2,7 +2,7 @@
 #include "ui_notgiris.h"
 #include <veritabani.h>
 #include <algorithm>
-#include <qmessagebox.h>
+#include <QMessageBox>
 #include<Siniflar/notlar.h>
 #include<Siniflar/ogrenciprofil.h>
 #include<formlar/veriGiris/notgiris.h>
@@ -16,7 +16,7 @@ notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
 
     this->Ogrencicomboboxdoldur();
 
-    auto _Notlar= VeriTabani::veritabani().notlar().yeni();
+    _Notlar= VeriTabani::veritabani().notlar().yeni();
     _Degisiklik=false;
 
     //tüm sınıflar kısmı yapılacak TODO ve link kısmı da yapılacak
@@ -29,34 +29,10 @@ notGiris::~notGiris()
     delete ui;
 }
 
-bool notGiris::Degisiklik() const
-{
-    return _Degisiklik;
-}
 
 void notGiris::GorselDegisti()
 {
     setDegisiklik(true);
-}
-
-void notGiris::reject()
-{
-
-}
-
-void notGiris::on_ekle_clicked()
-{
-
-}
-
-void notGiris::GorselGuncelle()
-{
-
-}
-
-void notGiris::veriGuncelle()
-{
-
 }
 
 void notGiris::Ogrencicomboboxdoldur()
@@ -77,22 +53,22 @@ void notGiris::Ogrencicomboboxdoldur()
     for(auto OgrenciProfil:tumOgrenciler){  //adıtem 2 parametre ister. gösterilecek metin,veri
         ui->comboBox_ogrenci->addItem(OgrenciProfil->ogrenciAdi()+" "+OgrenciProfil->ogrenciSoyadi(),OgrenciProfil->ogrenciId());
     }
-
-
 }
 
 void notGiris::SinifComboboxDoldur()
 {
-    auto Tumsiniflar = VeriTabani::veritabani().okulSinif().ara([](Okul_sinif::ptr){return true;});
+    auto tumSiniflar = VeriTabani::veritabani().okulSinif().ara([](Okul_sinif::ptr){return true;});
 
-    //std::sort(Tumsiniflar.begin() , Tumsiniflar.end() , [](Okul_sinif::ptr a , Okul_sinif::ptr b)) {
-    //    if (a->SinifAdi() == b->SinifAdi()) {
-    //        //TODO sinif siralamasi yapilacak.
-    //    }
-    //}
+    std::sort(tumSiniflar.begin() , tumSiniflar.end() , [](Okul_sinif::ptr a, Okul_sinif::ptr b){
+        if (a->SinifAdi() > b->SinifAdi()) {
+            return a->SinifAdi()>b->SinifAdi();
+        }
+    });
     ui->comboBox_sinif->clear();
-    ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --"));
-
+    ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --") , -1);
+    for (auto Okul_sinif:tumSiniflar) {
+        ui->comboBox_sinif->addItem(Okul_sinif->SinifAdi() , Okul_sinif->sinifId());
+    }
 };
 
 void notGiris::on_label_siniflink_linkActivated(const QString &link)
@@ -101,3 +77,24 @@ void notGiris::on_label_siniflink_linkActivated(const QString &link)
     form.exec();
     this->Ogrencicomboboxdoldur();
 }
+
+void notGiris::GorselGuncelle()
+{
+    //TODO not giriş yapılacak
+}
+
+void notGiris::VeriGuncelle()
+{
+
+}
+
+bool notGiris::Degisiklik() const
+{
+    return _Degisiklik;
+}
+
+void notGiris::setDegisiklik(bool Degisiklik)
+{
+    _Degisiklik = Degisiklik;
+}
+
