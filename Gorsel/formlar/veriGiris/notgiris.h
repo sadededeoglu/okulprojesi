@@ -28,6 +28,8 @@ public slots:
 private slots:
     void on_label_siniflink_linkActivated(const QString &link);
 
+    void on_QPushButton_ekle_clicked();
+
 private:
 
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır

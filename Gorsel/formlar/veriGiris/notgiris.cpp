@@ -98,3 +98,8 @@ void notGiris::setDegisiklik(bool Degisiklik)
     _Degisiklik = Degisiklik;
 }
 
+
+void notGiris::on_QPushButton_ekle_clicked()
+{
+    //TODO not girişin eklesi yapılacak
+}

@@ -17,50 +17,50 @@
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_ogretmen">
        <property name="text">
         <string>ogretmen</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QComboBox" name="comboBox_2"/>
+      <widget class="QComboBox" name="comboBox_ogretmen"/>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="label_sinifAdi">
        <property name="text">
         <string>sinif adı</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="lineEdit_SinifAdi"/>
      </item>
      <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="label_yil">
        <property name="text">
         <string>yil</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QSpinBox" name="spinBox"/>
+      <widget class="QSpinBox" name="spinBox_yil"/>
      </item>
     </layout>
    </item>
    <item row="2" column="0">
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="0" column="2">
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_vazgec">
        <property name="text">
-        <string>PushButton</string>
+        <string>VAZGEÇ</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_ekle">
        <property name="text">
-        <string>PushButton</string>
+        <string>EKLE</string>
        </property>
       </widget>
      </item>
@@ -107,6 +107,30 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>comboBox_ogretmen</tabstop>
+  <tabstop>lineEdit_SinifAdi</tabstop>
+  <tabstop>spinBox_yil</tabstop>
+  <tabstop>pushButton_ekle</tabstop>
+  <tabstop>pushButton_vazgec</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_vazgec</sender>
+   <signal>clicked()</signal>
+   <receiver>sinifGiris</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
