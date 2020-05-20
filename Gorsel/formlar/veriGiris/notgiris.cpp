@@ -35,6 +35,17 @@ void notGiris::GorselDegisti()
     setDegisiklik(true);
 }
 
+void notGiris::reject()
+{
+    if(_Degisiklik) {
+                auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+                if (cevap == QMessageBox::No) {
+                    return;
+                }
+    }
+     QDialog::reject();
+}
+
 void notGiris::Ogrencicomboboxdoldur()
 {
     auto tumOgrenciler=
@@ -101,5 +112,5 @@ void notGiris::setDegisiklik(bool Degisiklik)
 
 void notGiris::on_QPushButton_ekle_clicked()
 {
-    //TODO not girişin eklesi yapılacak
+    setDegisiklik(true);
 }

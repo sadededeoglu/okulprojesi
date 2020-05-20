@@ -27,7 +27,7 @@ private slots:
 
 public slots:
     void gorselDegisti();
-        void reject() override;
+    void reject() override;
 
 private:
     Ui::sinifGiris *ui;

@@ -34,7 +34,30 @@ void sinifGiris::on_pushButton_ekle_clicked()
 
 void sinifGiris::gorselDegisti()
 {
+    setDegisiklikVarMi(true);
+}
 
+void sinifGiris::reject()
+{
+    if(_degisiklikVarMi) {
+        auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+        if (cevap == QMessageBox::No) {
+            return;
+        }
+    }
+    QDialog::reject();
+}
+
+void sinifGiris::GorselGuncelle()
+{
+    ui->lineEdit_SinifAdi->setText(_sinif->SinifAdi());
+    ui->spinBox_yil->setValue(_sinif->Yil());
+}
+
+void sinifGiris::VeriGuncelle()
+{
+    _sinif->setSinifAdi(ui->lineEdit_SinifAdi->text());
+    _sinif->setYil(ui->spinBox_yil->value());
 }
 
 Okul_sinif::ptr sinifGiris::sinif() const
