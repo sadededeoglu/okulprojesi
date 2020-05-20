@@ -16,7 +16,7 @@ private:
 signals:
     void YilDegisti(const PozitifTamsayi &yil);
     void DersAdiDegisti(const Metin &DersAdi);
-    void DonemDegisti(const Metin &Donem);
+    void DonemDegisti(const PozitifTamsayi &Donem);
 
 public:
     typedef std::shared_ptr<Dersler>ptr;

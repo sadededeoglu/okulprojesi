@@ -34,6 +34,7 @@ private:
     bool _Degisiklik;
 
     void Ogrencicomboboxdoldur();
+    void SinifComboboxDoldur();
 
     Ui::notGiris *ui;
     Notlar::ptr _Notlar;

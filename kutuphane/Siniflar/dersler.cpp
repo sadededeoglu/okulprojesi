@@ -34,7 +34,7 @@ void Dersler::setDonem(const PozitifTamsayi &donem)
 {
     if(this->_donem !=donem){
     _donem = donem;
-    DonemDegisti(_donem);}
+    DonemDegisti(this->_donem);}
 }
 
 Dersler::IdTuru Dersler::Id() const
