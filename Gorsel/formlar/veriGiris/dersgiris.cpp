@@ -1,6 +1,5 @@
 #include "dersgiris.h"
 #include "ui_dersgiris.h"
-
 #include <veritabani.h>
 #include <QMessageBox>
 
@@ -14,41 +13,34 @@ dersGiris::dersGiris(QWidget *parent) :
 
     _degisiklikVar = false;
 }
-
 dersGiris::~dersGiris()
 {
     delete ui;
 }
-
 void dersGiris::GorselGuncelle()
 {
     ui->lineEdit_DersAdi->setText(_ders->DersAdi());
     ui->spinBox_Donem->setValue(_ders->donem());
     ui->spinBox_DersYili->setValue(_ders->yil());
 }
-
 void dersGiris::VeriGuncelle()
 {
     _ders->setDersAdi(ui->lineEdit_DersAdi->text());
     _ders->setYil(ui->spinBox_DersYili->value());
     _ders->setDonem(ui->spinBox_Donem->value());
 }
-
 bool dersGiris::degisiklikVar() const
 {
     return _degisiklikVar;
 }
-
 void dersGiris::setDegisiklikVar(bool degisiklikVar)
 {
     _degisiklikVar = degisiklikVar;
 }
-
 void dersGiris::GorselDegisti()
 {
     setDegisiklikVar(true);
 }
-
 void dersGiris::reject()
 {
     if(_degisiklikVar){
@@ -59,8 +51,6 @@ void dersGiris::reject()
     }
     QDialog::reject();
 }
-
-
 void dersGiris::on_pushButton_Ekle_clicked()
 {
     VeriGuncelle();

@@ -103,6 +103,4 @@ public:
         return sonuc;
     }
 };
-
-// eleman eklendi fonksiyonu eklenecek
 #endif // VERIYONETIM_H

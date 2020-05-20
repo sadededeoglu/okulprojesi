@@ -12,12 +12,10 @@ ogretmenGiris::ogretmenGiris(QWidget *parent) :
     _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
     _Degisiklik = false;
 }
-
 ogretmenGiris::~ogretmenGiris()
 {
     delete ui;
 }
-
 void ogretmenGiris::GorselGuncelle() // nesnesindeki bilgileri ekrana aktarır. görsele ulasmak için ui. yaz
 {
     ui->lineEdit_ogretmenadi->setText(_Ogretmenprofil->ogretmenAdi());
@@ -25,7 +23,6 @@ void ogretmenGiris::GorselGuncelle() // nesnesindeki bilgileri ekrana aktarır. 
     ui->plainTextEdit_adres->setPlainText(_Ogretmenprofil->ogretmenAdresi());
     ui->spinBox_SicilNumarasi->setValue(_Ogretmenprofil->sicilNo());
 }
-
 void ogretmenGiris::veriGuncelle()  //ekrandaki bilgiyi nesneye aktarma
 {
     _Ogretmenprofil->setOgretmenAdi(ui->lineEdit_ogretmenadi->text());
@@ -33,23 +30,19 @@ void ogretmenGiris::veriGuncelle()  //ekrandaki bilgiyi nesneye aktarma
     _Ogretmenprofil->setOgretmenAdresi(ui->plainTextEdit_adres->document()->toPlainText());
     _Ogretmenprofil->setSicilNo(ui->spinBox_SicilNumarasi->value());
 }
-
 void ogretmenGiris::GorselDegisti()
 {
     setDegisiklik(true);
 }
-
 bool ogretmenGiris::Degisiklik() const
 {
     return _Degisiklik;
 }
-
 void ogretmenGiris::setDegisiklik(bool Degisiklik)
 {
     _Degisiklik = Degisiklik;
 
 }
-
 void ogretmenGiris::reject()
 {
     if(_Degisiklik){
@@ -63,7 +56,6 @@ void ogretmenGiris::reject()
     }
     QDialog::reject();
 }
-
 void ogretmenGiris::on_ekle_clicked()
 {
     veriGuncelle();

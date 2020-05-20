@@ -12,7 +12,9 @@ public:
     explicit DerslerYonetim(QObject *parent = nullptr);
 
 signals:
-//eklenecek
+    void DersEklendi(Pointer ptr);
+    void DersSilindi(Pointer ptr);
+    void DersDegisti(Pointer eski, Pointer yeni);
 
 
 };

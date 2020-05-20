@@ -11,7 +11,10 @@ class KUTUPHANE_EXPORT Ogrenciyonetim : public QObject, public Veriyonetim<Ogren
 public:
     explicit Ogrenciyonetim(QObject *parent = nullptr);
 
-signals://eklenecek
+signals:
+    void OgrencinEklendi(Pointer ptr);
+    void OgrenciSilindi(Pointer ptr);
+    void OgrenciDegisti(Pointer eski, Pointer yeni);
 
 };
 

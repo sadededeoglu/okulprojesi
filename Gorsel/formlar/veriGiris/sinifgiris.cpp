@@ -1,6 +1,5 @@
 #include "sinifgiris.h"
 #include "ui_sinifgiris.h"
-
 #include <veritabani.h>
 #include <QMessageBox>
 
@@ -11,12 +10,10 @@ sinifGiris::sinifGiris(QWidget *parent) :
     ui->setupUi(this);
     _degisiklikVarMi = false;
 }
-
 sinifGiris::~sinifGiris()
 {
     delete ui;
 }
-
 void sinifGiris::on_pushButton_ekle_clicked()
 {
     VeriGuncelle();
@@ -31,12 +28,10 @@ void sinifGiris::on_pushButton_ekle_clicked()
         accept();
     }
 }
-
 void sinifGiris::gorselDegisti()
 {
     setDegisiklikVarMi(true);
 }
-
 void sinifGiris::reject()
 {
     if(_degisiklikVarMi) {
@@ -47,34 +42,28 @@ void sinifGiris::reject()
     }
     QDialog::reject();
 }
-
 void sinifGiris::GorselGuncelle()
 {
     ui->lineEdit_SinifAdi->setText(_sinif->SinifAdi());
     ui->spinBox_yil->setValue(_sinif->Yil());
 }
-
 void sinifGiris::VeriGuncelle()
 {
     _sinif->setSinifAdi(ui->lineEdit_SinifAdi->text());
     _sinif->setYil(ui->spinBox_yil->value());
 }
-
 Okul_sinif::ptr sinifGiris::sinif() const
 {
     return _sinif;
 }
-
 void sinifGiris::setSinif(const Okul_sinif::ptr &sinif)
 {
     _sinif = sinif;
 }
-
 bool sinifGiris::degisiklikVarMi() const
 {
     return _degisiklikVarMi;
 }
-
 void sinifGiris::setDegisiklikVarMi(bool degisiklikVarMi)
 {
     _degisiklikVarMi = degisiklikVarMi;

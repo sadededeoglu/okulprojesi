@@ -20,8 +20,6 @@ public slots:
 
 private slots:
 
-
-
     void on_actionOgrenciEkle_triggered();
 
     void on_actiondersEkle_triggered();

@@ -1,6 +1,5 @@
 #ifndef SINIFGIRIS_H
 #define SINIFGIRIS_H
-
 #include <Siniflar/okul_sinif.h>
 #include <QDialog>
 
@@ -31,12 +30,10 @@ public slots:
 
 private:
     Ui::sinifGiris *ui;
-
     Okul_sinif::ptr _sinif;
 
     void GorselGuncelle();
     void VeriGuncelle();
-
     bool _degisiklikVarMi;
 };
 

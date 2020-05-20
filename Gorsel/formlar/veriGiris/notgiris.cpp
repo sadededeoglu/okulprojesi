@@ -20,32 +20,25 @@ notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
     _Degisiklik=false;
 
     //tüm sınıflar kısmı yapılacak TODO ve link kısmı da yapılacak
-
-
 }
-
 notGiris::~notGiris()
 {
     delete ui;
 }
-
-
 void notGiris::GorselDegisti()
 {
     setDegisiklik(true);
 }
-
 void notGiris::reject()
 {
     if(_Degisiklik) {
-                auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
-                if (cevap == QMessageBox::No) {
-                    return;
-                }
+        auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+        if (cevap == QMessageBox::No) {
+            return;
+        }
     }
-     QDialog::reject();
+    QDialog::reject();
 }
-
 void notGiris::Ogrencicomboboxdoldur()
 {
     auto tumOgrenciler=
@@ -65,51 +58,41 @@ void notGiris::Ogrencicomboboxdoldur()
         ui->comboBox_ogrenci->addItem(OgrenciProfil->ogrenciAdi()+" "+OgrenciProfil->ogrenciSoyadi(),OgrenciProfil->ogrenciId());
     }
 }
-
 void notGiris::SinifComboboxDoldur()
 {
     auto tumSiniflar = VeriTabani::veritabani().okulSinif().ara([](Okul_sinif::ptr){return true;});
 
     std::sort(tumSiniflar.begin() , tumSiniflar.end() , [](Okul_sinif::ptr a, Okul_sinif::ptr b){
         if (a->SinifAdi() > b->SinifAdi()) {
-            return a->SinifAdi()>b->SinifAdi();
-        }
-    });
+            return a->SinifAdi()>b->SinifAdi();}});
     ui->comboBox_sinif->clear();
     ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --") , -1);
     for (auto Okul_sinif:tumSiniflar) {
         ui->comboBox_sinif->addItem(Okul_sinif->SinifAdi() , Okul_sinif->sinifId());
     }
 };
-
 void notGiris::on_label_siniflink_linkActivated(const QString &link)
 {
     sinifGiris form;
     form.exec();
     this->Ogrencicomboboxdoldur();
 }
-
 void notGiris::GorselGuncelle()
 {
     //TODO not giriş yapılacak
 }
-
 void notGiris::VeriGuncelle()
 {
 
 }
-
 bool notGiris::Degisiklik() const
 {
     return _Degisiklik;
 }
-
 void notGiris::setDegisiklik(bool Degisiklik)
 {
     _Degisiklik = Degisiklik;
 }
-
-
 void notGiris::on_QPushButton_ekle_clicked()
 {
     setDegisiklik(true);

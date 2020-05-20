@@ -15,18 +15,16 @@ Ana_Pencere::Ana_Pencere(QWidget *parent)
 {
     ui->setupUi(this);
 }
-
 Ana_Pencere::~Ana_Pencere()
 {
     delete ui;
 }
-
 void Ana_Pencere::close()
 {
-//close yapınca pat diye kapatılmasın diye yazıldı
+    //close yapınca pat diye kapatılmasın diye yazıldı
 
-   auto cevap= QMessageBox::question(this,tr("çıkış onayı"),tr("çıkacak mısın"),
-                          QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
+    auto cevap= QMessageBox::question(this,tr("çıkış onayı"),tr("çıkacak mısın"),
+                                      QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
 
     if(cevap==QMessageBox::Yes){
         //ata sınıfa ulasabilmek için;
@@ -48,7 +46,6 @@ void Ana_Pencere::on_actionOgrenciEkle_triggered()
     yeniOgrenciGiris form;
     form.exec();
 }
-
 void Ana_Pencere::on_actiondersEkle_triggered()
 {
     dersGiris form;
@@ -65,7 +62,7 @@ void Ana_Pencere::on_actionnotEkle_triggered()
 
     while (OgrenciSayisi==0) {
         auto cevap= QMessageBox::question(this,tr("müsteri yok"),tr("yeni müsteri tanımla"),
-                               QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
+                                          QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
 
         if(cevap==QMessageBox::No){
             QMessageBox::critical(this,tr("kapatılıyor"),tr("müsteri yok"),
@@ -83,13 +80,11 @@ void Ana_Pencere::on_actionnotEkle_triggered()
     notGiris form;
     form.exec();
 }
-
 void Ana_Pencere::on_actionogretmenEkle_triggered()
 {
     ogretmenGiris form;
     form.exec();
 }
-
 void Ana_Pencere::on_actionsinifEkle_triggered()
 {
     sinifGiris form;

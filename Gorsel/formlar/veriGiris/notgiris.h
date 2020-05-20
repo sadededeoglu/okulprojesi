@@ -16,7 +16,6 @@ public:
     explicit notGiris(QWidget *parent = nullptr);
     ~notGiris();
 
-
     bool Degisiklik() const;
     void setDegisiklik(bool Degisiklik);
 
@@ -27,7 +26,6 @@ public slots:
 
 private slots:
     void on_label_siniflink_linkActivated(const QString &link);
-
     void on_QPushButton_ekle_clicked();
 
 private:
@@ -35,7 +33,6 @@ private:
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
     void VeriGuncelle();
     bool _Degisiklik;
-
     void Ogrencicomboboxdoldur();
     void SinifComboboxDoldur();
 

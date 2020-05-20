@@ -14,7 +14,7 @@ public:
 signals:
 
     void OgretmenEklendi(Pointer ptr);
-    void OgretmeSilindi(Pointer ptr);
+    void OgretmenSilindi(Pointer ptr);
     void OgretmenDegisti(Pointer eski, Pointer yeni);
 };
 

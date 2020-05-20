@@ -1,6 +1,5 @@
 #ifndef YENIOGRENCIGIRIS_H
 #define YENIOGRENCIGIRIS_H
-
 #include <Siniflar/ogrenciprofil.h>
 #include <QDialog>
 
@@ -19,8 +18,6 @@ public:
     OgrenciProfil::ptr ogrenci() const;
     void setOgrenci(const OgrenciProfil::ptr &ogrenci);
 
-
-
     bool degisiklikVar() const;
     void setDegisiklikVar(bool degisiklikVar);
 
@@ -33,12 +30,10 @@ private slots:
 
 private:
     Ui::yeniOgrenciGiris *ui;
-
     OgrenciProfil::ptr _ogrenci;
 
     void GorselGuncelle();
     void VeriGuncelle();
-
     bool _degisiklikVar;
 };
 

@@ -16,7 +16,7 @@ class KUTUPHANE_EXPORT VeriTabani : public QObject
     explicit VeriTabani(QObject *parent = nullptr);
 
     DerslerYonetim _dersler;
-    Notlaryonetim _notmlar;
+    Notlaryonetim _notlar;
     Ogrenciyonetim _ogrenci;
     Ogretmenyonetim _ogretmen;
     Okul_sinifyonetim _okulSinif;
@@ -37,6 +37,17 @@ signals:
     void OgretmenSilindi(OgretmenProfil::ptr ogretmensilindi);
     void OgrenciEklendi(OgrenciProfil::ptr ogrenciEklendi);
     void OgrenciSilindi(OgrenciProfil::ptr ogrenciSilindi);
+    void DersEklendi(Dersler::ptr derseklendi);
+    void DersSilindi( ptr);
+    void NotEklendi( ptr);
+    void NotSilindi( ptr);
+    void SinifEklendi( ptr);
+    void SinifSilindi( ptr);
+
+
+
+
+
 
     /*const lar vardı silindi basına & geldi sonrasına sınyalleri eklenecek
 
