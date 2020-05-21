@@ -41,5 +41,6 @@ void Okul_sinif::setSinifAdi(const Metin &SinifAdi)
 Okul_sinif::Okul_sinif(QObject *parent) : TemelVeriSinifi(parent)
 {
     this->_Yil=0;
+    this->_ogretmenId=0;
     this->_SinifAdi="";
 }

@@ -39,6 +39,10 @@ void Notlar::setOgrenciNot(const PozitifTamsayi &ogrenciNot)
 Notlar::Notlar(QObject *parent) :TemelVeriSinifi(parent)
 {
     this->_ogrenciNot=0;
+    this->_ogrenciId=0;
+    this->_DersId=0;
+
+    //diğer işlemler falan olacaksa onlar da eklenecek TODO
 }
 
 /*

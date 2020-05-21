@@ -53,7 +53,7 @@ void notGiris::Ogrencicomboboxdoldur()
     });
 
     ui->comboBox_ogrenci->clear();//önceden olanları siliyor
-    ui->comboBox_ogrenci->addItem(tr("-- ÖĞRENCİ SEÇ --"),-1);
+    ui->comboBox_ogrenci->addItem(tr("-- ÖĞRENCİ SEÇ --"),0);
     for(auto OgrenciProfil:tumOgrenciler){  //adıtem 2 parametre ister. gösterilecek metin,veri
         ui->comboBox_ogrenci->addItem(OgrenciProfil->ogrenciAdi()+" "+OgrenciProfil->ogrenciSoyadi(),OgrenciProfil->ogrenciId());
     }
@@ -66,7 +66,7 @@ void notGiris::SinifComboboxDoldur()
         if (a->SinifAdi() > b->SinifAdi()) {
             return a->SinifAdi()>b->SinifAdi();}});
     ui->comboBox_sinif->clear();
-    ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --") , -1);
+    ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --") , 0);
     for (auto Okul_sinif:tumSiniflar) {
         ui->comboBox_sinif->addItem(Okul_sinif->SinifAdi() , Okul_sinif->sinifId());
     }
