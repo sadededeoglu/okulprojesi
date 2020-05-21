@@ -132,5 +132,56 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>comboBox_ogretmen</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>sinifGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_SinifAdi</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>sinifGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>16</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_yil</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sinifGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>135</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>GorselDegisti()</slot>
+ </slots>
 </ui>

@@ -179,12 +179,44 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>207</x>
-     <y>171</y>
+     <x>248</x>
+     <y>170</y>
     </hint>
     <hint type="destinationlabel">
      <x>262</x>
      <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_DersYili</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dersGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>174</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>112</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_Donem</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dersGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>111</y>
     </hint>
    </hints>
   </connection>

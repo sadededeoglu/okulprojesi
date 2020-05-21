@@ -38,11 +38,11 @@ signals:
     void OgrenciEklendi(OgrenciProfil::ptr ogrenciEklendi);
     void OgrenciSilindi(OgrenciProfil::ptr ogrenciSilindi);
     void DersEklendi(Dersler::ptr derseklendi);
-    void DersSilindi( ptr);
-    void NotEklendi( ptr);
-    void NotSilindi( ptr);
-    void SinifEklendi( ptr);
-    void SinifSilindi( ptr);
+    void DersSilindi( Dersler::ptr derssilindi);
+    void NotEklendi( Notlar::ptr noteklendi);
+    void NotSilindi( Notlar::ptr notsilindi);
+    void SinifEklendi(Okul_sinif::ptr sinifeklendi);
+    void SinifSilindi( Okul_sinif::ptr sinifsilindi);
 
 
 

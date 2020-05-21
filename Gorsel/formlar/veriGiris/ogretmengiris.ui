@@ -169,6 +169,7 @@
   <tabstop>lineEdit_ogretmenadi</tabstop>
   <tabstop>lineEdit_ogretmensoyad</tabstop>
   <tabstop>spinBox_SicilNumarasi</tabstop>
+  <tabstop>plainTextEdit_adres</tabstop>
   <tabstop>ekle</tabstop>
   <tabstop>vazgec</tabstop>
  </tabstops>
@@ -183,8 +184,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>369</x>
-     <y>391</y>
+     <x>300</x>
+     <y>317</y>
     </hint>
     <hint type="destinationlabel">
      <x>226</x>
@@ -199,8 +200,8 @@
    <slot>GorselDegisti()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>173</x>
-     <y>49</y>
+     <x>272</x>
+     <y>31</y>
     </hint>
     <hint type="destinationlabel">
      <x>25</x>
@@ -215,8 +216,8 @@
    <slot>GorselDegisti()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>199</x>
-     <y>96</y>
+     <x>298</x>
+     <y>59</y>
     </hint>
     <hint type="destinationlabel">
      <x>4</x>
@@ -231,12 +232,28 @@
    <slot>GorselDegisti()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>229</x>
-     <y>295</y>
+     <x>284</x>
+     <y>262</y>
     </hint>
     <hint type="destinationlabel">
      <x>7</x>
      <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SicilNumarasi</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>34</x>
+     <y>289</y>
     </hint>
    </hints>
   </connection>

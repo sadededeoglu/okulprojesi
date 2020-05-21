@@ -37,6 +37,9 @@
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_ogrenci"/>
+      </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_snf">
         <property name="text">
@@ -44,68 +47,34 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1" colspan="2">
-       <widget class="QComboBox" name="comboBox_sinif"/>
-      </item>
-      <item row="0" column="3">
-       <widget class="QLabel" name="label_siniflink">
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ffffff;&quot;&gt;sınıf ekle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_ogrenci">
-        <property name="text">
-         <string>ogrenci</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="QComboBox" name="comboBox_ogrenci"/>
-      </item>
-      <item row="1" column="3">
-       <widget class="QLabel" name="label_ogrencilink">
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ogrenci ekle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_ders">
-        <property name="text">
-         <string>ders</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_ders"/>
       </item>
-      <item row="2" column="3">
-       <widget class="QLabel" name="label_derslink">
+      <item row="9" column="0">
+       <widget class="QLabel" name="label_ssapma">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ders ekle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>ssapma</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_not">
-        <property name="text">
-         <string>not1</string>
+      <item row="8" column="1" colspan="2">
+       <widget class="QSpinBox" name="spinBox_ort">
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QSpinBox" name="spinBox_not">
-        <property name="prefix">
-         <string>100/</string>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>regresyon</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="0" colspan="2">
-       <widget class="QLabel" name="label">
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_ort">
         <property name="text">
-         <string>not2</string>
+         <string>ortalama</string>
         </property>
        </widget>
       </item>
@@ -116,59 +85,90 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="0" rowspan="2" colspan="3">
-       <widget class="QLabel" name="label_2">
+      <item row="2" column="3">
+       <widget class="QLabel" name="label_derslink">
         <property name="text">
-         <string>not3</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ders ekle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="2">
-       <widget class="QSpinBox" name="spinBox_not_3">
-        <property name="prefix">
-         <string>100/</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="label_ort">
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_siniflink">
         <property name="text">
-         <string>ortalama</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
-       <widget class="QLabel" name="label_ssapma">
-        <property name="text">
-         <string>ssapma</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>regresyon</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ffffff;&quot;&gt;sınıf ekle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="9" column="1" colspan="2">
-       <widget class="QSpinBox" name="spinBox_regresyon">
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="1" colspan="2">
        <widget class="QSpinBox" name="spinBox_ssapma">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="7" column="1" colspan="2">
-       <widget class="QSpinBox" name="spinBox_ort">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_ogrenci">
+        <property name="text">
+         <string>ogrenci</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_sinif"/>
+      </item>
+      <item row="3" column="2">
+       <widget class="QSpinBox" name="spinBox_not">
+        <property name="prefix">
+         <string>100/</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_ders">
+        <property name="text">
+         <string>ders</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="label_ogrencilink">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ogrenci ekle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_not">
+        <property name="text">
+         <string>not1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1" colspan="2">
+       <widget class="QSpinBox" name="spinBox_regresyon">
         <property name="readOnly">
          <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QSpinBox" name="spinBox_not_3">
+        <property name="prefix">
+         <string>100/</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>not3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>not2</string>
         </property>
        </widget>
       </item>
@@ -251,17 +251,17 @@
  <connections>
   <connection>
    <sender>comboBox_sinif</sender>
-   <signal>textActivated(QString)</signal>
+   <signal>currentIndexChanged(int)</signal>
    <receiver>notGiris</receiver>
-   <slot>reject()</slot>
+   <slot>GorselDegisti()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>279</x>
      <y>23</y>
     </hint>
     <hint type="destinationlabel">
-     <x>388</x>
-     <y>185</y>
+     <x>350</x>
+     <y>116</y>
     </hint>
    </hints>
   </connection>
@@ -281,5 +281,88 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>comboBox_ogrenci</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>notGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>348</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_ders</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>notGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>64</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>351</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_not</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>notGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>352</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_not_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>notGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>358</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_not_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>notGiris</receiver>
+   <slot>GorselDegisti()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>GorselDegisti()</slot>
+ </slots>
 </ui>
