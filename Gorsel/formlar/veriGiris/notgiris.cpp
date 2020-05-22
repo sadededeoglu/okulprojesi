@@ -117,9 +117,9 @@ void notGiris::setDegisiklik(bool Degisiklik)
 void notGiris::on_QPushButton_ekle_clicked()
 {
     VeriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
-    if(_Notlar->ogrenciId()==0 || _Notlar->sinifId()==0){//bu diğer taraflarda da yapılacak
-       QMessageBox::critical(this,tr("hata"),
-                             tr("ogrenci veya sınıf seçilmedi"),
+    if(_Notlar->ogrenciId()==0 || _Notlar->sinifId()==0 || _Notlar->dersId()==0){//bu diğer taraflarda da yapılacak
+       QMessageBox::critical(this,tr("HATALI GİRİŞ"),
+                             tr("Ögrenci, sınıf veya ders seçilmedi"),
                   QMessageBox::Ok);
        return;
     }

@@ -64,6 +64,12 @@ void yeniOgrenciGiris::reject()
 void yeniOgrenciGiris::on_pushButton_Ekle_clicked()
 {
     VeriGuncelle();
+
+    if(_ogrenci->ogrenciAdi() == 0 || _ogrenci->ogrenciSoyadi() == 0 || _ogrenci->ogrenciAdresi() == 0 || _ogrenci->ogrenciNo() == 0){
+        QMessageBox::critical(this , tr("HATALI GİRİŞ") , tr("Eksik Bilgi Girişi") , QMessageBox::Ok);
+        return;
+    }
+
     VeriTabani::veritabani().ogrenci().ekle(this->_ogrenci);
     auto cevap = QMessageBox::question(this , "Öğrenci Kaydı Tamamlandı" , "Yeni Bir Öğrenci Tanımlamak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
     if (cevap == QMessageBox::Yes) {

@@ -58,7 +58,15 @@ void ogretmenGiris::reject()
 }
 void ogretmenGiris::on_ekle_clicked()
 {
-    veriGuncelle();
+    veriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
+
+    if(_Ogretmenprofil->ogretmenAdi()==0 || _Ogretmenprofil->ogretmenSoyadi()==0 || _Ogretmenprofil->sicilNo()==0 || _Ogretmenprofil->ogretmenAdresi()==0)
+    {
+        QMessageBox::critical(this,tr("hata"),
+                              tr("eksik bilgi girişi"),
+                   QMessageBox::Ok);
+        return;
+    }
     VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil);
 
     auto cevap = QMessageBox::question(this ,tr("Ogretmen Kaydı Tamamlandı"),

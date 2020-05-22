@@ -2,6 +2,7 @@
 #include "ui_sinifgiris.h"
 #include <veritabani.h>
 #include <QMessageBox>
+#include <Siniflar/okul_sinif.h>
 
 sinifGiris::sinifGiris(QWidget *parent) :
     QDialog(parent),
@@ -17,6 +18,14 @@ sinifGiris::~sinifGiris()
 void sinifGiris::on_pushButton_ekle_clicked()
 {
     VeriGuncelle();
+    if(_sinif->ogretmenId()==0 || _sinif->SinifAdi()==0 || _sinif->Yil()==0){
+
+        QMessageBox::critical(this,tr("hata"),
+                              tr("eksik bilgi girişi"),
+                   QMessageBox::Ok);
+        return;
+    }
+
     VeriTabani::veritabani().okulSinif().ekle(this->_sinif);
     auto cevap = QMessageBox::question(this , "Öğrenci Kaydı Tamamlandı" , "Yeni Bir Öğrenci Tanımlamak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
     if (cevap == QMessageBox::Yes) {
