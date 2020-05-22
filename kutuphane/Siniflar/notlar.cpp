@@ -36,11 +36,22 @@ void Notlar::setOgrenciNot(const PozitifTamsayi &ogrenciNot)
     _ogrenciNot = ogrenciNot;
     OgrenciNotDegisti(_ogrenciNot);}
 }
+Notlar::IdTuru Notlar::sinifId() const
+{
+    return _sinifId;
+}
+
+void Notlar::setSinifId(const IdTuru &sinifId)
+{
+    _sinifId = sinifId;
+}
+
 Notlar::Notlar(QObject *parent) :TemelVeriSinifi(parent)
 {
     this->_ogrenciNot=0;
     this->_ogrenciId=0;
     this->_DersId=0;
+    this->_sinifId = 0;
 
     //diğer işlemler falan olacaksa onlar da eklenecek TODO
 }

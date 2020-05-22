@@ -29,13 +29,11 @@ private slots:
     void on_QPushButton_ekle_clicked();
 
 private:
-
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
     void VeriGuncelle();
     bool _Degisiklik; //değişiklik derken form değişti mi demek istemiştik? TODO
     void Ogrencicomboboxdoldur();
     void SinifComboboxDoldur();
-
 
     Ui::notGiris *ui;
     Notlar::ptr _Notlar;

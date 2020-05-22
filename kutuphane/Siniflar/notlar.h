@@ -12,6 +12,7 @@ private:
     IdTuru _DersId;
     IdTuru _ogrenciId;
     IdTuru _notId;
+    IdTuru _sinifId;
     PozitifTamsayi _ogrenciNot;
 signals:
     void OgrenciNotDegisti(const PozitifTamsayi &ogrenciNot);
@@ -31,6 +32,10 @@ public:
     IdTuru notId() const;
     void setNotId(const IdTuru &notId);
 
+    IdTuru sinifId() const;
+    void setSinifId(const IdTuru &sinifId);
+
+
     PozitifTamsayi ogrenciNot() const;
     void setOgrenciNot(const PozitifTamsayi &ogrenciNot);
 
@@ -42,6 +47,7 @@ public:
          kopyalanan->_DersId=this->_DersId;
          kopyalanan->_ogrenciId=this->_ogrenciId;
          kopyalanan->_ogrenciNot=this->_ogrenciNot;
+         kopyalanan->_sinifId = this->_sinifId;
 
          return kopyalanan;
      }
@@ -51,6 +57,7 @@ public:
          this->_DersId=diger->_DersId;
          this->_ogrenciId=diger->_ogrenciId;
          this->_ogrenciNot=diger->_ogrenciNot;
+         this->_sinifId = diger->_sinifId;
      }
 
 };
