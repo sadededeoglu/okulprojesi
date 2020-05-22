@@ -1,14 +1,15 @@
-#include "notgiris.h"
-#include "ui_notgiris.h"
-#include <veritabani.h>
 #include <algorithm>
+#include "notgiris.h"
 #include <QMessageBox>
+#include <veritabani.h>
+#include "ui_notgiris.h"
 #include<Siniflar/notlar.h>
+#include <Siniflar/okul_sinif.h>
 #include<Siniflar/ogrenciprofil.h>
 #include<formlar/veriGiris/notgiris.h>
 #include<formlar/veriGiris/sinifgiris.h>
 #include<formlar/veriGiris/yeniogrencigiris.h>
-#include <Siniflar/okul_sinif.h>
+
 
 notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
 {
@@ -77,12 +78,32 @@ void notGiris::on_label_siniflink_linkActivated(const QString &link)
     form.exec();
     this->Ogrencicomboboxdoldur();
 }
-void notGiris::GorselGuncelle()
+void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
+
+//okul sınıf için de yapılacak TODO
 {
-    //TODO not giriş yapılacak
-}
+    if (_Notlar->ogrenciId()==0){
+        //ilk eleman seçili olacak
+        ui->comboBox_ogrenci->setCurrentIndex(0);
+    }else{
+
+        for(int i=1; i<ui->comboBox_ogrenci->count();i++){
+            Notlar::IdTuru gizliId=ui->comboBox_ogrenci->itemData(i).toInt();
+            if(gizliId==_Notlar->ogrenciId()){//gizli ıd ye erisme
+                ui->comboBox_ogrenci->setCurrentIndex(i);
+                break;
+
+                /*ui->comboBox_ogrenci->count();//içindeki eleman sayısını verir
+                //görünen değerleri;
+                ui->comboBox_ogrenci->itemText(2);
+                //gizli değerleri
+                //ui->spinbox ortalama falan buraya
+                //begin oladıgı ıcın for ile*/
+            }}}}
 void notGiris::VeriGuncelle()
 {
+_Notlar->setOgrenciId(ui->comboBox_ogrenci->currentData().toInt());
+//TODO okul için de
 
 }
 bool notGiris::Degisiklik() const
@@ -95,5 +116,21 @@ void notGiris::setDegisiklik(bool Degisiklik)
 }
 void notGiris::on_QPushButton_ekle_clicked()
 {
-    setDegisiklik(true);
+    VeriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
+    if(_Notlar->ogrenciId()==0 || _Notlar.()==0){//bu diğer taraflarda da yapılacak
+       QMessageBox::critical(this,tr("hata"),
+                             tr("ogrenci veya sınıf seçilmedi"),
+                  QMessageBox::Ok);
+       return;
+    }
+    VeriTabani::veritabani().notlar().ekle(this->_Notlar);
+    auto cevap = QMessageBox::question(this , "Ders Kaydı Tamamlandı" , "Yeni Bir Ders Koymak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+    if (cevap == QMessageBox::Yes){
+        _Notlar = VeriTabani::veritabani().notlar().yeni();
+        GorselGuncelle();
+       ui->comboBox_ogrenci->setFocus();
+        setDegisiklik(false);
+    } else {
+        accept();
+    }
 }

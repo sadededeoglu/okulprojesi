@@ -32,10 +32,9 @@ private:
 
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
     void VeriGuncelle();
-    bool _Degisiklik;
+    bool _Degisiklik; //değişiklik derken form değişti mi demek istemiştik? TODO
     void Ogrencicomboboxdoldur();
     void SinifComboboxDoldur();
-
 
 
     Ui::notGiris *ui;
