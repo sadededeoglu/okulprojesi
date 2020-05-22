@@ -55,11 +55,31 @@ void sinifGiris::GorselGuncelle()
 {
     ui->lineEdit_SinifAdi->setText(_sinif->SinifAdi());
     ui->spinBox_yil->setValue(_sinif->Yil());
+
+    if (_sinif->ogretmenId() == 0) {
+        ui->comboBox_ogretmen->setCurrentIndex(0);
+    }else {
+        for (int i = 1 ; i<ui->comboBox_ogretmen->count() ; i++){
+            Okul_sinif::IdTuru gizliId = ui->comboBox_ogretmen->itemData(i).toInt();
+            if (gizliId == _sinif->ogretmenId()){
+                ui->comboBox_ogretmen->setCurrentIndex(i);
+                break;
+            }
+        }
+    }
 }
+
 void sinifGiris::VeriGuncelle()
 {
     _sinif->setSinifAdi(ui->lineEdit_SinifAdi->text());
     _sinif->setYil(ui->spinBox_yil->value());
+}
+
+void sinifGiris::OgretmenComboboxDoldur()
+{
+    //TODO öğretmen comboboxu doldur
+
+
 }
 Okul_sinif::ptr sinifGiris::sinif() const
 {

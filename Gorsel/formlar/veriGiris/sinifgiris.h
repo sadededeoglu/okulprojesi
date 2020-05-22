@@ -35,6 +35,8 @@ private:
     void GorselGuncelle();
     void VeriGuncelle();
     bool _degisiklikVarMi;
+
+    void OgretmenComboboxDoldur();
 };
 
 #endif // SINIFGIRIS_H

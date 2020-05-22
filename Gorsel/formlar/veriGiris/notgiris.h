@@ -34,9 +34,11 @@ private:
     bool _Degisiklik; //değişiklik derken form değişti mi demek istemiştik? TODO
     void Ogrencicomboboxdoldur();
     void SinifComboboxDoldur();
+    void DersComboboxDoldur();
 
     Ui::notGiris *ui;
     Notlar::ptr _Notlar;
+
 };
 
 #endif // NOTGIRIS_H

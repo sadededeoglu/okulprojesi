@@ -7,7 +7,7 @@
 #include <Siniflar/okul_sinif.h>
 #include<Siniflar/ogrenciprofil.h>
 #include<formlar/veriGiris/notgiris.h>
-#include<formlar/veriGiris/sinifgiris.h>
+#include <formlar/veriGiris/sinifgiris.h>
 #include<formlar/veriGiris/yeniogrencigiris.h>
 
 
@@ -71,6 +71,26 @@ void notGiris::SinifComboboxDoldur()
     for (auto Okul_sinif:tumSiniflar) {
         ui->comboBox_sinif->addItem(Okul_sinif->SinifAdi() , Okul_sinif->sinifId());
     }
+}
+
+void notGiris::DersComboboxDoldur()
+{
+    auto tumDersler=
+            VeriTabani::veritabani().dersler().ara([](Dersler::ptr){return true;});
+
+    //alfabe sırası
+    std::sort(tumDersler.begin(),tumDersler.end(),[](Dersler::ptr a, Dersler::ptr b){
+
+        if (a->DersAdi() > b->DersAdi()) {
+            return a->DersAdi()>b->DersAdi();}
+        }
+);
+
+    ui->comboBox_ders->clear();//önceden olanları siliyor
+    ui->comboBox_ders->addItem(tr("-- DERS SEÇ --"),0);
+    for(auto Dersler:tumDersler){  //adıtem 2 parametre ister. gösterilecek metin,veri
+        ui->comboBox_ogrenci->addItem(Dersler->DersAdi() , Dersler->_DersId);
+    }
 };
 void notGiris::on_label_siniflink_linkActivated(const QString &link)
 {
@@ -82,6 +102,17 @@ void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
 
 //okul sınıf için de yapılacak TODO
 {
+
+    //if (_siparis->musteriId == 0)
+    //                        //ilk eleman seçili hale gelsin
+    //                        ui->comboboxMusteri->setcurrentIndex(0);
+    //                else
+    //                        for(int i = 1 ; i<ui.comboboxMusteri.count() ; i++)
+    //                        siparis::ıdTuru gizliId = ui.comboboxMusteri.itemData(i).toInt();
+    //                        if(gizliId == _siparis()->musteriId())
+    //                                ui->comboboxMusteri->setcurrentIndex(i);
+    //                                break;
+
     if (_Notlar->ogrenciId()==0){
         //ilk eleman seçili olacak
         ui->comboBox_ogrenci->setCurrentIndex(0);
