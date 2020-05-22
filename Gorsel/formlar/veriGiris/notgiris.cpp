@@ -67,11 +67,10 @@ void notGiris::SinifComboboxDoldur()
         if (a->SinifAdi() > b->SinifAdi()) {
             return a->SinifAdi()>b->SinifAdi();}});
     ui->comboBox_sinif->clear();
-    ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --") , 0);
+    ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --"),0);
     for (auto Okul_sinif:tumSiniflar) {
         ui->comboBox_sinif->addItem(Okul_sinif->SinifAdi() , Okul_sinif->sinifId());
-    }
-}
+    }}
 
 void notGiris::DersComboboxDoldur()
 {
@@ -82,16 +81,13 @@ void notGiris::DersComboboxDoldur()
     std::sort(tumDersler.begin(),tumDersler.end(),[](Dersler::ptr a, Dersler::ptr b){
 
         if (a->DersAdi() > b->DersAdi()) {
-            return a->DersAdi()>b->DersAdi();}
-        }
-);
-
-    ui->comboBox_ders->clear();//önceden olanları siliyor
+            return a->DersAdi()>b->DersAdi();}});
+    ui->comboBox_ders->clear();
     ui->comboBox_ders->addItem(tr("-- DERS SEÇ --"),0);
-    for(auto Dersler:tumDersler){  //adıtem 2 parametre ister. gösterilecek metin,veri
-        ui->comboBox_ogrenci->addItem(Dersler->DersAdi() , Dersler->_DersId);
-    }
-};
+    for(auto Dersler:tumDersler){
+        ui->comboBox_ders->addItem(Dersler->DersAdi(), Dersler->DersId());
+    }}
+
 void notGiris::on_label_siniflink_linkActivated(const QString &link)
 {
     sinifGiris form;

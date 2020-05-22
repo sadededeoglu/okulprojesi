@@ -78,7 +78,20 @@ void sinifGiris::VeriGuncelle()
 void sinifGiris::OgretmenComboboxDoldur()
 {
     //TODO öğretmen comboboxu doldur
-
+  // void notGiris::SinifComboboxDoldur()
+  // {
+  //     auto tumSiniflar = VeriTabani::veritabani().okulSinif().ara([](Okul_sinif::ptr){return true;});
+  //
+  //     std::sort(tumSiniflar.begin() , tumSiniflar.end() , [](Okul_sinif::ptr a, Okul_sinif::ptr b){
+  //         if (a->SinifAdi() > b->SinifAdi()) {
+  //             return a->SinifAdi()>b->SinifAdi();}});
+  //     ui->comboBox_sinif->clear();
+  //     ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --"),0);
+  //     for (auto Okul_sinif:tumSiniflar) {
+  //         ui->comboBox_sinif->addItem(Okul_sinif->SinifAdi() , Okul_sinif->sinifId());
+  //     }}
+  //
+  //
 
 }
 Okul_sinif::ptr sinifGiris::sinif() const
