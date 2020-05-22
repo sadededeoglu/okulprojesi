@@ -46,7 +46,10 @@ signals:
 
 
 
+/*11. video
 
+ilk 23 dkka birim fiyat kısmını anlatıyor bizim oyle bir seye ihtiyacımız yok sanırım
+*/
 
 
     /*const lar vardı silindi basına & geldi sonrasına sınyalleri eklenecek
@@ -86,20 +89,10 @@ okul sınıf da sadece sınıfın adını, sorumlu hocanın adını ve yıl  tut
   girilen notlar listede kayıtta oldugu için standart s. kısmı orda yapılacak. ama bunlar nasıl cıktı olarak verilecek.
 
 
-hocanın projesindeki ürün =notlar oluyor sanırım
+hocanın projesindeki ürün =notlar oluyor sanırım*/
 
 
-
-
-
-
-
-
-
-
-
-
- virtual demek kodlar bende değil diğer cocuk sınıfında, bu fnksıyona isyan edilebilir =0 dersek
+/* virtual demek kodlar bende değil diğer cocuk sınıfında, bu fnksıyona isyan edilebilir =0 dersek
 
 bir sınıftan 1 tane nesne olusturulsun baska olusturulmasın.
 
