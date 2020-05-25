@@ -1,6 +1,6 @@
 #ifndef OGRETMENLISTESI_H
 #define OGRETMENLISTESI_H
-
+#include<VeriYonetim/ogretmenyonetim.h>
 #include <QDialog>
 
 namespace Ui {
@@ -16,7 +16,10 @@ public:
     ~OgretmenListesi();
 
 private:
+    void TabloGuncelle();
+
     Ui::OgretmenListesi *ui;
+    Ogretmenyonetim::Liste _Ogretmenler;
 };
 
 #endif // OGRETMENLISTESI_H
