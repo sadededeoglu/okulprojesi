@@ -1,6 +1,7 @@
 #ifndef VERIYONETIM_H
 #define VERIYONETIM_H
 #include <QVector>
+#include <QDataStream>
 #include <functional>
 #include "kutuphane_global.h"
 
@@ -20,6 +21,12 @@ protected:
     IdTuru _sonId;
 
 public:
+
+  /*  virtual void Eklendi(Pointer ptr)=0;
+    virtual void Silindi(Pointer ptr)=0;
+    virtual void Degisti(Pointer eski,Pointer yeni)=0;*/
+
+
     Veriyonetim() { _sonId = 0; }
 
     Pointer yeni() { return T::yeni(); }
@@ -46,7 +53,7 @@ public:
             _sonId++;
             gecici->setId(_sonId);
             _veriler.append(gecici);
-            ekle(veri);
+            Eklendi(veri);
         }
     }
 
@@ -54,7 +61,7 @@ public:
         for(int i=0 ; i < _veriler.size() ; i++){
             if(eski->id() == _veriler[i]->id()) {
                 this->_veriler[i] = yeni;
-                elemanDegisti(eski, yeni);
+                Degisti(eski, yeni);
             }
         }
     }
@@ -70,7 +77,7 @@ public:
 
     void sil(PozitifTamsayi idx) {
         Pointer ptr = _veriler.takeAt(idx);
-        elemanSilindi(ptr);
+        Silindi(ptr);
     }
 
     Liste ara(Filtre f) const{
@@ -103,15 +110,16 @@ public:
         return sonuc;
     }
 
-  /*  virtual void ogretmeneklendi(OgretmenProfil::ptr ogretmeneklendi);
-    void OgretmenSilindi(OgretmenProfil::ptr ogretmensilindi);
-    void OgrenciEklendi(OgrenciProfil::ptr ogrenciEklendi);
-    void OgrenciSilindi(OgrenciProfil::ptr ogrenciSilindi);
-    void DersEklendi(Dersler::ptr derseklendi);
-    void DersSilindi( Dersler::ptr derssilindi);
-    void NotEklendi( Notlar::ptr noteklendi);
-    void NotSilindi( Notlar::ptr notsilindi);
-    void SinifEklendi(Okul_sinif::ptr sinifeklendi);
-    void SinifSilindi( Okul_sinif::ptr sinifsilindi);*/
+    void kaydet(QDataStream &dosya){//kaydedilecek iki bilgi var
+        //en son kaydettiği ıd 2. veriler
+
+        dosya<<this->_sonId<<_veriler;//vektor
+
+    }
+    void yukle(QDataStream &dosya){
+
+        dosya>>_sonId>>_veriler;
+    }
+
 };
 #endif // VERIYONETIM_H

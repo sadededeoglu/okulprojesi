@@ -31,6 +31,8 @@ public:
     Ogrenciyonetim &ogrenci();
     Ogretmenyonetim &ogretmen();
     Okul_sinifyonetim &okulSinif();
+    void kaydet(QString dosyaAdi);
+    void yukle(QString dosyaAdi);
 
 signals:
     void OgretmenEklendi(OgretmenProfil::ptr ogretmeneklendi);
