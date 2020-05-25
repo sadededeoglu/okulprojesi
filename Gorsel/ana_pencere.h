@@ -21,14 +21,13 @@ public slots:
 private slots:
 
     void on_actionOgrenciEkle_triggered();
-
     void on_actiondersEkle_triggered();
-
     void on_actionnotEkle_triggered();
-
     void on_actionogretmenEkle_triggered();
-
     void on_actionsinifEkle_triggered();
+    void on_actionkaydet_triggered();
+    void on_actionac_triggered();
+    void on_actionogretmen_listesi_triggered();
 
 private:
     Ui::Ana_Pencere *ui;

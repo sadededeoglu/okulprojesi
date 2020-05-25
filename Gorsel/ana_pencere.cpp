@@ -1,12 +1,17 @@
 #include "ana_pencere.h"
 #include<veritabani.h>
 #include "ui_ana_pencere.h"
+#include<QFile>
+#include<QFileDialog>
+#include<qstring.h>
 #include <QMessageBox>  //kapatırken mesaj;
 #include <formlar/veriGiris/dersgiris.h>
 #include <formlar/veriGiris/notgiris.h>
 #include <formlar/veriGiris/ogretmengiris.h>
 #include <formlar/veriGiris/yeniogrencigiris.h>
 #include <formlar/veriGiris/sinifgiris.h>
+#include <formlar/listeleme/ogretmenlistesi.h>
+
 
 
 Ana_Pencere::Ana_Pencere(QWidget *parent)
@@ -88,5 +93,29 @@ void Ana_Pencere::on_actionogretmenEkle_triggered()
 void Ana_Pencere::on_actionsinifEkle_triggered()
 {
     sinifGiris form;
+    form.exec();
+}
+
+void Ana_Pencere::on_actionkaydet_triggered()
+{
+    QString DosyaAdi=QFileDialog::getSaveFileName(this,tr("dosya seç"),
+                                                  qApp->applicationDirPath(),
+                                                  tr("veri dos(...)")); //TODO
+}
+
+void Ana_Pencere::on_actionac_triggered()
+{
+    QString DosyaAdi=QFileDialog::getOpenFileName(this,tr("dosya seç"),
+                                                  qApp->applicationDirPath(),
+                                               tr("veri dos()"));  //TODO
+    if(DosyaAdi!=""){
+        VeriTabani::veritabani().yukle(DosyaAdi);
+    }
+
+}
+
+void Ana_Pencere::on_actionogretmen_listesi_triggered()
+{
+    OgretmenListesi form;
     form.exec();
 }
