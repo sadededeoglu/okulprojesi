@@ -29,8 +29,34 @@ void OgretmenListesi::TabloGuncelle()
  ui->tableView_ogretmen->setHorizontalHeaderLabels(Baslik);*/
 
  for(int i=0;i<this->_Ogretmenler.count();i++){
+
     auto hucre=new QTableWidgetItem();
-    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->Id()));
+    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->ogretmenId()));
+    hucre->setTextAlignment(Qt::AlignCenter);
+
+   // ui->tableView_ogretmen->setItem(i,0,hucre);
+
+
+    hucre=new QTableWidgetItem();
+    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->ogretmenAdi()));
+    hucre->setTextAlignment(Qt::AlignCenter);
+
+    //ui->tableView_ogretmen.setItem(i,0,hucre);
+
+    hucre=new QTableWidgetItem();
+    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->ogretmenSoyadi()));
+    hucre->setTextAlignment(Qt::AlignCenter);
+
+    //ui->tableView_ogretmen.setItem(i,0,hucre);
+
+    hucre=new QTableWidgetItem();
+    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->ogretmenAdresi()));
+    hucre->setTextAlignment(Qt::AlignCenter);
+
+    //ui->tableView_ogretmen.setItem(i,0,hucre);
+
+    hucre=new QTableWidgetItem();
+    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->sicilNo()));
     hucre->setTextAlignment(Qt::AlignCenter);
 
     //ui->tableView_ogretmen.setItem(i,0,hucre);
