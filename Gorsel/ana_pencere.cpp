@@ -3,7 +3,7 @@
 #include "ui_ana_pencere.h"
 #include<QFile>
 #include<QFileDialog>
-#include<qstring.h>
+#include<Qstring.h>
 #include <QMessageBox>  //kapatırken mesaj;
 #include <formlar/veriGiris/dersgiris.h>
 #include <formlar/veriGiris/notgiris.h>
@@ -19,9 +19,14 @@ Ana_Pencere::Ana_Pencere(QWidget *parent)
     , ui(new Ui::Ana_Pencere)
 {
     ui->setupUi(this);
+
+    QString varsayılanDosyaAdi="veri.movd";
+    VeriTabani::veritabani().yukle(varsayılanDosyaAdi);
 }
 Ana_Pencere::~Ana_Pencere()
 {
+    QString varsayılanDosyaAdi="veri.movd";
+    VeriTabani::veritabani().kaydet(varsayılanDosyaAdi);
     delete ui;
 }
 void Ana_Pencere::close()

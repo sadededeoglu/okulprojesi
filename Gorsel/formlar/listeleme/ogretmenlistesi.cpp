@@ -20,6 +20,7 @@ OgretmenListesi::~OgretmenListesi()
 
 void OgretmenListesi::TabloGuncelle()
 {
+ //ui->tableView_ogretmen->clear();
  QStringList Baslik;
  Baslik <<tr("ogretmen adı")<<tr("soyadı")<<tr("adresi")<<tr("sicil no");
 
@@ -38,28 +39,28 @@ void OgretmenListesi::TabloGuncelle()
 
 
     hucre=new QTableWidgetItem();
-    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->ogretmenAdi()));
+    hucre->setText(this->_Ogretmenler[i]->ogretmenAdi());
     hucre->setTextAlignment(Qt::AlignCenter);
 
-    //ui->tableView_ogretmen.setItem(i,0,hucre);
+    //ui->tableView_ogretmen.setItem(i,1,hucre);
 
     hucre=new QTableWidgetItem();
-    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->ogretmenSoyadi()));
+    hucre->setText(this->_Ogretmenler[i]->ogretmenSoyadi());
     hucre->setTextAlignment(Qt::AlignCenter);
 
-    //ui->tableView_ogretmen.setItem(i,0,hucre);
+    //ui->tableView_ogretmen.setItem(i,2,hucre);
 
     hucre=new QTableWidgetItem();
-    hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->ogretmenAdresi()));
+    hucre->setText(this->_Ogretmenler[i]->ogretmenAdresi());
     hucre->setTextAlignment(Qt::AlignCenter);
 
-    //ui->tableView_ogretmen.setItem(i,0,hucre);
+    //ui->tableView_ogretmen.setItem(i,3,hucre);
 
     hucre=new QTableWidgetItem();
     hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->sicilNo()));
     hucre->setTextAlignment(Qt::AlignCenter);
 
-    //ui->tableView_ogretmen.setItem(i,0,hucre);
+    //ui->tableView_ogretmen.setItem(i,4,hucre);
  }
  //TODO yukarısı calısmıyor dosyaları tam yapmadıgımdan büyük ihtimalle
 }
