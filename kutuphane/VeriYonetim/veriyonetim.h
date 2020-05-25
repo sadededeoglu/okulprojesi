@@ -102,5 +102,16 @@ public:
         Pointer sonuc(nullptr);
         return sonuc;
     }
+
+  /*  virtual void ogretmeneklendi(OgretmenProfil::ptr ogretmeneklendi);
+    void OgretmenSilindi(OgretmenProfil::ptr ogretmensilindi);
+    void OgrenciEklendi(OgrenciProfil::ptr ogrenciEklendi);
+    void OgrenciSilindi(OgrenciProfil::ptr ogrenciSilindi);
+    void DersEklendi(Dersler::ptr derseklendi);
+    void DersSilindi( Dersler::ptr derssilindi);
+    void NotEklendi( Notlar::ptr noteklendi);
+    void NotSilindi( Notlar::ptr notsilindi);
+    void SinifEklendi(Okul_sinif::ptr sinifeklendi);
+    void SinifSilindi( Okul_sinif::ptr sinifsilindi);*/
 };
 #endif // VERIYONETIM_H

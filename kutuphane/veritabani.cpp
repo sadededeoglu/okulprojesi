@@ -5,7 +5,9 @@ VeriTabani::VeriTabani(QObject *parent) : QObject(parent)
 {
 connect(&_ogretmen, &Ogretmenyonetim::OgretmenEklendi, this,&VeriTabani::OgretmenEklendi);
 connect(&_ogrenci, &Ogrenciyonetim::OgrencinEklendi,this,&VeriTabani::OgrenciEklendi);
-//connect(&_notlar, &Notlaryonetim::NotEklendi,this,&VeriTabani::notlar)
+connect(&_notlar, &Notlaryonetim::NotEklendi,this,&VeriTabani::NotEklendi);
+connect(&_dersler,&DerslerYonetim::DersEklendi,this,&VeriTabani::DersEklendi);
+connect(&_okulSinif,&Okul_sinifyonetim::SinifEklendi,this,&VeriTabani::SinifEklendi);
 }
 
 Okul_sinifyonetim &VeriTabani::okulSinif()

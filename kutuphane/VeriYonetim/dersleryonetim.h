@@ -1,6 +1,7 @@
 #ifndef DERSLERYONETIM_H
 #define DERSLERYONETIM_H
 #include <QObject>
+#include <QDataStream>
 #include "veriyonetim.h"
 #include "Siniflar/dersler.h"
 #include "kutuphane_global.h"

@@ -1,6 +1,7 @@
 #ifndef NOTLARYONETIM_H
 #define NOTLARYONETIM_H
 #include <QObject>
+#include <QDataStream>
 #include "veriyonetim.h"
 #include "Siniflar/notlar.h"
 #include "kutuphane_global.h"
