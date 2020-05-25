@@ -1,6 +1,7 @@
 #include "ogretmengiris.h"
 #include <veritabani.h>
 #include <qmessagebox.h>
+#include<QFileDialog>
 #include "ui_ogretmengiris.h"
 #include<Siniflar/ogretmenprofil.h>
 
