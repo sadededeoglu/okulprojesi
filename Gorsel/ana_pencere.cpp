@@ -20,18 +20,18 @@ Ana_Pencere::Ana_Pencere(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QString varsayılanDosyaAdi="veri.movd";
-    VeriTabani::veritabani().yukle(varsayılanDosyaAdi);
+    QString varsayilanDosyaAdi="veri.movd";
+    VeriTabani::veritabani().yukle(varsayilanDosyaAdi);
 }
 Ana_Pencere::~Ana_Pencere()
 {
-    QString varsayılanDosyaAdi="veri.movd";
-    VeriTabani::veritabani().kaydet(varsayılanDosyaAdi);
+    QString varsayilanDosyaAdi="veri.movd";
+    VeriTabani::veritabani().kaydet(varsayilanDosyaAdi);
     delete ui;
 }
 void Ana_Pencere::close()
 {
-    //close yapınca pat diye kapatılmasın diye yazıldı
+    //close yapınca aniden kapatılmasın diye yazıldı
 
     auto cevap= QMessageBox::question(this,tr("çıkış onayı"),tr("çıkacak mısın"),
                                       QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
