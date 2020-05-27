@@ -49,7 +49,7 @@ public:
 
         PozitifTamsayi elemanSayisi = this->filtreyeUyanElemanSayisi(fonksiyon);
         if (elemanSayisi == 0 ) {
-            auto gecici = veri->kopyala();
+            auto gecici = veri->Kopyala();
             _sonId++;
             gecici->setId(_sonId);
             _veriler.append(gecici);
@@ -84,7 +84,7 @@ public:
         Liste sonuc;
         for(auto eleman : _veriler){
             if(f(eleman)){
-                sonuc.append(eleman->kopyala());
+                sonuc.append(eleman->Kopyala());
             }
         }
         return sonuc;
@@ -93,7 +93,7 @@ public:
     Pointer ilkiniBul(Filtre f) const {
         for (auto eleman : _veriler) {
             if(f(eleman)){
-                return eleman->kopyala();
+                return eleman->Kopyala();
             }
         }
         Pointer sonuc(nullptr);
@@ -103,7 +103,7 @@ public:
     Pointer sonuncuyuBul(Filtre f) const {
         for (auto eleman = _veriler.rbegin(); eleman != _veriler.rend(); eleman++){
             if (f(*eleman)) {
-              return (*eleman)->kopyala();
+              return (*eleman)->Kopyala();
             }
         }
         Pointer sonuc(nullptr);

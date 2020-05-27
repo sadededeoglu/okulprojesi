@@ -41,7 +41,7 @@ public:
 
      static ptr yeni() {return std::make_shared<Notlar>();}
 
-     ptr kopyala(){
+     ptr Kopyala(){
          ptr kopyalanan=Notlar::yeni();
          kopyalanan->_notId=this->_notId;
          kopyalanan->_DersId=this->_DersId;

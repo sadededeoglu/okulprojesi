@@ -85,7 +85,7 @@ void notGiris::DersComboboxDoldur()
     ui->comboBox_ders->clear();
     ui->comboBox_ders->addItem(tr("-- DERS SEÇ --"),0);
     for(auto Dersler:tumDersler){
-        ui->comboBox_ders->addItem(Dersler->DersAdi(), Dersler->DersId());
+        ui->comboBox_ders->addItem(Dersler->DersAdi(), Dersler->Id());
     }}
 
 void notGiris::on_label_siniflink_linkActivated(const QString &link)

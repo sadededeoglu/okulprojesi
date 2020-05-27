@@ -35,7 +35,7 @@ public:
 
     static ptr yeni() {return std::make_shared<Dersler>();}
 
-    ptr kopyala(){
+    ptr Kopyala(){
         ptr kopyalanan=Dersler::yeni();
         kopyalanan->_yil=this->_yil;
         kopyalanan->_donem=this->_donem;
