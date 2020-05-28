@@ -76,24 +76,25 @@ void sinifGiris::VeriGuncelle()
 }
 
 void sinifGiris::OgretmenComboboxDoldur()
-{
-    //TODO öğretmen comboboxu doldur
-  // void notGiris::SinifComboboxDoldur()
-  // {
-  //     auto tumSiniflar = VeriTabani::veritabani().okulSinif().ara([](Okul_sinif::ptr){return true;});
-  //
-  //     std::sort(tumSiniflar.begin() , tumSiniflar.end() , [](Okul_sinif::ptr a, Okul_sinif::ptr b){
-  //         if (a->SinifAdi() > b->SinifAdi()) {
-  //             return a->SinifAdi()>b->SinifAdi();}});
-  //     ui->comboBox_sinif->clear();
-  //     ui->comboBox_sinif->addItem(tr("-- SINIF SEÇ --"),0);
-  //     for (auto Okul_sinif:tumSiniflar) {
-  //         ui->comboBox_sinif->addItem(Okul_sinif->SinifAdi() , Okul_sinif->sinifId());
-  //     }}
-  //
-  //
+{   
+    auto tumOgretmenler=
+            VeriTabani::veritabani().ogretmen().ara([](OgretmenProfil::ptr){return true;});
 
+    //alfabe sırası
+    std::sort(tumOgretmenler.begin(),tumOgretmenler.end(),[](OgretmenProfil::ptr a, OgretmenProfil::ptr b){
+
+        if(a->ogretmenAdi() == b->ogretmenAdi()){
+            return a->ogretmenSoyadi() < b->ogretmenSoyadi();}
+        return a->ogretmenAdi()<b->ogretmenAdi();
+    });
+
+    ui->comboBox_ogretmen->clear();//önceden olanları siliyor
+    ui->comboBox_ogretmen->addItem(tr("-- ÖĞRETMEN SEÇİN --"),0);
+    for(auto OgretmenProfil:tumOgretmenler){  //adıtem 2 parametre ister. gösterilecek metin,veri
+        ui->comboBox_ogretmen->addItem(OgretmenProfil->ogretmenAdi()+" "+OgretmenProfil->ogretmenSoyadi(),OgretmenProfil->ogretmenId());
+    }
 }
+
 Okul_sinif::ptr sinifGiris::sinif() const
 {
     return _sinif;

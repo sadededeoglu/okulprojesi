@@ -31,7 +31,7 @@ private slots:
 private:
     void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
     void VeriGuncelle();
-    bool _Degisiklik; //değişiklik derken form değişti mi demek istemiştik? TODO
+    bool _Degisiklik;
     void Ogrencicomboboxdoldur();
     void SinifComboboxDoldur();
     void DersComboboxDoldur();
