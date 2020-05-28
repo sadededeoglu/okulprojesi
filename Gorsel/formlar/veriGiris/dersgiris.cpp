@@ -71,3 +71,13 @@ void dersGiris::on_pushButton_Ekle_clicked()
         accept();
     }
 }
+
+Dersler::ptr dersGiris::ders() const
+{
+    return _ders;
+}
+
+void dersGiris::setDers(const Dersler::ptr &ders)
+{
+    _ders = ders;
+}

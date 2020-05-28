@@ -61,7 +61,7 @@ void Ana_Pencere::on_actiondersEkle_triggered()
     dersGiris form;
     form.exec();
 }
-//asağıdaki islemlerin aynısını sınıf sayısı için de yap yapılmadı TODO
+
 void Ana_Pencere::on_actionnotEkle_triggered()
 {//bu ikisi 0 ise hata vermeli
     auto OgrenciSayisi = VeriTabani::veritabani().ogrenci().filtreyeUyanElemanSayisi(
@@ -71,11 +71,11 @@ void Ana_Pencere::on_actionnotEkle_triggered()
                 [](Okul_sinif::ptr){return true;});
 
     while (OgrenciSayisi==0) {
-        auto cevap= QMessageBox::question(this,tr("müsteri yok"),tr("yeni müsteri tanımla"),
+        auto cevap= QMessageBox::question(this,tr("öğrenci yok"),tr("yeni öğrenci tanımla"),
                                           QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
 
         if(cevap==QMessageBox::No){
-            QMessageBox::critical(this,tr("kapatılıyor"),tr("müsteri yok"),
+            QMessageBox::critical(this,tr("kapatılıyor"),tr("öğrenci yok"),
                                   QMessageBox::Ok,
                                   QMessageBox::Ok);
             return;
@@ -85,6 +85,22 @@ void Ana_Pencere::on_actionnotEkle_triggered()
         //ogrenci sayısını güncellemeden kapatmasın diye yeniden güncelliyorum
         auto OgrenciSayisi = VeriTabani::veritabani().ogrenci().filtreyeUyanElemanSayisi(
                     [](OgrenciProfil::ptr){return true;});
+    }
+
+    while (SinifSayisi==0) {
+        auto cevap= QMessageBox::question(this,tr("sınıf yok"),tr("yeni sınıf tanımla"),
+                                          QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
+
+        if(cevap==QMessageBox::No){
+            QMessageBox::critical(this,tr("kapatılıyor"),tr("sınıf yok"),
+                                  QMessageBox::Ok,
+                                  QMessageBox::Ok);
+            return;
+        }
+        on_actionsinifEkle_triggered();
+
+        auto SinifSayisi = VeriTabani::veritabani().okulSinif().filtreyeUyanElemanSayisi(
+                    [](Okul_sinif::ptr){return true;});
     }
 
     notGiris form;

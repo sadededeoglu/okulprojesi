@@ -18,6 +18,9 @@ public:
     bool degisiklikVar() const;
     void setDegisiklikVar(bool degisiklikVar);
 
+    Dersler::ptr ders() const;
+    void setDers(const Dersler::ptr &ders);
+
 public slots:
     void GorselDegisti();
     void reject() override;

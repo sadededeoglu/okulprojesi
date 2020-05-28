@@ -9,7 +9,7 @@
 #include<formlar/veriGiris/notgiris.h>
 #include <formlar/veriGiris/sinifgiris.h>
 #include<formlar/veriGiris/yeniogrencigiris.h>
-
+#include <formlar/veriGiris/dersgiris.h>
 
 notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
 {
@@ -20,7 +20,6 @@ notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
     _Notlar= VeriTabani::veritabani().notlar().yeni();
     _Degisiklik=false;
 
-    //TODO link kısmı da yapılacak
 }
 notGiris::~notGiris()
 {
@@ -96,17 +95,17 @@ void notGiris::on_label_siniflink_linkActivated(const QString &link)
 }
 void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
 
-//okul sınıf için de yapılacak TODO
 {
 
-    //ui->lineEdit_DersAdi->setText(_ders->DersAdi());
-    //ui->spinBox_Donem->setValue(_ders->donem());
-    //ui->spinBox_DersYili->setValue(_ders->yil());
+    ui->spinBox_not1->setValue(_Notlar->ogrenciNot());
+        //TODO 2. ve 3. notlar öğrenci notu etkiler mi
+    //ui->spinBox_not2->setValue(_Notlar->ogrenciNot());
+    //ui->spinBox_not3->setValue(_Notlar->ogrenciNot());
 
     if (_Notlar->ogrenciId()==0){
         //ilk eleman seçili olacak
         ui->comboBox_ogrenci->setCurrentIndex(0);
-    }else{
+    } else {
 
         for(int i=1; i<ui->comboBox_ogrenci->count();i++){
             Notlar::IdTuru gizliId=ui->comboBox_ogrenci->itemData(i).toInt();
@@ -114,19 +113,42 @@ void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
                 ui->comboBox_ogrenci->setCurrentIndex(i);
                 break;
 
-
-
                 /*ui->comboBox_ogrenci->count();//içindeki eleman sayısını verir
                 //görünen değerleri;
                 ui->comboBox_ogrenci->itemText(2);
                 //gizli değerleri
                 //ui->spinbox ortalama falan buraya
                 //begin oladıgı ıcın for ile*/
-            }}}}
+            }}}
+
+    if (_Notlar->dersId() == 0) {
+        ui->comboBox_ders->setCurrentIndex(0);
+    } else {
+        for (int i = 1 ; i<ui->comboBox_ders->count() ; i++){
+            Notlar::IdTuru gizliId = ui->comboBox_ders->itemData(i).toInt();
+            if(gizliId == _Notlar->dersId()) {
+                ui->comboBox_ders->setCurrentIndex(i);
+                break;
+            }
+        }
+    }
+
+    if (_Notlar->sinifId() == 0){
+        ui->comboBox_sinif->setCurrentIndex(0);
+    } else {
+        for(int i = 0 ; i<ui->comboBox_sinif->count() ; i++){
+            Notlar::IdTuru gizliId = ui->comboBox_sinif->itemData(i).toInt();
+            if (gizliId == _Notlar->sinifId()) {
+                ui->comboBox_sinif->setCurrentIndex(i);
+                break;
+            }
+        }
+    }
+}
 void notGiris::VeriGuncelle()
 {
     _Notlar->setOgrenciId(ui->comboBox_ogrenci->currentData().toInt());
-    //TODO okul için de
+    //TODO okulsınıf için de
 
 }
 bool notGiris::Degisiklik() const
@@ -156,4 +178,18 @@ void notGiris::on_QPushButton_ekle_clicked()
     } else {
         accept();
     }
+}
+
+void notGiris::on_label_ogrencilink_linkActivated(const QString &link)
+{
+    yeniOgrenciGiris form;
+    form.exec();
+    this->Ogrencicomboboxdoldur();
+}
+
+void notGiris::on_label_derslink_linkActivated(const QString &link)
+{
+    dersGiris form;
+    form.exec();
+    this->DersComboboxDoldur();
 }

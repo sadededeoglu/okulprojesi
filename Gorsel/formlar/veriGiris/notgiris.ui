@@ -79,7 +79,7 @@
        </widget>
       </item>
       <item row="4" column="2">
-       <widget class="QSpinBox" name="spinBox_not_2">
+       <widget class="QSpinBox" name="spinBox_not2">
         <property name="prefix">
          <string>100/</string>
         </property>
@@ -117,7 +117,7 @@
        <widget class="QComboBox" name="comboBox_sinif"/>
       </item>
       <item row="3" column="2">
-       <widget class="QSpinBox" name="spinBox_not">
+       <widget class="QSpinBox" name="spinBox_not1">
         <property name="prefix">
          <string>100/</string>
         </property>
@@ -138,7 +138,7 @@
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QLabel" name="label_not">
+       <widget class="QLabel" name="label_not1">
         <property name="text">
          <string>not1</string>
         </property>
@@ -152,21 +152,21 @@
        </widget>
       </item>
       <item row="5" column="2">
-       <widget class="QSpinBox" name="spinBox_not_3">
+       <widget class="QSpinBox" name="spinBox_not3">
         <property name="prefix">
          <string>100/</string>
         </property>
        </widget>
       </item>
       <item row="5" column="0">
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label_not3">
         <property name="text">
          <string>not3</string>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_not2">
         <property name="text">
          <string>not2</string>
         </property>
@@ -314,7 +314,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinBox_not</sender>
+   <sender>spinBox_not1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>notGiris</receiver>
    <slot>GorselDegisti()</slot>
@@ -330,7 +330,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinBox_not_2</sender>
+   <sender>spinBox_not2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>notGiris</receiver>
    <slot>GorselDegisti()</slot>
@@ -346,7 +346,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinBox_not_3</sender>
+   <sender>spinBox_not3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>notGiris</receiver>
    <slot>GorselDegisti()</slot>
