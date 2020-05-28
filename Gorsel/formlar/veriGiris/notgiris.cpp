@@ -147,9 +147,32 @@ void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
 }
 void notGiris::VeriGuncelle()
 {
+        //TODO bunların yazılması gerekiyor muydu
     _Notlar->setOgrenciId(ui->comboBox_ogrenci->currentData().toInt());
-    //TODO okulsınıf için de
+    _Notlar->setSinifId(ui->comboBox_sinif->currentData().toInt());
+    _Notlar->setDersId(ui->comboBox_ders->currentData().toInt());
 
+    OgrenciProfil::IdTuru ogrenciId = ui->comboBox_ogrenci->currentData().toInt();
+    Okul_sinif::IdTuru sinifId = ui->comboBox_sinif->currentData().toInt();
+    Dersler::IdTuru dersId = ui->comboBox_ders->currentData().toInt();
+
+    if (ogrenciId == 0) {
+      QMessageBox::critical(this, tr("Öğrenci Seçilmedi"),
+                            tr("Öğrenci seçimi yapılmadan not girilemez!"));
+      return;
+    }
+
+    if (sinifId == 0) {
+      QMessageBox::critical(this, tr("Sınıf Seçilmedi"),
+                            tr("Sınıf seçimi yapılmadan not girilemez!"));
+      return;
+    }
+
+    if (dersId == 0) {
+      QMessageBox::critical(this, tr("Ders Seçilmedi"),
+                            tr("Ders seçimi yapılmadan not girilemez!"));
+      return;
+    }
 }
 bool notGiris::Degisiklik() const
 {
