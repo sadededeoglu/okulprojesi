@@ -3,7 +3,7 @@
 #include "ui_ana_pencere.h"
 #include<QFile>
 #include<QFileDialog>
-#include<Qstring.h>
+ //#include<Qstring.h>
 #include <QMessageBox>  //kapatırken mesaj;
 #include <formlar/veriGiris/dersgiris.h>
 #include <formlar/veriGiris/notgiris.h>
@@ -11,7 +11,7 @@
 #include <formlar/veriGiris/yeniogrencigiris.h>
 #include <formlar/veriGiris/sinifgiris.h>
 #include <formlar/listeleme/ogretmenlistesi.h>
-
+#include <QString>
 
 
 Ana_Pencere::Ana_Pencere(QWidget *parent)

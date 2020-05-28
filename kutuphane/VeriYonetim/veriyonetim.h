@@ -22,9 +22,9 @@ protected:
 
 public:
 
-  /*  virtual void Eklendi(Pointer ptr)=0;
-    virtual void Silindi(Pointer ptr)=0;
-    virtual void Degisti(Pointer eski,Pointer yeni)=0;*/
+    //virtual void Eklendi(Pointer ptr)=0;
+    //virtual void Silindi(Pointer ptr)=0;
+    //virtual void Degisti(Pointer eski,Pointer yeni)=0;
 
 
     Veriyonetim() { _sonId = 0; }
@@ -116,10 +116,10 @@ public:
         dosya<<this->_sonId<<_veriler;//vektor
 
     }
+
     void yukle(QDataStream &dosya){
 
         dosya>>_sonId>>_veriler;
     }
-
 };
 #endif // VERIYONETIM_H
