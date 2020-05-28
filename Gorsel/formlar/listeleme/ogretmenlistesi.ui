@@ -19,7 +19,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -197,8 +197,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>748</x>
-     <y>379</y>
+     <x>260</x>
+     <y>688</y>
     </hint>
     <hint type="destinationlabel">
      <x>387</x>
@@ -313,8 +313,8 @@
      <y>17</y>
     </hint>
     <hint type="destinationlabel">
-     <x>384</x>
-     <y>53</y>
+     <x>299</x>
+     <y>62</y>
     </hint>
    </hints>
   </connection>
@@ -329,8 +329,8 @@
      <y>22</y>
     </hint>
     <hint type="destinationlabel">
-     <x>372</x>
-     <y>77</y>
+     <x>299</x>
+     <y>92</y>
     </hint>
    </hints>
   </connection>
@@ -341,12 +341,12 @@
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>489</x>
-     <y>23</y>
+     <x>429</x>
+     <y>24</y>
     </hint>
     <hint type="destinationlabel">
-     <x>503</x>
-     <y>46</y>
+     <x>417</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -357,12 +357,92 @@
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>465</x>
-     <y>111</y>
+     <x>429</x>
+     <y>112</y>
     </hint>
     <hint type="destinationlabel">
-     <x>440</x>
-     <y>80</y>
+     <x>309</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>132</x>
+     <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_3</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>96</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>121</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>comboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>comboBox_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>232</x>
+     <y>87</y>
     </hint>
    </hints>
   </connection>

@@ -23,7 +23,6 @@ void OgretmenListesi::TabloGuncelle()
  //ui->tableView_ogretmen->clear();
  QStringList Baslik;
  Baslik <<tr("ogretmen adı")<<tr("soyadı")<<tr("adresi")<<tr("sicil no");
-
  /*
  ui->tableView_ogretmen->setColumnCount(5);
  ui->tableView_ogretmen.setRowCount(this->_Ogretmenler.count());
@@ -62,5 +61,30 @@ void OgretmenListesi::TabloGuncelle()
 
     //ui->tableView_ogretmen.setItem(i,4,hucre);
  }
- //TODO yukarısı calısmıyor dosyaları tam yapmadıgımdan büyük ihtimalle
+ //TODO yukarısı calısmıyor dosyaları tam yapmadıgımdan büyük ihtimalle table wiew i tanımıyor
+}
+
+void OgretmenListesi::filtreleme()//ekranda yapılan seçimlere göre yapar
+{
+    auto OgretmenAdifiltreleme = [](OgretmenProfil::ptr){return true;};
+    auto OgretmenSoyadifiltreleme = [](OgretmenProfil::ptr){return true;};
+    auto SicilNofiltreleme = [](OgretmenProfil::ptr){return true;};
+
+    auto filtreleme = [OgretmenAdifiltreleme,OgretmenSoyadifiltreleme,SicilNofiltreleme](OgretmenProfil::ptr ogretmen){
+
+    return OgretmenAdifiltreleme(ogretmen) && OgretmenSoyadifiltreleme(ogretmen) || SicilNofiltreleme(ogretmen);
+    };
+
+    this->_Ogretmenler=VeriTabani::veritabani().ogretmen().ara(filtreleme);
+
+}
+
+Ogretmenyonetim::Liste OgretmenListesi::Ogretmenler() const
+{
+    return _Ogretmenler;
+}
+
+void OgretmenListesi::setOgretmenler(const Ogretmenyonetim::Liste &Ogretmenler)
+{
+    _Ogretmenler = Ogretmenler;
 }
