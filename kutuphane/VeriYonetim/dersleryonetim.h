@@ -1,23 +1,21 @@
 #ifndef DERSLERYONETIM_H
 #define DERSLERYONETIM_H
-#include <QObject>
-#include <QDataStream>
-#include "veriyonetim.h"
 #include "Siniflar/dersler.h"
 #include "kutuphane_global.h"
+#include "veriyonetim.h"
+#include <QDataStream>
+#include <QObject>
 
-class KUTUPHANE_EXPORT DerslerYonetim : public QObject, public Veriyonetim<Dersler>
-{
-    Q_OBJECT
+class KUTUPHANE_EXPORT DerslerYonetim : public QObject,
+                                        public Veriyonetim<Dersler> {
+  Q_OBJECT
 public:
-    explicit DerslerYonetim(QObject *parent = nullptr);
+  explicit DerslerYonetim(QObject *parent = nullptr);
 
 signals:
-    void DersEklendi(Pointer ptr);
-    void DersSilindi(Pointer ptr);
-    void DersDegisti(Pointer eski, Pointer yeni);
-
-
+  void Eklendi(Pointer ptr);
+  void Silindi(Pointer ptr);
+  void Degisti(Pointer eski, Pointer yeni);
 };
 
 #endif // DERSLERYONETIM_H
