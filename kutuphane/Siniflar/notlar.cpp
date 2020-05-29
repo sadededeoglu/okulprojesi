@@ -53,16 +53,16 @@ Notlar::Notlar(QObject *parent) :TemelVeriSinifi(parent)
     this->_DersId=0;
     this->_sinifId = 0;
 
-    //diğer işlemler falan olacaksa onlar da eklenecek TODO
+    //diğer işlemler olacaksa onlar da eklenecek TODO ama diğer işlemleri bulamadık
 }
 
 /*
 
-//Adım 1: Ortalamayı bulun.
-//Adım 2: Her veri noktasının ortalamaya uzaklığının karesini bulun.
-//Adım 3: 2. Adımdaki değerleri toplayın.
-//Adım 4: Veri noktası sayısına bölün.
-//Adım 5: Karekök alın.
+Adım 1: Ortalamayı bulun.
+Adım 2: Her veri noktasının ortalamaya uzaklığının karesini bulun.
+Adım 3: 2. Adımdaki değerleri toplayın.
+Adım 4: Veri noktası sayısına bölün.
+Adım 5: Karekök alın.
 
 using namespace std;
 

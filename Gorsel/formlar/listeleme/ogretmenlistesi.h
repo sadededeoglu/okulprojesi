@@ -14,9 +14,8 @@ class OgretmenListesi : public QDialog
 public:
     explicit OgretmenListesi(QWidget *parent = nullptr);
     ~OgretmenListesi();
-
-    Ogretmenyonetim::Liste Ogretmenler() const;
-    void setOgretmenler(const Ogretmenyonetim::Liste &Ogretmenler);
+private slots:
+    void on_pushButton_ara_clicked();
 
 private:
     void TabloGuncelle();

@@ -34,8 +34,7 @@ void sinifGiris::on_pushButton_ekle_clicked()
         ui->lineEdit_SinifAdi->setFocus();
         //degisiklikVarMi(false);
     } else {
-        accept();
-    }
+        accept();  }
 }
 void sinifGiris::gorselDegisti()
 {
@@ -47,8 +46,7 @@ void sinifGiris::reject()
         auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
         if (cevap == QMessageBox::No) {
             return;
-        }
-    }
+    }}
     QDialog::reject();
 }
 void sinifGiris::GorselGuncelle()
@@ -64,10 +62,7 @@ void sinifGiris::GorselGuncelle()
             if (gizliId == _sinif->ogretmenId()){
                 ui->comboBox_ogretmen->setCurrentIndex(i);
                 break;
-            }
-        }
-    }
-}
+            }}}}
 
 void sinifGiris::VeriGuncelle()
 {
@@ -92,8 +87,7 @@ void sinifGiris::OgretmenComboboxDoldur()
     ui->comboBox_ogretmen->addItem(tr("-- ÖĞRETMEN SEÇİN --"),0);
     for(auto OgretmenProfil:tumOgretmenler){  //adıtem 2 parametre ister. gösterilecek metin,veri
         ui->comboBox_ogretmen->addItem(OgretmenProfil->ogretmenAdi()+" "+OgretmenProfil->ogretmenSoyadi(),OgretmenProfil->ogretmenId());
-    }
-}
+   }}
 
 Okul_sinif::ptr sinifGiris::sinif() const
 {

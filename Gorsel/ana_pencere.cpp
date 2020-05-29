@@ -41,16 +41,6 @@ void Ana_Pencere::close()
         QMainWindow::close();
     }
 }
-
-//yeni orgren giris sıgnal yerinde sağ tus yapıp goto slot sonra triggerd a cift tıkladım geldi burası
-//void Ana_Pencere::on_actionyeni_ogrenci_ekle_triggered()
-//{
-//    yeniOgrenciGiris form;
-//    //diyalogların görünebilmesi için
-//    form.exec();
-//}
-
-
 void Ana_Pencere::on_actionOgrenciEkle_triggered()
 {
     yeniOgrenciGiris form;

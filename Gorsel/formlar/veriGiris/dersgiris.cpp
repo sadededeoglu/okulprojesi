@@ -48,9 +48,8 @@ void dersGiris::reject()
         if(cevap == QMessageBox::No){
             return;
         }
-    }
-    QDialog::reject();
-}
+    }QDialog::reject();}
+
 void dersGiris::on_pushButton_Ekle_clicked()
 {
     VeriGuncelle();
@@ -69,8 +68,7 @@ void dersGiris::on_pushButton_Ekle_clicked()
         setDegisiklikVar(false);
     } else {
         accept();
-    }
-}
+    }}
 
 Dersler::ptr dersGiris::ders() const
 {

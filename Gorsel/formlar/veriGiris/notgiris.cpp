@@ -7,9 +7,10 @@
 #include <Siniflar/okul_sinif.h>
 #include<Siniflar/ogrenciprofil.h>
 #include<formlar/veriGiris/notgiris.h>
+#include <formlar/veriGiris/dersgiris.h>
 #include <formlar/veriGiris/sinifgiris.h>
 #include<formlar/veriGiris/yeniogrencigiris.h>
-#include <formlar/veriGiris/dersgiris.h>
+
 
 notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
 {
@@ -19,7 +20,6 @@ notGiris::notGiris(QWidget *parent) :QDialog(parent),ui(new Ui::notGiris)
 
     _Notlar= VeriTabani::veritabani().notlar().yeni();
     _Degisiklik=false;
-
 }
 notGiris::~notGiris()
 {
@@ -36,9 +36,8 @@ void notGiris::reject()
         if (cevap == QMessageBox::No) {
             return;
         }
-    }
-    QDialog::reject();
-}
+    } QDialog::reject();}
+
 void notGiris::Ogrencicomboboxdoldur()
 {
     auto tumOgrenciler=
@@ -56,8 +55,7 @@ void notGiris::Ogrencicomboboxdoldur()
     ui->comboBox_ogrenci->addItem(tr("-- ÖĞRENCİ SEÇİN --"),0);
     for(auto OgrenciProfil:tumOgrenciler){  //adıtem 2 parametre ister. gösterilecek metin,veri
         ui->comboBox_ogrenci->addItem(OgrenciProfil->ogrenciAdi()+" "+OgrenciProfil->ogrenciSoyadi(),OgrenciProfil->ogrenciId());
-    }
-}
+    }}
 void notGiris::SinifComboboxDoldur()
 {
     auto tumSiniflar = VeriTabani::veritabani().okulSinif().ara([](Okul_sinif::ptr){return true;});
@@ -129,9 +127,7 @@ void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
             if(gizliId == _Notlar->dersId()) {
                 ui->comboBox_ders->setCurrentIndex(i);
                 break;
-            }
-        }
-    }
+            }}}
 
     if (_Notlar->sinifId() == 0){
         ui->comboBox_sinif->setCurrentIndex(0);
@@ -141,9 +137,7 @@ void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
             if (gizliId == _Notlar->sinifId()) {
                 ui->comboBox_sinif->setCurrentIndex(i);
                 break;
-            }
-        }
-    }
+            }}}
 }
 void notGiris::VeriGuncelle()
 {
@@ -200,8 +194,7 @@ void notGiris::on_QPushButton_ekle_clicked()
         setDegisiklik(false);
     } else {
         accept();
-    }
-}
+    }}
 
 void notGiris::on_label_ogrencilink_linkActivated(const QString &link)
 {

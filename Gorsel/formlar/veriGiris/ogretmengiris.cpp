@@ -53,8 +53,7 @@ void ogretmenGiris::reject()
 
         if(cevap==QMessageBox::No){
             return;
-        }
-    }
+        }}
     QDialog::reject();
 }
 void ogretmenGiris::on_ekle_clicked()
@@ -80,6 +79,5 @@ void ogretmenGiris::on_ekle_clicked()
         ui->lineEdit_ogretmenadi->setFocus();
         setDegisiklik(false);
     }else{
-        accept();
-    }
+        accept();}
 }
