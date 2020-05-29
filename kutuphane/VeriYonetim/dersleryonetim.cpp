@@ -15,6 +15,8 @@ QDataStream & operator >> (QDataStream &dosya , Dersler::ptr &Dersler) {
     Dersler::Metin dersAdi;
     Dersler::PozitifTamsayi yil , donem;
 
+    dosya >> id >> dersAdi >> yil >> donem;
+
     auto yeniDersler = Dersler::yeni();
     yeniDersler->setId(id);
     yeniDersler->setDersAdi(dersAdi);

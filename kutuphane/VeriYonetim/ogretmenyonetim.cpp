@@ -14,7 +14,7 @@ QDataStream &operator<<(QDataStream &dosya, const OgretmenProfil::ptr &OgretmenP
     return dosya;
 }
 
-QDataStream &operator<<(QDataStream &dosya, OgretmenProfil::ptr &OgretmenProfil)
+QDataStream &operator>>(QDataStream &dosya, OgretmenProfil::ptr &OgretmenProfil)
 {
     //5 adet değişkene ihtiyac var
     OgretmenProfil::IdTuru Id;

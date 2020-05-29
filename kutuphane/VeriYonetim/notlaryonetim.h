@@ -18,6 +18,7 @@ signals:
   void Degisti(Pointer eski, Pointer yeni);
 };
 
-
+QDataStream & operator << (QDataStream &dosya , const Notlar::ptr &Notlar);
+QDataStream & operator >> (QDataStream &dosya , Notlar::ptr &Notlar);
 
 #endif // NOTLARYONETIM_H

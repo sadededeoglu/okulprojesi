@@ -19,12 +19,8 @@ signals:
   void Degisti(Pointer eski, Pointer yeni);
 };
 
-QDataStream &operator<<(
-    QDataStream &dosya,
-    const OgretmenProfil::ptr
-        &OgretmenProfil); // müşteri alıp q tada ya aktarılacaını söylüuorum
+QDataStream &operator<<(QDataStream &dosya , const OgretmenProfil::ptr &OgretmenProfil); // müşteri alıp q tada ya aktarılacaını söylüuorum
 // bu fonk okumak için;
-QDataStream &operator<<(QDataStream &dosya,
-                        OgretmenProfil::ptr &OgretmenProfil);
+QDataStream &operator >> (QDataStream &dosya , OgretmenProfil::ptr &OgretmenProfil);
 
 #endif // OGRETMENYONETIM_H

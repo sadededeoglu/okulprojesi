@@ -17,4 +17,7 @@ signals:
   void Degisti(Pointer eski, Pointer yeni);
 };
 
+QDataStream & operator << (QDataStream &dosya , const Okul_sinif::ptr &Okul_sinif);
+QDataStream & operator >> (QDataStream &dosya , Okul_sinif::ptr &Okul_sinif);
+
 #endif // OKUL_SINIFYONETIM_H
