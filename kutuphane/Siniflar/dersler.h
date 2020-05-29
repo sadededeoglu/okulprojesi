@@ -11,8 +11,9 @@ class KUTUPHANE_EXPORT Dersler : public TemelVeriSinifi
 private:
     IdTuru _DersId;
     PozitifTamsayi _yil;
-    Metin _DersAdi;
     PozitifTamsayi _donem;
+    Metin _DersAdi;
+
 signals:
     void YilDegisti(const PozitifTamsayi &yil);
     void DersAdiDegisti(const Metin &DersAdi);

@@ -3,8 +3,7 @@
 #include "ui_ana_pencere.h"
 #include<QFile>
 #include<QFileDialog>
- //#include<Qstring.h>
-#include <QMessageBox>  //kapatırken mesaj;
+#include <QMessageBox>
 #include <formlar/veriGiris/dersgiris.h>
 #include <formlar/veriGiris/notgiris.h>
 #include <formlar/veriGiris/ogretmengiris.h>
@@ -21,12 +20,12 @@ Ana_Pencere::Ana_Pencere(QWidget *parent)
     ui->setupUi(this);
 
     QString varsayilanDosyaAdi="veri.movd";
-    VeriTabani::veritabani().yukle(varsayilanDosyaAdi);
+    VeriTabani::veritabani().Yukle(varsayilanDosyaAdi);
 }
 Ana_Pencere::~Ana_Pencere()
 {
     QString varsayilanDosyaAdi="veri.movd";
-    VeriTabani::veritabani().kaydet(varsayilanDosyaAdi);
+    VeriTabani::veritabani().Kaydet(varsayilanDosyaAdi);
     delete ui;
 }
 void Ana_Pencere::close()
@@ -109,18 +108,21 @@ void Ana_Pencere::on_actionsinifEkle_triggered()
 
 void Ana_Pencere::on_actionkaydet_triggered()
 {
-    QString DosyaAdi=QFileDialog::getSaveFileName(this,tr("dosya seç"),
+    QString DosyaAdi=QFileDialog::getSaveFileName(this,tr("Dosya Seç"),
                                                   qApp->applicationDirPath(),
-                                                  tr("veri dos(...)")); //TODO
+                                                  tr("Okul Otomasyonu Veri Dosyası(*.oovd)"));
+    if(DosyaAdi != ""){
+        VeriTabani::veritabani().Kaydet(DosyaAdi);
+    }
 }
 
 void Ana_Pencere::on_actionac_triggered()
 {
-    QString DosyaAdi=QFileDialog::getOpenFileName(this,tr("dosya seç"),
+    QString DosyaAdi=QFileDialog::getOpenFileName(this,tr("Dosya Seç"),
                                                   qApp->applicationDirPath(),
-                                               tr("veri dos()"));  //TODO
-    if(DosyaAdi!=""){
-        VeriTabani::veritabani().yukle(DosyaAdi);
+                                               tr("Okul Otomasyonu Veri Dosyası(*.oovd)"));
+    if(DosyaAdi != ""){
+        VeriTabani::veritabani().Yukle(DosyaAdi);
     }
 
 }

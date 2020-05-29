@@ -18,4 +18,8 @@ signals:
   void Degisti(Pointer eski, Pointer yeni);
 };
 
+QDataStream & operator << (QDataStream &dosya , const Dersler::ptr &Dersler);
+QDataStream & operator >> (QDataStream &dosya , Dersler::ptr &Dersler);
+
+
 #endif // DERSLERYONETIM_H

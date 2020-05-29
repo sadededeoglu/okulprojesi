@@ -18,4 +18,6 @@ signals:
   void Degisti(Pointer eski, Pointer yeni);
 };
 
+
+
 #endif // NOTLARYONETIM_H

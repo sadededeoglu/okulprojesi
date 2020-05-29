@@ -107,12 +107,13 @@ public:
     return sonuc;
   }
 
-  void kaydet(QDataStream &dosya) { // kaydedilecek iki bilgi var
+  void Kaydet(QDataStream &dosya) { // kaydedilecek iki bilgi var
     // en son kaydettiği ıd 2. veriler
-
     dosya << this->_sonId << _veriler; // vektor
   }
 
-  void yukle(QDataStream &dosya) { dosya >> _sonId >> _veriler; }
+  void Yukle(QDataStream &dosya) {
+      dosya >> _sonId >> _veriler;
+  }
 };
 #endif // VERIYONETIM_H
