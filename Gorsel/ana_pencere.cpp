@@ -11,7 +11,7 @@
 #include <formlar/veriGiris/sinifgiris.h>
 #include <formlar/listeleme/ogretmenlistesi.h>
 #include <QString>
-
+#include <formlar/listeleme/ogrencilistesi.h>
 
 Ana_Pencere::Ana_Pencere(QWidget *parent)
     : QMainWindow(parent)
@@ -130,5 +130,11 @@ void Ana_Pencere::on_actionac_triggered()
 void Ana_Pencere::on_actionogretmen_listesi_triggered()
 {
     OgretmenListesi form;
+    form.exec();
+}
+
+void Ana_Pencere::on_actionOgrenci_Listesi_triggered()
+{
+    ogrenciListesi form;
     form.exec();
 }

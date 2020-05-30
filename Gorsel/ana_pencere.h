@@ -29,7 +29,10 @@ private slots:
     void on_actionac_triggered();
     void on_actionogretmen_listesi_triggered();
 
+    void on_actionOgrenci_Listesi_triggered();
+
 private:
     Ui::Ana_Pencere *ui;
+
 };
 #endif // ANA_PENCERE_H

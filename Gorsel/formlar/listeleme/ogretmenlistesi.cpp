@@ -22,11 +22,11 @@ void OgretmenListesi::TabloGuncelle()
 {
     //ui->tableView_ogretmen->clear();
     QStringList Baslik;
-    Baslik <<tr("ogretmen adı")<<tr("soyadı")<<tr("adresi")<<tr("sicil no");
-    /*
- ui->tableView_ogretmen->setColumnCount(5);
- ui->tableView_ogretmen.setRowCount(this->_Ogretmenler.count());
- ui->tableView_ogretmen->setHorizontalHeaderLabels(Baslik);*/
+    Baslik <<tr("ogretmen adı")<<tr("soyadı")<<tr("sicil no");
+
+    //ui->tableWidget_ogretmen->setColumnCount(3);
+    //ui->tableWidget_ogretmen.setRowCount(this->_Ogretmenler.count());
+    //ui->tableView_ogretmen->setHorizontalHeaderLabels(Baslik);
 
     for(int i=0;i<this->_Ogretmenler.count();i++){
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>441</width>
-    <height>704</height>
+    <height>392</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -19,174 +19,165 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0" colspan="3">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>filtre seçenekleri</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0" rowspan="2">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QCheckBox" name="checkBox_adi">
-          <property name="text">
-           <string>ADI</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_ad"/>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox_adiile">
-          <item>
-           <property name="text">
-            <string>ile başlayan</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ile biten</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>içeren</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="0" column="1" rowspan="4" colspan="2">
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>423</width>
+     <height>160</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>filtre seçenekleri</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1" rowspan="4" colspan="2">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2" rowspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QCheckBox" name="checkBox_yazarkenara">
+        <property name="text">
+         <string>yazarken arama</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="2" rowspan="2">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QCheckBox" name="checkBox_yazarkenara">
-          <property name="text">
-           <string>yazarken arama</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_ara">
-          <property name="text">
-           <string>ara</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
-      <item row="2" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QCheckBox" name="checkBox_soyadi">
-          <property name="text">
-           <string>SOYADI</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_soyad"/>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox_soyadiile">
-          <item>
-           <property name="text">
-            <string>ile başlayan</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ile biten</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>içeren</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="3" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QCheckBox" name="checkBox_sicilno">
-          <property name="text">
-           <string>sicil no</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="spinBox_sicilno"/>
-        </item>
-       </layout>
+      <item>
+       <widget class="QPushButton" name="pushButton_ara">
+        <property name="text">
+         <string>ara</string>
+        </property>
+       </widget>
       </item>
      </layout>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="3">
-    <widget class="QTableView" name="tableView_ogretmen"/>
-   </item>
-   <item row="2" column="0">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>163</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="1">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>cık</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>162</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-  </layout>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QCheckBox" name="checkBox_sicilno">
+        <property name="text">
+         <string>sicil no</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spinBox_sicilno"/>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="checkBox_soyadi">
+        <property name="text">
+         <string>SOYADI</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_soyad"/>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_soyadiile">
+        <item>
+         <property name="text">
+          <string>ile başlayan</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ile biten</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>içeren</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0" rowspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QCheckBox" name="checkBox_adi">
+        <property name="text">
+         <string>ADI</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_ad"/>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_adiile">
+        <item>
+         <property name="text">
+          <string>ile başlayan</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ile biten</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>içeren</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>181</x>
+     <y>362</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>cık</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_ogretmen">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>170</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>checkBox_adi</tabstop>
@@ -198,7 +189,6 @@
   <tabstop>checkBox_sicilno</tabstop>
   <tabstop>spinBox_sicilno</tabstop>
   <tabstop>checkBox_yazarkenara</tabstop>
-  <tabstop>tableView_ogretmen</tabstop>
   <tabstop>pushButton</tabstop>
  </tabstops>
  <resources/>
@@ -222,128 +212,16 @@
   <connection>
    <sender>groupBox</sender>
    <signal>clicked(bool)</signal>
-   <receiver>checkBox_adi</receiver>
+   <receiver>line</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>113</x>
-     <y>18</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>77</x>
-     <y>45</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>lineEdit_ad</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>145</x>
-     <y>22</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>153</x>
-     <y>49</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>checkBox_soyadi</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>49</x>
-     <y>64</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>48</x>
-     <y>74</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>lineEdit_soyad</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>181</x>
-     <y>25</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>174</x>
-     <y>76</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>checkBox_sicilno</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>18</x>
-     <y>35</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>27</x>
+     <x>429</x>
      <y>112</y>
     </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>spinBox_sicilno</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>254</x>
-     <y>22</y>
-    </hint>
     <hint type="destinationlabel">
-     <x>207</x>
-     <y>117</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>comboBox_adiile</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>363</x>
-     <y>17</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>299</x>
-     <y>62</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>comboBox_soyadiile</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>337</x>
-     <y>22</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>299</x>
-     <y>92</y>
+     <x>309</x>
+     <y>110</y>
     </hint>
    </hints>
   </connection>
@@ -366,48 +244,48 @@
   <connection>
    <sender>groupBox</sender>
    <signal>clicked(bool)</signal>
-   <receiver>line</receiver>
+   <receiver>comboBox_soyadiile</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>429</x>
+     <x>337</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spinBox_sicilno</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>207</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>checkBox_sicilno</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>18</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>27</x>
      <y>112</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>309</x>
-     <y>110</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_adi</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>lineEdit_ad</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>92</x>
-     <y>59</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>132</x>
-     <y>55</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_soyadi</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>lineEdit_soyad</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>92</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>113</x>
-     <y>82</y>
     </hint>
    </hints>
   </connection>
@@ -428,18 +306,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_adi</sender>
+   <sender>groupBox</sender>
    <signal>clicked(bool)</signal>
-   <receiver>comboBox_adiile</receiver>
-   <slot>setEnabled(bool)</slot>
+   <receiver>checkBox_soyadi</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>63</x>
-     <y>52</y>
+     <x>49</x>
+     <y>64</y>
     </hint>
     <hint type="destinationlabel">
-     <x>234</x>
-     <y>49</y>
+     <x>48</x>
+     <y>74</y>
     </hint>
    </hints>
   </connection>
@@ -456,6 +334,118 @@
     <hint type="destinationlabel">
      <x>232</x>
      <y>87</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_soyadi</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_soyad</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_soyad</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>174</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>comboBox_adiile</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>363</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>62</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_adi</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>comboBox_adiile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>checkBox_adi</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>77</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_adi</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_ad</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>132</x>
+     <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_ad</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>49</y>
     </hint>
    </hints>
   </connection>

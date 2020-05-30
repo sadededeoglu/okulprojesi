@@ -52,6 +52,7 @@
      <string>öğrenci</string>
     </property>
     <addaction name="actionOgrenciEkle"/>
+    <addaction name="actionOgrenci_Listesi"/>
    </widget>
    <widget class="QMenu" name="menuogrenci">
     <property name="title">
@@ -167,6 +168,15 @@
    </property>
    <property name="text">
     <string>ogretmen listesi</string>
+   </property>
+  </action>
+  <action name="actionOgrenci_Listesi">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/resimler</normaloff>:/resimler/resimler/resimler</iconset>
+   </property>
+   <property name="text">
+    <string>Ogrenci Listesi</string>
    </property>
   </action>
  </widget>
