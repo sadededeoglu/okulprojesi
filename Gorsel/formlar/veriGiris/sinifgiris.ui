@@ -55,12 +55,20 @@
        <property name="text">
         <string>VAZGEÇ</string>
        </property>
+       <property name="icon">
+        <iconset resource="../../kaynaklar.qrc">
+         <normaloff>:/resimler/cık.png</normaloff>:/resimler/cık.png</iconset>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QPushButton" name="pushButton_ekle">
        <property name="text">
         <string>EKLE</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../kaynaklar.qrc">
+         <normaloff>:/resimler/resimler/accept_button.png</normaloff>:/resimler/resimler/accept_button.png</iconset>
        </property>
       </widget>
      </item>
@@ -114,7 +122,9 @@
   <tabstop>pushButton_ekle</tabstop>
   <tabstop>pushButton_vazgec</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../kaynaklar.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pushButton_vazgec</sender>

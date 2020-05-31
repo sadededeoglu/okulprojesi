@@ -207,6 +207,10 @@
         <property name="text">
          <string>EKLE</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../kaynaklar.qrc">
+          <normaloff>:/resimler/resimler/accept_button.png</normaloff>:/resimler/resimler/accept_button.png</iconset>
+        </property>
        </widget>
       </item>
       <item row="0" column="2">
@@ -226,6 +230,10 @@
        <widget class="QPushButton" name="QPushButton_vazgec">
         <property name="text">
          <string>VAZGEÇ</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../kaynaklar.qrc">
+          <normaloff>:/resimler/cık.png</normaloff>:/resimler/cık.png</iconset>
         </property>
        </widget>
       </item>
@@ -247,7 +255,9 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../kaynaklar.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>comboBox_sinif</sender>

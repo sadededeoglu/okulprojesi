@@ -66,6 +66,7 @@
      <string>sınıf</string>
     </property>
     <addaction name="actionsinifEkle"/>
+    <addaction name="actionsinif_listesi"/>
    </widget>
    <addaction name="menudosya"/>
    <addaction name="menudersler"/>
@@ -101,8 +102,8 @@
   </action>
   <action name="actionkaydet">
    <property name="icon">
-    <iconset resource="kaynaklar.qrc">
-     <normaloff>:/resimler/resimler/accept_button.png</normaloff>:/resimler/resimler/accept_button.png</iconset>
+    <iconset>
+     <normaloff>../../simgeler/IconSet4/CD_add.png</normaloff>../../simgeler/IconSet4/CD_add.png</iconset>
    </property>
    <property name="text">
     <string>kaydet</string>
@@ -163,8 +164,8 @@
   </action>
   <action name="actionogretmen_listesi">
    <property name="icon">
-    <iconset resource="kaynaklar.qrc">
-     <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
+    <iconset>
+     <normaloff>../../simgeler/IconSet1/iconpool/table.png</normaloff>../../simgeler/IconSet1/iconpool/table.png</iconset>
    </property>
    <property name="text">
     <string>ogretmen listesi</string>
@@ -172,11 +173,20 @@
   </action>
   <action name="actionOgrenci_Listesi">
    <property name="icon">
-    <iconset resource="kaynaklar.qrc">
-     <normaloff>:/resimler/resimler/resimler</normaloff>:/resimler/resimler/resimler</iconset>
+    <iconset>
+     <normaloff>../../simgeler/IconSet1/iconpool/table_merge_cells.png</normaloff>../../simgeler/IconSet1/iconpool/table_merge_cells.png</iconset>
    </property>
    <property name="text">
     <string>Ogrenci Listesi</string>
+   </property>
+  </action>
+  <action name="actionsinif_listesi">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../simgeler/IconSet1/iconpool/table_merge_cells.png</normaloff>../../simgeler/IconSet1/iconpool/table_merge_cells.png</iconset>
+   </property>
+   <property name="text">
+    <string>sinif listesi</string>
    </property>
   </action>
  </widget>
