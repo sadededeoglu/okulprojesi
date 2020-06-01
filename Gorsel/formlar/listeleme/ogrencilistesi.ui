@@ -168,5 +168,86 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkBox_adi</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_adi</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>34</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_adi</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>comboBox_adiile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>524</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_soyadi</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineEdit_soyadi</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>139</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_soyadi</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>comboBox_soyadiile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_numara</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spinBox_numara</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>33</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -53,6 +53,28 @@ void ogrenciListesi::TabloGuncelle()
     }
 }
 
+void ogrenciListesi::Filtrele()
+{
+    Ogrenciyonetim::Filtre adFiltreFonksiyonu = [](OgrenciProfil::ptr) {return true;};
+    Ogrenciyonetim::Filtre soyadFiltreFonksiyonu = [](OgrenciProfil::ptr) {return true;};
+    Ogrenciyonetim::Filtre numaraFiltreFonksiyonu = [](OgrenciProfil::ptr) {return true;};
+
+    if (ui->checkBox_adi->isChecked()) {
+        QString aranan = ui->lineEdit_adi->text();
+        if (ui->comboBox_adiile->currentIndex() == 0) {
+            //ile başlayanlar
+            adFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciAdi().toLower().startsWith(aranan.toLower());};
+        }
+        else if (ui->comboBox_adiile->currentIndex() == 1) {
+            //ile bitenler
+            adFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciAdi().toLower().endsWith(aranan.toLower());};
+        } else {
+            //içerenler
+            adFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciAdi().toLower().contains(aranan.toLower());};
+        }
+    }
+}
+
 
 
 

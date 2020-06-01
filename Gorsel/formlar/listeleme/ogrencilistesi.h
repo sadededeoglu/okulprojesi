@@ -23,6 +23,8 @@ private:
 
     void TabloGuncelle();
     Ogrenciyonetim::Liste _ogrenciler;
+
+    void Filtrele();
 };
 
 #endif // OGRENCILISTESI_H
