@@ -18,6 +18,8 @@ public:
 
 private slots:
 
+    void on_pushButton_ara_clicked();
+
 private:
     Ui::ogrenciListesi *ui;
 

@@ -73,13 +73,36 @@ void ogrenciListesi::Filtrele()
             adFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciAdi().toLower().contains(aranan.toLower());};
         }
     }
+
+    if (ui->checkBox_soyadi->isChecked()) {
+        QString aranan = ui->lineEdit_adi->text();
+        if (ui->comboBox_soyadiile->currentIndex() == 0) {
+            //ile başlayanlar
+            soyadFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciSoyadi().toLower().startsWith(aranan.toLower());};
+        }
+        else if (ui->comboBox_soyadiile->currentIndex() == 1) {
+            //ile bitenler
+            soyadFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciSoyadi().toLower().endsWith(aranan.toLower());};
+        } else {
+            //içerenler
+            adFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciAdi().toLower().contains(aranan.toLower());};
+        }
+    }
+
+    //TODO numara filtre fonksiyonunda sorun labilir emin değilim.
+    if (ui->checkBox_numara->isChecked()) {
+        auto aranan = ui->spinBox_numara->value();
+        numaraFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman) {return eleman->ogrenciNo();};
+    }
+
+    auto filtreFonksiyonu = [adFiltreFonksiyonu , soyadFiltreFonksiyonu , numaraFiltreFonksiyonu](OgrenciProfil::ptr eleman) {
+        return adFiltreFonksiyonu(eleman) && soyadFiltreFonksiyonu(eleman) && numaraFiltreFonksiyonu(eleman);
+    };
+    this->_ogrenciler=VeriTabani::veritabani().ogrenci().ara(filtreFonksiyonu);
+    this->TabloGuncelle();
 }
 
-
-
-
-
-
-
-
-
+void ogrenciListesi::on_pushButton_ara_clicked()
+{
+    this->Filtrele();
+}

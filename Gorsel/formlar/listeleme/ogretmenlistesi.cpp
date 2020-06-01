@@ -62,55 +62,52 @@ void OgretmenListesi::filtreleme()//ekranda yapılan seçimlere göre yapar
     if(ui->checkBox_adi->isChecked()){
         QString filtrelenen=ui->lineEdit_ad->text();
         if(ui->comboBox_adiile->currentIndex()==0){
-
             //ile baslayanlar
             OgretmenAdifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
                 return ogretmen->ogretmenAdi().toLower().startsWith(filtrelenen.toLower());
             };
-        }else if(ui->comboBox_adiile->currentIndex()==1 ){
-
+        } else if(ui->comboBox_adiile->currentIndex()==1 ){
             //ile bitenler
             OgretmenAdifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
                 return ogretmen->ogretmenAdi().toLower().contains(filtrelenen.toLower());
             };
-        }else{
-
+        } else {
             //içerenler
-    OgretmenAdifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
-        return ogretmen->ogretmenAdi().toLower().startsWith(filtrelenen.toLower());
-
-    };
-    if(ui->checkBox_soyadi->isChecked()){
-        QString filtrelenen=ui->lineEdit_ad->text();
-        if(ui->comboBox_adiile->currentIndex()==0){
-
-        //ile baslayanlar
-            OgretmenSoyadifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
-                return ogretmen->ogretmenSoyadi().toLower().startsWith(filtrelenen.toLower());
+            OgretmenAdifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
+                return ogretmen->ogretmenAdi().toLower().startsWith(filtrelenen.toLower());
             };
-        }else if(ui->comboBox_soyadiile->currentIndex()==1 ){
+        if(ui->checkBox_soyadi->isChecked()){
+            QString filtrelenen=ui->lineEdit_ad->text();
+            if(ui->comboBox_adiile->currentIndex()==0){
+                //ile baslayanlar
+                OgretmenSoyadifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
+                  return ogretmen->ogretmenSoyadi().toLower().startsWith(filtrelenen.toLower());
+                    };
+                }else if(ui->comboBox_soyadiile->currentIndex()==1 ){
 
-            //ile bitenler
-            OgretmenSoyadifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
-                return ogretmen->ogretmenSoyadi().toLower().contains(filtrelenen.toLower());
-            };
-        }else{
+                    //ile bitenler
+                    OgretmenSoyadifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
+                        return ogretmen->ogretmenSoyadi().toLower().contains(filtrelenen.toLower());
+                    };
+                }else{
 
-          //içerenler
-          OgretmenSoyadifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
-              return ogretmen->ogretmenSoyadi().toLower().startsWith(filtrelenen.toLower());
+                    //içerenler
+                    OgretmenSoyadifiltreleme=[filtrelenen](OgretmenProfil::ptr ogretmen){
+                        return ogretmen->ogretmenSoyadi().toLower().startsWith(filtrelenen.toLower());
 
-          };
+                    };
 
 
-          auto filtreleme = [OgretmenAdifiltreleme,OgretmenSoyadifiltreleme,SicilNofiltreleme](OgretmenProfil::ptr ogretmen){
+    auto filtreleme = [OgretmenAdifiltreleme,OgretmenSoyadifiltreleme,SicilNofiltreleme](OgretmenProfil::ptr ogretmen){
 
-              return OgretmenAdifiltreleme(ogretmen) && OgretmenSoyadifiltreleme(ogretmen)&& SicilNofiltreleme(ogretmen);
-          };
+                        return OgretmenAdifiltreleme(ogretmen) && OgretmenSoyadifiltreleme(ogretmen)&& SicilNofiltreleme(ogretmen);
+                    };
 
-          this->_Ogretmenler=VeriTabani::veritabani().ogretmen().ara(filtreleme);
+                    this->_Ogretmenler=VeriTabani::veritabani().ogretmen().ara(filtreleme);
 
-}}}}}
+                }}}}
+    TabloGuncelle();
+}
 
 void OgretmenListesi::on_pushButton_ara_clicked()
 {
