@@ -13,6 +13,12 @@ VeriTabani::VeriTabani(QObject *parent) : QObject(parent) {
             &VeriTabani::SinifEklendi);
 }
 
+VeriTabani &VeriTabani::veritabani()
+{
+    static VeriTabani nesne;
+    return nesne;
+}
+
 Okul_sinifyonetim &VeriTabani::okulSinif() { return _okulSinif; }
 
 Ogretmenyonetim &VeriTabani::ogretmen() { return _ogretmen; }

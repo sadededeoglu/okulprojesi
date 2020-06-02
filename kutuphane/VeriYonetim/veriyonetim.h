@@ -5,7 +5,7 @@
 #include <QVector>
 #include <functional>
 
-template <class T> class KUTUPHANE_EXPORT Veriyonetim {
+template <class T> class Veriyonetim {
 public:
   typedef T Veri;
   typedef typename T::ptr Pointer;

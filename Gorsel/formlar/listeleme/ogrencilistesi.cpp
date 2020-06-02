@@ -92,7 +92,7 @@ void ogrenciListesi::Filtrele()
     //TODO numara filtre fonksiyonunda sorun labilir emin değilim.
     if (ui->checkBox_numara->isChecked()) {
         auto aranan = ui->spinBox_numara->value();
-        numaraFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman) {return eleman->ogrenciNo();};
+        numaraFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman) {return eleman->ogrenciNo()==aranan;};
     }
 
     auto filtreFonksiyonu = [adFiltreFonksiyonu , soyadFiltreFonksiyonu , numaraFiltreFonksiyonu](OgrenciProfil::ptr eleman) {

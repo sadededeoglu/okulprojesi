@@ -21,6 +21,6 @@ QDataStream &operator<<(
     const OgrenciProfil::ptr
         &OgrenciProfil); // müşteri alıp q tada ya aktarılacaını söylüuorum
 // bu fonk okumak için;
-QDataStream &operator<<(QDataStream &dosya, OgrenciProfil::ptr &OgrenciProfil);
+QDataStream &operator>>(QDataStream &dosya, OgrenciProfil::ptr &OgrenciProfil);
 
 #endif // OGRENCIYONETIM_H

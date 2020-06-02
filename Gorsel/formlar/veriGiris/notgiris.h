@@ -22,7 +22,6 @@ public:
 public slots:
     void GorselDegisti();
     void reject() override;
-    void on_ekle_clicked();
 
 private slots:
     void on_label_siniflink_linkActivated(const QString &link);    

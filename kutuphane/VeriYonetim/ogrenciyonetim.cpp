@@ -11,7 +11,7 @@ QDataStream &operator<<(QDataStream&dosya,const OgrenciProfil::ptr &OgrenciProfi
     return dosya;
 }
 
-QDataStream &operator<<(QDataStream&dosya,OgrenciProfil::ptr &OgrenciProfil)
+QDataStream &operator>>(QDataStream&dosya,OgrenciProfil::ptr &OgrenciProfil)
 {
     OgrenciProfil::IdTuru Id;
     OgrenciProfil::Metin _OgrenciAdi, _ogrenciSoyadi,_OgrenciAdresi;
