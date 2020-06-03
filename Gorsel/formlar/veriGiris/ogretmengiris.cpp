@@ -66,33 +66,32 @@ void ogretmenGiris::on_ekle_clicked(){
     veriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
 
     if(_EskiOgretmen == nullptr){
-       VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil) ;   }
+       VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil) ;
 
-    if(_Ogretmenprofil->ogretmenAdi()==0 || _Ogretmenprofil->ogretmenSoyadi()==0 || _Ogretmenprofil->sicilNo()==0 || _Ogretmenprofil->ogretmenAdresi()==0)
-    {
-        QMessageBox::critical(this,tr("hata"),
-                              tr("eksik bilgi girişi"),
-                   QMessageBox::Ok);
-        return;
-    }
-    VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil);
+       if(_Ogretmenprofil->ogretmenAdi()==0 || _Ogretmenprofil->ogretmenSoyadi()==0 || _Ogretmenprofil->sicilNo()==0 || _Ogretmenprofil->ogretmenAdresi()==0)
+       {
+           QMessageBox::critical(this,tr("hata"),
+                                 tr("eksik bilgi girişi"),
+                      QMessageBox::Ok);
+           return;
+       }
+       VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil);
 
-    auto cevap = QMessageBox::question(this ,tr("Ogretmen Kaydı Tamamlandı"),
-                                       tr( "Yeni Bir Ogretmen Tanımlamak İster misiniz?"),
-                                       QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+       auto cevap = QMessageBox::question(this ,tr("Ogretmen Kaydı Tamamlandı"),
+                                          tr( "Yeni Bir Ogretmen Tanımlamak İster misiniz?"),
+                                          QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
 
-    if(cevap== QMessageBox::Yes){
-        _Ogretmenprofil= VeriTabani::veritabani().ogretmen().yeni();
-        GorselGuncelle();
-        ui->lineEdit_ogretmenadi->setFocus();
-        setDegisiklik(false);
-    }else{
-        accept();
-    }
-    /* else {
-        Veritabani::veritabani().ogretmenprofil().duzenle(_eskiOgretmen, _ogretmenprofil);
-        accept();
-        }*/
+       if(cevap== QMessageBox::Yes){
+           _Ogretmenprofil= VeriTabani::veritabani().ogretmen().yeni();
+           GorselGuncelle();
+           ui->lineEdit_ogretmenadi->setFocus();
+           setDegisiklik(false);
+       }else{
+           accept();
+       }
+    } else {
+        VeriTabani::veritabani().ogretmen().duzenle(_EskiOgretmen,_Ogretmenprofil);
 
- }
+}
+}
 
