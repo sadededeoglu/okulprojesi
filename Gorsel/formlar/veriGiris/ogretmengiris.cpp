@@ -1,9 +1,9 @@
-#include "ogretmengiris.h"
+#include <QFileDialog>
 #include <veritabani.h>
 #include <qmessagebox.h>
-#include<QFileDialog>
+#include "ogretmengiris.h"
 #include "ui_ogretmengiris.h"
-#include<Siniflar/ogretmenprofil.h>
+#include <Siniflar/ogretmenprofil.h>
 
 ogretmenGiris::ogretmenGiris(QWidget *parent) :
     QDialog(parent),

@@ -56,8 +56,24 @@ void OgretmenListesi::TabloGuncelle()
         hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->sicilNo()));
         hucre->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_ogretmen->setItem(i,3,hucre);
-    }
-}
+
+        auto SilmeButonu = new QPushButton(this);
+        SilmeButonu->setText(tr("Ogretmen sil"));
+        //SilmeButonu->setIcon(&SilmeSimgesi);
+        ui->tableWidget_ogretmen->setCellWidget(i,5,SilmeButonu);
+
+        auto ogretmen = this->_Ogretmenler[i];
+        connect(SilmeButonu,&QPushButton::clicked,[ogretmen,this](){
+
+            auto cevap=
+
+                    QMessageBox::question(nullptr,tr("silme onayi"),tr("%1 %2 silmek istediğine emin misin")
+                                          .arg(ogretmen->ogretmenAdi()).arg(ogretmen->ogretmenSoyadi()));
+            if(cevap==QMessageBox::Yes){
+                VeriTabani::veritabani().ogretmen().sil(ogretmen);
+
+                this->filtreleme(); }});
+    }}
 
 void OgretmenListesi::filtreleme()//ekranda yapılan seçimlere göre yapar
 {

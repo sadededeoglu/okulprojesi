@@ -1,7 +1,7 @@
+#include <QMessageBox>
+#include <veritabani.h>
 #include "sinifgiris.h"
 #include "ui_sinifgiris.h"
-#include <veritabani.h>
-#include <QMessageBox>
 #include <Siniflar/okul_sinif.h>
 
 sinifGiris::sinifGiris(QWidget *parent) :
