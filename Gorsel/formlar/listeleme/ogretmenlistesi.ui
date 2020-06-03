@@ -403,5 +403,88 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>lineEdit_ad</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OgretmenListesi</receiver>
+   <slot>filtreleme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>19</x>
+     <y>467</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_soyad</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OgretmenListesi</receiver>
+   <slot>filtreleme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>153</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>48</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_adiile</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>OgretmenListesi</receiver>
+   <slot>filtreleme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>605</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_soyadiile</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>OgretmenListesi</receiver>
+   <slot>filtreleme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>639</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>637</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_sicilno</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OgretmenListesi</receiver>
+   <slot>filtreleme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>495</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>468</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>filtreleme()</slot>
+ </slots>
 </ui>

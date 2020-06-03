@@ -33,10 +33,10 @@ void OgretmenListesi::TabloGuncelle()
     ui->tableWidget_ogretmen->setHorizontalHeaderLabels(Baslik);
 
     QIcon SilmeSimgesi = QIcon();
-   // TODO SilmeSimgesi.addFile(QString::formUtf8(":/resimler/sil.png"), QSize, QIcon::Normal,QIcon::Off);
+   SilmeSimgesi.addFile(QString::fromUtf8(":/resimler/sil.png"), QSize(), QIcon::Normal,QIcon::Off);
 
     QIcon DuzenlemeSimgesi = QIcon();
-   // TODO DuzenlemeSimgesi.addFile(QString::formUtf8(":/resimler/sil.png"), QSize, QIcon::Normal,QIcon::Off);
+   DuzenlemeSimgesi.addFile(QString::fromUtf8(":/resimler/duzenle.png"), QSize(), QIcon::Normal,QIcon::Off);
 
     for(int i=0 ; i<this->_Ogretmenler.count() ; i++){
 
@@ -84,10 +84,10 @@ void OgretmenListesi::TabloGuncelle()
 
         connect(DuzenlemeButonu, &QPushButton::clicked,[ogretmen,this]() {
 
-      // TODO  ogretmenGiris form(this,ogretmen);
-      //  form.setStyleSheet();
-      //  form exec();
-      //  this->filtreleme();
+   // ogretmenGiris from(this,ogretmen);
+   //   from.setStyleSheet();
+   //   from exec();
+   //   this->filtreleme();
         });
 
     }}
@@ -136,7 +136,6 @@ void OgretmenListesi::filtreleme()//ekranda yapılan seçimlere göre yapar
                         return ogretmen->ogretmenSoyadi().toLower().startsWith(filtrelenen.toLower());
 
                     };
-
 
     auto filtreleme = [OgretmenAdifiltreleme,OgretmenSoyadifiltreleme,SicilNofiltreleme](OgretmenProfil::ptr ogretmen){
 
