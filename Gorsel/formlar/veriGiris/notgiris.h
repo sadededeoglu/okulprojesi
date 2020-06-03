@@ -32,7 +32,7 @@ private slots:
     void on_label_derslink_linkActivated(const QString &link);
 
 private:
-    void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır
+    void GorselGuncelle(); //pointer daki bilgileri tex box lara aktarır.
     void VeriGuncelle();
     bool _Degisiklik;
     void Ogrencicomboboxdoldur();
