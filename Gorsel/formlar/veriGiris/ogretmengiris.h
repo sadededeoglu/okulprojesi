@@ -12,7 +12,7 @@ class ogretmenGiris : public QDialog
     Q_OBJECT
 
 public:
-    explicit ogretmenGiris(QWidget *parent = nullptr);
+    explicit ogretmenGiris(QWidget *parent = nullptr, OgretmenProfil::ptr ogretmen =nullptr);
     ~ogretmenGiris();
 
     bool Degisiklik() const;
@@ -33,6 +33,7 @@ private:
 
     Ui::ogretmenGiris *ui;
     OgretmenProfil::ptr _Ogretmenprofil;
+    OgretmenProfil::ptr _EskiOgretmen;
 
     //bunun ilklendiricisi cpp de eklenecek ama vt düzenlenmesi lazım
 

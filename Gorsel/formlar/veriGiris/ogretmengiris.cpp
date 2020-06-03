@@ -1,17 +1,23 @@
 #include <QFileDialog>
 #include <veritabani.h>
-#include <qmessagebox.h>
+#include <QMessageBox>
 #include "ogretmengiris.h"
 #include "ui_ogretmengiris.h"
-#include <Siniflar/ogretmenprofil.h>
 
-ogretmenGiris::ogretmenGiris(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::ogretmenGiris)
-{
-    ui->setupUi(this);
+
+ogretmenGiris::ogretmenGiris(QWidget *parent,OgretmenProfil::ptr Ogretmen)
+
+    :QDialog(parent),ui(new Ui::ogretmenGiris){
+     ui->setupUi(this);
+
+     if(Ogretmen !=nullptr){
+         _EskiOgretmen= Ogretmen;
+         _Ogretmenprofil=Ogretmen->Kopyala();
+         ui->buton_ekle->setText("gunclle");
+         GorselGuncelle();
+     }else {
     _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
-    _Degisiklik = false;
+   } _Degisiklik = false;
 }
 ogretmenGiris::~ogretmenGiris()
 {
@@ -59,6 +65,10 @@ void ogretmenGiris::reject()
 void ogretmenGiris::on_ekle_clicked()
 {
     veriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
+
+    if(_EskiOgretmen == nullptr){
+       // VeriTabani::veritabani().ekle
+    }
 
     if(_Ogretmenprofil->ogretmenAdi()==0 || _Ogretmenprofil->ogretmenSoyadi()==0 || _Ogretmenprofil->sicilNo()==0 || _Ogretmenprofil->ogretmenAdresi()==0)
     {
