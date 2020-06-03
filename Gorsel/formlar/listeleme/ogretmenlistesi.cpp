@@ -33,7 +33,10 @@ void OgretmenListesi::TabloGuncelle()
     ui->tableWidget_ogretmen->setHorizontalHeaderLabels(Baslik);
 
     QIcon SilmeSimgesi = QIcon();
-   //TODO SilmeSimgesi.addFile(QString::formUtf8(""), QSize, QIcon::Normal,QIcon::Off);
+   // TODO SilmeSimgesi.addFile(QString::formUtf8(":/resimler/sil.png"), QSize, QIcon::Normal,QIcon::Off);
+
+    QIcon DuzenlemeSimgesi = QIcon();
+   // TODO DuzenlemeSimgesi.addFile(QString::formUtf8(":/resimler/sil.png"), QSize, QIcon::Normal,QIcon::Off);
 
     for(int i=0 ; i<this->_Ogretmenler.count() ; i++){
 
@@ -59,8 +62,8 @@ void OgretmenListesi::TabloGuncelle()
 
         auto SilmeButonu = new QPushButton(this);
         SilmeButonu->setText(tr("Ogretmen sil"));
-        //SilmeButonu->setIcon(&SilmeSimgesi);
-        ui->tableWidget_ogretmen->setCellWidget(i,5,SilmeButonu);
+        SilmeButonu->setIcon(SilmeSimgesi);
+        ui->tableWidget_ogretmen->setCellWidget(i,4,SilmeButonu);
 
         auto ogretmen = this->_Ogretmenler[i];
         connect(SilmeButonu,&QPushButton::clicked,[ogretmen,this](){
@@ -73,6 +76,20 @@ void OgretmenListesi::TabloGuncelle()
                 VeriTabani::veritabani().ogretmen().sil(ogretmen);
 
                 this->filtreleme(); }});
+
+        auto DuzenlemeButonu = new QPushButton(this);
+        DuzenlemeButonu->setText(tr("duzenle"));
+        DuzenlemeButonu->setIcon(DuzenlemeSimgesi);
+        ui->tableWidget_ogretmen->setCellWidget(i,5,DuzenlemeButonu);
+
+        connect(DuzenlemeButonu, &QPushButton::clicked,[ogretmen,this]() {
+
+      // TODO  ogretmenGiris form(this,ogretmen);
+      //  form.setStyleSheet();
+      //  form exec();
+      //  this->filtreleme();
+        });
+
     }}
 
 void OgretmenListesi::filtreleme()//ekranda yapılan seçimlere göre yapar

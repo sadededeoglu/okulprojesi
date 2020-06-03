@@ -2,11 +2,11 @@
     <qresource prefix="/resimler">
         <file>resimler/3d bar chart.png</file>
         <file alias="cık.png">resimler/Close file.png</file>
-        <file>resimler/accept_button.png</file>
+        <file alias="onay.png">resimler/accept_button.png</file>
         <file>resimler/okulOtomasyonu</file>
         <file>resimler/resimler</file>
-        <file>resimler/user_delete.png</file>
-        <file>resimler/table.png</file>
-        <file>resimler/user_student_female.png</file>
+        <file alias="sil.png">resimler/user_delete.png</file>
+        <file alias="liste.png">resimler/table.png</file>
+        <file alias="ogrenci.png">resimler/user_student_female.png</file>
     </qresource>
 </RCC>

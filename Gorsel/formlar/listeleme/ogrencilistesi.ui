@@ -28,6 +28,9 @@
   <layout class="QGridLayout" name="gridLayout_9">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout_8">
+     <item row="1" column="0">
+      <widget class="QTableWidget" name="tableWidget_ogrenci"/>
+     </item>
      <item row="0" column="0">
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
@@ -51,41 +54,17 @@
           </item>
          </layout>
         </item>
-        <item row="0" column="1" rowspan="3">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2" rowspan="3">
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QCheckBox" name="checkBox_canliArama">
+        <item row="2" column="0">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="checkBox_numara">
             <property name="text">
-             <string>CANLI ARAMA</string>
+             <string>NUMARA</string>
             </property>
            </widget>
           </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_ara">
-            <property name="text">
-             <string>ara</string>
-            </property>
-           </widget>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spinBox_numara"/>
           </item>
          </layout>
         </item>
@@ -106,25 +85,8 @@
           </item>
          </layout>
         </item>
-        <item row="2" column="0">
-         <layout class="QGridLayout" name="gridLayout_3">
-          <item row="0" column="0">
-           <widget class="QCheckBox" name="checkBox_numara">
-            <property name="text">
-             <string>NUMARA</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QSpinBox" name="spinBox_numara"/>
-          </item>
-         </layout>
-        </item>
        </layout>
       </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QTableWidget" name="tableWidget_ogrenci"/>
      </item>
     </layout>
    </item>
@@ -170,18 +132,34 @@
  <resources/>
  <connections>
   <connection>
-   <sender>checkBox_adi</sender>
+   <sender>checkBox_soyadi</sender>
    <signal>clicked(bool)</signal>
-   <receiver>lineEdit_adi</receiver>
+   <receiver>lineEdit_soyadi</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>34</x>
-     <y>50</y>
+     <x>32</x>
+     <y>91</y>
     </hint>
     <hint type="destinationlabel">
-     <x>126</x>
-     <y>53</y>
+     <x>139</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_numara</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spinBox_numara</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>33</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>121</y>
     </hint>
    </hints>
   </connection>
@@ -202,18 +180,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_soyadi</sender>
+   <sender>checkBox_adi</sender>
    <signal>clicked(bool)</signal>
-   <receiver>lineEdit_soyadi</receiver>
+   <receiver>lineEdit_adi</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>32</x>
-     <y>91</y>
+     <x>34</x>
+     <y>50</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>91</y>
+     <x>126</x>
+     <y>53</y>
     </hint>
    </hints>
   </connection>
@@ -230,22 +208,6 @@
     <hint type="destinationlabel">
      <x>516</x>
      <y>83</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_numara</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>spinBox_numara</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>33</x>
-     <y>122</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>339</x>
-     <y>121</y>
     </hint>
    </hints>
   </connection>

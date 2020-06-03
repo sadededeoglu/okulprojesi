@@ -37,40 +37,35 @@
         <bool>true</bool>
        </property>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="1" rowspan="4" colspan="2">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2" rowspan="2">
-         <layout class="QVBoxLayout" name="verticalLayout">
+        <item row="0" column="0" rowspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QCheckBox" name="checkBox_yazarkenara">
+           <widget class="QCheckBox" name="checkBox_adi">
             <property name="text">
-             <string>yazarken arama</string>
+             <string>ADI</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
+           <widget class="QLineEdit" name="lineEdit_ad"/>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_ara">
-            <property name="text">
-             <string>ara</string>
-            </property>
+           <widget class="QComboBox" name="comboBox_adiile">
+            <item>
+             <property name="text">
+              <string>ile başlayan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ile biten</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>içeren</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>
@@ -103,39 +98,6 @@
           </item>
           <item>
            <widget class="QComboBox" name="comboBox_soyadiile">
-            <item>
-             <property name="text">
-              <string>ile başlayan</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ile biten</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>içeren</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="0" rowspan="2">
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QCheckBox" name="checkBox_adi">
-            <property name="text">
-             <string>ADI</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_ad"/>
-          </item>
-          <item>
-           <widget class="QComboBox" name="comboBox_adiile">
             <item>
              <property name="text">
               <string>ile başlayan</string>
@@ -211,7 +173,6 @@
   <tabstop>comboBox_soyadiile</tabstop>
   <tabstop>checkBox_sicilno</tabstop>
   <tabstop>spinBox_sicilno</tabstop>
-  <tabstop>checkBox_yazarkenara</tabstop>
   <tabstop>pushButton</tabstop>
  </tabstops>
  <resources/>
@@ -229,38 +190,6 @@
     <hint type="destinationlabel">
      <x>387</x>
      <y>241</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>line</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>429</x>
-     <y>112</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>309</x>
-     <y>110</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>groupBox</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>checkBox_yazarkenara</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>429</x>
-     <y>24</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>417</x>
-     <y>60</y>
     </hint>
    </hints>
   </connection>
