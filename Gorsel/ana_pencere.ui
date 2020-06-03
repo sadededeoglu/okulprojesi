@@ -68,12 +68,19 @@
     </property>
     <addaction name="actionsinifEkle"/>
    </widget>
+   <widget class="QMenu" name="menuraporlar">
+    <property name="title">
+     <string>raporlar</string>
+    </property>
+    <addaction name="actionistatistikler"/>
+   </widget>
    <addaction name="menudosya"/>
    <addaction name="menudersler"/>
    <addaction name="menunolar"/>
    <addaction name="menu_renci"/>
    <addaction name="menuogrenci"/>
    <addaction name="menus_n_f"/>
+   <addaction name="menuraporlar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -102,8 +109,8 @@
    </attribute>
    <addaction name="actionOgrenciEkle"/>
    <addaction name="actionogretmenEkle"/>
-   <addaction name="actiondersEkle"/>
    <addaction name="actionnotEkle"/>
+   <addaction name="actionDers_ekle"/>
    <addaction name="actionsinifEkle"/>
   </widget>
   <widget class="QToolBar" name="toolBar_3">
@@ -118,11 +125,12 @@
    </attribute>
    <addaction name="actionogretmen_listesi"/>
    <addaction name="actionOgrenci_Listesi"/>
+   <addaction name="actionistatistikler"/>
   </widget>
   <action name="actionac">
    <property name="icon">
-    <iconset>
-     <normaloff>resimler/accept_button.png</normaloff>resimler/accept_button.png</iconset>
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
    </property>
    <property name="text">
     <string>ac</string>
@@ -157,8 +165,8 @@
   </action>
   <action name="actiondersEkle">
    <property name="icon">
-    <iconset>
-     <normaloff>resimler/book_add.png</normaloff>resimler/book_add.png</iconset>
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/book_add.png</normaloff>:/resimler/resimler/book_add.png</iconset>
    </property>
    <property name="text">
     <string>ders ekle</string>
@@ -166,8 +174,8 @@
   </action>
   <action name="actionnotEkle">
    <property name="icon">
-    <iconset>
-     <normaloff>resimler/access_imports.png</normaloff>resimler/access_imports.png</iconset>
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/access_imports.png</normaloff>:/resimler/resimler/access_imports.png</iconset>
    </property>
    <property name="text">
     <string>Not Ekle</string>
@@ -178,8 +186,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>resimler/contact-new.png</normaloff>resimler/contact-new.png</iconset>
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/contact-new.png</normaloff>:/resimler/resimler/contact-new.png</iconset>
    </property>
    <property name="text">
     <string>Öğretmen Ekle</string>
@@ -187,8 +195,8 @@
   </action>
   <action name="actionsinifEkle">
    <property name="icon">
-    <iconset>
-     <normaloff>resimler/bullet_valid.png</normaloff>resimler/bullet_valid.png</iconset>
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/account_menu.png</normaloff>:/resimler/resimler/account_menu.png</iconset>
    </property>
    <property name="text">
     <string>Sınıf Ekle</string>
@@ -222,8 +230,21 @@
    </property>
   </action>
   <action name="actionDers_ekle">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/book_add.png</normaloff>:/resimler/resimler/book_add.png</iconset>
+   </property>
    <property name="text">
     <string>Ders ekle</string>
+   </property>
+  </action>
+  <action name="actionistatistikler">
+   <property name="icon">
+    <iconset resource="kaynaklar.qrc">
+     <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
+   </property>
+   <property name="text">
+    <string>istatistikler</string>
    </property>
   </action>
  </widget>
