@@ -65,7 +65,7 @@ public:
 
   void sil(Pointer silinecek) {
     for (int i = 0; i < _veriler.size(); i++) {
-      if (silinecek->id() == _veriler[i]->id()) {
+      if (silinecek->Id() == _veriler[i]->Id()) {
         sil(i);
         return;
       }

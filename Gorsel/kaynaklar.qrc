@@ -8,5 +8,9 @@
         <file alias="sil.png">resimler/user_delete.png</file>
         <file alias="liste.png">resimler/table.png</file>
         <file alias="ogrenci.png">resimler/user_student_female.png</file>
+        <file alias="ekle.png">resimler/book_add.png</file>
+        <file alias="ekle2.png">resimler/bullet_valid.png</file>
+        <file>resimler/access_imports.png</file>
+        <file>resimler/contact-new.png</file>
     </qresource>
 </RCC>

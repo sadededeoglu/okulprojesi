@@ -40,6 +40,7 @@
     <property name="title">
      <string>dersler</string>
     </property>
+    <addaction name="actionDers_ekle"/>
    </widget>
    <widget class="QMenu" name="menunolar">
     <property name="title">
@@ -66,7 +67,6 @@
      <string>sınıf</string>
     </property>
     <addaction name="actionsinifEkle"/>
-    <addaction name="actionsinif_listesi"/>
    </widget>
    <addaction name="menudosya"/>
    <addaction name="menudersler"/>
@@ -86,15 +86,43 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionogretmenEkle"/>
-   <addaction name="actionnotEkle"/>
    <addaction name="actionac"/>
+   <addaction name="actionkaydet"/>
+   <addaction name="actioncik"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOgrenciEkle"/>
+   <addaction name="actionogretmenEkle"/>
+   <addaction name="actiondersEkle"/>
+   <addaction name="actionnotEkle"/>
+   <addaction name="actionsinifEkle"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_3">
+   <property name="windowTitle">
+    <string>toolBar_3</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
    <addaction name="actionogretmen_listesi"/>
+   <addaction name="actionOgrenci_Listesi"/>
   </widget>
   <action name="actionac">
    <property name="icon">
-    <iconset resource="kaynaklar.qrc">
-     <normaloff>:/resimler/resimler/accept_button.png</normaloff>:/resimler/resimler/accept_button.png</iconset>
+    <iconset>
+     <normaloff>resimler/accept_button.png</normaloff>resimler/accept_button.png</iconset>
    </property>
    <property name="text">
     <string>ac</string>
@@ -128,6 +156,10 @@
    </property>
   </action>
   <action name="actiondersEkle">
+   <property name="icon">
+    <iconset>
+     <normaloff>resimler/book_add.png</normaloff>resimler/book_add.png</iconset>
+   </property>
    <property name="text">
     <string>ders ekle</string>
    </property>
@@ -135,7 +167,7 @@
   <action name="actionnotEkle">
    <property name="icon">
     <iconset>
-     <normaloff>resimler/3d bar chart.png</normaloff>resimler/3d bar chart.png</iconset>
+     <normaloff>resimler/access_imports.png</normaloff>resimler/access_imports.png</iconset>
    </property>
    <property name="text">
     <string>Not Ekle</string>
@@ -146,8 +178,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="kaynaklar.qrc">
-     <normaloff>:/resimler/resimler/resimler</normaloff>:/resimler/resimler/resimler</iconset>
+    <iconset>
+     <normaloff>resimler/contact-new.png</normaloff>resimler/contact-new.png</iconset>
    </property>
    <property name="text">
     <string>Öğretmen Ekle</string>
@@ -156,7 +188,7 @@
   <action name="actionsinifEkle">
    <property name="icon">
     <iconset>
-     <normaloff>resimler/3d bar chart.png</normaloff>resimler/3d bar chart.png</iconset>
+     <normaloff>resimler/bullet_valid.png</normaloff>resimler/bullet_valid.png</iconset>
    </property>
    <property name="text">
     <string>Sınıf Ekle</string>
@@ -187,6 +219,11 @@
    </property>
    <property name="text">
     <string>sinif listesi</string>
+   </property>
+  </action>
+  <action name="actionDers_ekle">
+   <property name="text">
+    <string>Ders ekle</string>
    </property>
   </action>
  </widget>
