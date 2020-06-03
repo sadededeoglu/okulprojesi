@@ -52,8 +52,6 @@ Notlar::Notlar(QObject *parent) :TemelVeriSinifi(parent)
     this->_ogrenciId=0;
     this->_DersId=0;
     this->_sinifId = 0;
-
-    //diğer işlemler olacaksa onlar da eklenecek TODO ama diğer işlemleri bulamadık
 }
 
 /*

@@ -88,8 +88,6 @@ void ogrenciListesi::Filtrele()
             adFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman){return eleman->ogrenciAdi().toLower().contains(aranan.toLower());};
         }
     }
-
-    //TODO numara filtre fonksiyonunda sorun labilir emin değilim.
     if (ui->checkBox_numara->isChecked()) {
         auto aranan = ui->spinBox_numara->value();
         numaraFiltreFonksiyonu = [aranan](OgrenciProfil::ptr eleman) {return eleman->ogrenciNo()==aranan;};

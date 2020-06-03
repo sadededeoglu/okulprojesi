@@ -1,8 +1,12 @@
+#include<QIcon>
+#include <QPushButton>
+#include <QStringList>
+#include <QMessageBox>
+#include <veritabani.h>
+#include <QTableWidgetItem>
 #include "ogretmenlistesi.h"
 #include "ui_ogretmenlistesi.h"
-#include <veritabani.h>
-#include<QStringList>
-#include<QTableWidgetItem>
+#include <formlar/veriGiris/ogretmengiris.h>
 
 OgretmenListesi::OgretmenListesi(QWidget *parent) :
     QDialog(parent),
@@ -22,11 +26,14 @@ void OgretmenListesi::TabloGuncelle()
 {
     //ui->tableView_ogretmen->clear();
     QStringList Baslik;
-    Baslik << tr("No") <<tr("ogretmen adı")<<tr("soyadı")<<tr("sicil no");
+    Baslik << tr("No") <<tr("ogretmen adı")<<tr("soyadı")<<tr("sicil no")<<tr("sil")<<tr("düzenle");
 
-    ui->tableWidget_ogretmen->setColumnCount(4);
+    ui->tableWidget_ogretmen->setColumnCount(6);
     ui->tableWidget_ogretmen->setRowCount(this->_Ogretmenler.count());
     ui->tableWidget_ogretmen->setHorizontalHeaderLabels(Baslik);
+
+    QIcon SilmeSimgesi = QIcon();
+   //TODO SilmeSimgesi.addFile(QString::formUtf8(""), QSize, QIcon::Normal,QIcon::Off);
 
     for(int i=0 ; i<this->_Ogretmenler.count() ; i++){
 
@@ -48,7 +55,7 @@ void OgretmenListesi::TabloGuncelle()
         hucre=new QTableWidgetItem();
         hucre->setText(tr("%1").arg(this->_Ogretmenler[i]->sicilNo()));
         hucre->setTextAlignment(Qt::AlignCenter);
-        ui->tableWidget_ogretmen->setItem(i,4,hucre);
+        ui->tableWidget_ogretmen->setItem(i,3,hucre);
     }
 }
 

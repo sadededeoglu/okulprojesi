@@ -6,5 +6,7 @@
         <file>resimler/okulOtomasyonu</file>
         <file>resimler/resimler</file>
         <file>resimler/user_delete.png</file>
+        <file>resimler/table.png</file>
+        <file>resimler/user_student_female.png</file>
     </qresource>
 </RCC>

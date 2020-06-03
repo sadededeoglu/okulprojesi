@@ -96,9 +96,6 @@ void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
 {
 
     ui->spinBox_not1->setValue(_Notlar->ogrenciNot());
-        //TODO 2. ve 3. notlar öğrenci notu etkiler mi
-    //ui->spinBox_not2->setValue(_Notlar->ogrenciNot());
-    //ui->spinBox_not3->setValue(_Notlar->ogrenciNot());
 
     if (_Notlar->ogrenciId()==0){
         //ilk eleman seçili olacak
@@ -149,6 +146,10 @@ void notGiris::VeriGuncelle()
     OgrenciProfil::IdTuru ogrenciId = ui->comboBox_ogrenci->currentData().toInt();
     Okul_sinif::IdTuru sinifId = ui->comboBox_sinif->currentData().toInt();
     Dersler::IdTuru dersId = ui->comboBox_ders->currentData().toInt();
+    
+    _Notlar->setOgrenciId(ogrenciId);
+    _Notlar->setSinifId(sinifId);
+    _Notlar->setDersId(dersId);
 
     if (ogrenciId == 0) {
       QMessageBox::critical(this, tr("Öğrenci Seçilmedi"),
