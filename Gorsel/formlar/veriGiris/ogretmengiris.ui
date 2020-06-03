@@ -257,8 +257,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>buton_ekle</sender>
+   <signal>clicked()</signal>
+   <receiver>ogretmenGiris</receiver>
+   <slot>ekle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>302</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>GorselDegisti()</slot>
+  <slot>ekle()</slot>
  </slots>
 </ui>

@@ -50,7 +50,7 @@ public:
       _sonId++;
       gecici->setId(_sonId);
       _veriler.append(gecici);
-      ekle(veri);
+      Eklendi(veri);
     }
   }
 

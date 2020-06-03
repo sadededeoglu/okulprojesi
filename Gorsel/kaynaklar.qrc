@@ -12,5 +12,6 @@
         <file alias="ekle2.png">resimler/bullet_valid.png</file>
         <file>resimler/access_imports.png</file>
         <file>resimler/contact-new.png</file>
+        <file alias="duzenle.png">resimler/Pencil.png</file>
     </qresource>
 </RCC>

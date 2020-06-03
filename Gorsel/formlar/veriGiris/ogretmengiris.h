@@ -23,7 +23,7 @@ public slots:
      void reject() override; //otomatik olarak rejekte isyan ediyoruz.
 
 private slots:
-     void on_ekle_clicked();
+     void ekle();
 
 private:
 

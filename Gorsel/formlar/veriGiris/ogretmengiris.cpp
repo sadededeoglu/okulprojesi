@@ -62,7 +62,7 @@ void ogretmenGiris::reject()
         }}
     QDialog::reject();
 }
-void ogretmenGiris::on_ekle_clicked(){
+void ogretmenGiris::ekle(){
     veriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
 
     if(_EskiOgretmen == nullptr){

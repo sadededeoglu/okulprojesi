@@ -57,7 +57,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     kaynaklar.qrc
 
-unix|win32: LIBS += -L$$OUT_PWD/../kutuphane/ -lkutuphane
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../kutuphane/release/ -lkutuphane
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../kutuphane/debug/ -lkutuphane
+else:unix: LIBS += -L$$OUT_PWD/../kutuphane/ -lkutuphane
 
 INCLUDEPATH += $$PWD/../kutuphane
 DEPENDPATH += $$PWD/../kutuphane
