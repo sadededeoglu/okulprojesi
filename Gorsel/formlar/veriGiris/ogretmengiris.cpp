@@ -62,13 +62,11 @@ void ogretmenGiris::reject()
         }}
     QDialog::reject();
 }
-void ogretmenGiris::on_ekle_clicked()
-{
+void ogretmenGiris::on_ekle_clicked(){
     veriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
 
     if(_EskiOgretmen == nullptr){
-       // VeriTabani::veritabani().ekle
-    }
+       VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil) ;   }
 
     if(_Ogretmenprofil->ogretmenAdi()==0 || _Ogretmenprofil->ogretmenSoyadi()==0 || _Ogretmenprofil->sicilNo()==0 || _Ogretmenprofil->ogretmenAdresi()==0)
     {
@@ -89,5 +87,12 @@ void ogretmenGiris::on_ekle_clicked()
         ui->lineEdit_ogretmenadi->setFocus();
         setDegisiklik(false);
     }else{
-        accept();}
-}
+        accept();
+    }
+    /* else {
+        Veritabani::veritabani().ogretmenprofil().duzenle(_eskiOgretmen, _ogretmenprofil);
+        accept();
+        }*/
+
+ }
+

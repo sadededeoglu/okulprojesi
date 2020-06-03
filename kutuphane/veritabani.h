@@ -35,7 +35,7 @@ public:
     void Kaydet(QString dosyaAdi);
     void Yukle(QString dosyaAdi);
 
-signals:
+signals: //TODO burası da diğer sinyallerdeki gibi mi
     void OgretmenEklendi(OgretmenProfil::ptr ogretmeneklendi);
     void OgretmenSilindi(OgretmenProfil::ptr ogretmensilindi);
     void OgrenciEklendi(OgrenciProfil::ptr ogrenciEklendi);
