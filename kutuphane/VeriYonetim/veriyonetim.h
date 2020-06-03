@@ -56,7 +56,7 @@ public:
 
   void duzenle(Pointer eski, Pointer yeni) {
     for (int i = 0; i < _veriler.size(); i++) {
-      if (eski->id() == _veriler[i]->id()) {
+      if (eski->Id() == _veriler[i]->Id()) {
         this->_veriler[i] = yeni;
         Degisti(eski, yeni);
       }
