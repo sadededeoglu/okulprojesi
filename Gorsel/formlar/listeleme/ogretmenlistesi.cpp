@@ -83,13 +83,11 @@ void OgretmenListesi::TabloGuncelle()
         ui->tableWidget_ogretmen->setCellWidget(i,5,DuzenlemeButonu);
 
         connect(DuzenlemeButonu, &QPushButton::clicked,[ogretmen,this]() {
-
-   // ogretmenGiris from(this,ogretmen);
-   //   from.setStyleSheet();
-   //   from exec();
-   //   this->filtreleme();
+        ogretmenGiris form(this,ogretmen);
+        form.setStyleSheet(this->styleSheet());
+        form.exec();
+        this->filtreleme();
         });
-
     }}
 
 void OgretmenListesi::filtreleme()//ekranda yapılan seçimlere göre yapar
