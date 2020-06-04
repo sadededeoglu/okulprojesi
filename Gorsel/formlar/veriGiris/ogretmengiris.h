@@ -12,7 +12,7 @@ class ogretmenGiris : public QDialog
     Q_OBJECT
 
 public:
-    explicit ogretmenGiris(QWidget *parent = nullptr, OgretmenProfil::ptr ogretmen =nullptr);
+    explicit ogretmenGiris(QWidget *parent = nullptr, OgretmenProfil::ptr Ogretmen =nullptr);
     ~ogretmenGiris();
 
     bool Degisiklik() const;

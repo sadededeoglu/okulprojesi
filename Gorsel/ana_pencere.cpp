@@ -81,6 +81,7 @@ void Ana_Pencere::on_actionnotEkle_triggered()
     }
     notGiris form;
     form.exec();
+
 }
 
 void Ana_Pencere::on_actionkaydet_triggered()

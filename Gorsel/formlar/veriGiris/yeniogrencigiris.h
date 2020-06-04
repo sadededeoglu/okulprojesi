@@ -12,7 +12,7 @@ class yeniOgrenciGiris : public QDialog
     Q_OBJECT
 
 public:
-    explicit yeniOgrenciGiris(QWidget *parent = nullptr);
+    explicit yeniOgrenciGiris(QWidget *parent = nullptr , OgrenciProfil::ptr Ogrenci=nullptr);
     ~yeniOgrenciGiris();
 
     OgrenciProfil::ptr ogrenci() const;
@@ -20,6 +20,9 @@ public:
 
     bool degisiklikVar() const;
     void setDegisiklikVar(bool degisiklikVar);
+
+    OgrenciProfil::ptr eskiOgrenci() const;
+    void setEskiOgrenci(const OgrenciProfil::ptr &eskiOgrenci);
 
 public slots:
     void GorselDegisti();
@@ -31,6 +34,7 @@ private slots:
 private:
     Ui::yeniOgrenciGiris *ui;
     OgrenciProfil::ptr _ogrenci;
+    OgrenciProfil::ptr _eskiOgrenci;
 
     void GorselGuncelle();
     void VeriGuncelle();

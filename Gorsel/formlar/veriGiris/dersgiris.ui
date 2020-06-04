@@ -93,7 +93,7 @@
         <string>EKLE</string>
        </property>
        <property name="icon">
-        <iconset resource="../../kaynaklar.qrc">
+        <iconset>
          <normaloff>:/resimler/resimler/accept_button.png</normaloff>:/resimler/resimler/accept_button.png</iconset>
        </property>
       </widget>

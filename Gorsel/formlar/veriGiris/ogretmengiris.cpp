@@ -5,19 +5,20 @@
 #include "ui_ogretmengiris.h"
 
 
-ogretmenGiris::ogretmenGiris(QWidget *parent,OgretmenProfil::ptr Ogretmen)
+ogretmenGiris::ogretmenGiris(QWidget *parent,OgretmenProfil::ptr Ogretmen) :
 
-    :QDialog(parent),ui(new Ui::ogretmenGiris){
-     ui->setupUi(this);
+    QDialog(parent),ui(new Ui::ogretmenGiris){
+    ui->setupUi(this);
 
-     if(Ogretmen !=nullptr){
-         _EskiOgretmen= Ogretmen;
-         _Ogretmenprofil=Ogretmen->Kopyala();
-         ui->buton_ekle->setText("gunclle");
-         GorselGuncelle();
-     }else {
-    _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
-   } _Degisiklik = false;
+    if(Ogretmen !=nullptr){
+        _EskiOgretmen= Ogretmen;
+        _Ogretmenprofil=Ogretmen->Kopyala();
+        ui->buton_ekle->setText("Güncelle");
+        GorselGuncelle();
+     } else {
+        _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
+        }
+    _Degisiklik = false;
 }
 ogretmenGiris::~ogretmenGiris()
 {
@@ -53,8 +54,8 @@ void ogretmenGiris::setDegisiklik(bool Degisiklik)
 void ogretmenGiris::reject()
 {
     if(_Degisiklik){
-        auto cevap = QMessageBox::question(this ,tr("bilgi degisikligi var"),
-                                           tr( "değişiklikleri kaydetmeden çıkmakta emin misin"),
+        auto cevap = QMessageBox::question(this ,tr("Bilgi Değişikliği Algılandı"),
+                                           tr( "Değişiklikleri Kaydetmeden Çıkmak İstediğinize Emin Misiniz?"),
                                            QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
 
         if(cevap==QMessageBox::No){
@@ -91,7 +92,6 @@ void ogretmenGiris::ekle(){
        }
     } else {
         VeriTabani::veritabani().ogretmen().duzenle(_EskiOgretmen,_Ogretmenprofil);
-
-}
+    }
 }
 

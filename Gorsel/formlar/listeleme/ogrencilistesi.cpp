@@ -51,6 +51,8 @@ void ogrenciListesi::TabloGuncelle()
         hucre->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_ogrenci->setItem(i , 3 , hucre);
     }
+
+    //ui->tableWidget_ogrenci->
 }
 
 void ogrenciListesi::Filtrele()

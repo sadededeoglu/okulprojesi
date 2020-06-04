@@ -141,7 +141,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_cik">
        <property name="text">
         <string>cık</string>
        </property>
@@ -175,12 +175,12 @@
   <tabstop>checkBox_sicilno</tabstop>
   <tabstop>spinBox_sicilno</tabstop>
   <tabstop>tableWidget_ogretmen</tabstop>
-  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_cik</tabstop>
  </tabstops>
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pushButton_cik</sender>
    <signal>clicked()</signal>
    <receiver>OgretmenListesi</receiver>
    <slot>accept()</slot>

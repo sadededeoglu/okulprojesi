@@ -47,8 +47,6 @@ signals: //TODO burası da diğer sinyallerdeki gibi mi
     void SinifEklendi(Okul_sinif::ptr sinifeklendi);
     void SinifSilindi( Okul_sinif::ptr sinifsilindi);
 
-
-
 /*11. video
 
 ilk 23 dkka birim fiyat kısmını anlatıyor bizim oyle bir seye ihtiyacımız yok sanırım

@@ -2,16 +2,42 @@
 #include "ui_yeniogrencigiris.h"
 #include <veritabani.h>
 #include <QMessageBox>
+#include <QFileDialog>
 
-yeniOgrenciGiris::yeniOgrenciGiris(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::yeniOgrenciGiris)
+yeniOgrenciGiris::yeniOgrenciGiris(QWidget *parent , OgrenciProfil::ptr Ogrenci) :
+    QDialog(parent),ui(new Ui::yeniOgrenciGiris)
 {
+    //BENİM KODLAR
+    //ui->setupUi(this);
+    //
+    //_ogrenci = VeriTabani::veritabani().ogrenci().yeni();
+    //
+    //_degisiklikVar = false;
+
     ui->setupUi(this);
 
-    _ogrenci = VeriTabani::veritabani().ogrenci().yeni();
-
+    if (Ogrenci != nullptr) {
+        _eskiOgrenci = Ogrenci;
+        _ogrenci = Ogrenci->Kopyala();
+        ui->pushButton_Ekle->setText("Güncelle");
+        GorselGuncelle();
+    } else {
+        _ogrenci = VeriTabani::veritabani().ogrenci().yeni();
+    }
     _degisiklikVar = false;
+
+   //QDialog(parent),ui(new Ui::ogretmenGiris){
+   //ui->setupUi(this);
+   //
+   //if(Ogretmen !=nullptr){
+   //    _EskiOgretmen= Ogretmen;
+   //    _Ogretmenprofil=Ogretmen->Kopyala();
+   //    ui->buton_ekle->setText("gunclle");
+   //    GorselGuncelle();
+   // } else {
+   //    _Ogretmenprofil = VeriTabani::veritabani().ogretmen().yeni();
+   //    }
+   //_Degisiklik = false;
 }
 yeniOgrenciGiris::~yeniOgrenciGiris()
 {
@@ -54,30 +80,53 @@ void yeniOgrenciGiris::GorselDegisti()
 void yeniOgrenciGiris::reject()
 {
     if(_degisiklikVar){
-        auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+        auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Değişiklikleri Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
         if (cevap == QMessageBox::No) {
             return;
         }
     }
     QDialog::reject();
 }
+
+OgrenciProfil::ptr yeniOgrenciGiris::eskiOgrenci() const
+{
+    return _eskiOgrenci;
+}
+
+void yeniOgrenciGiris::setEskiOgrenci(const OgrenciProfil::ptr &eskiOgrenci)
+{
+    _eskiOgrenci = eskiOgrenci;
+};
+
+
 void yeniOgrenciGiris::on_pushButton_Ekle_clicked()
 {
     VeriGuncelle();
 
-    if(_ogrenci->ogrenciAdi() == 0 || _ogrenci->ogrenciSoyadi() == 0 || _ogrenci->ogrenciAdresi() == 0 || _ogrenci->ogrenciNo() == 0){
-        QMessageBox::critical(this , tr("HATALI GİRİŞ") , tr("Eksik Bilgi Girişi") , QMessageBox::Ok);
-        return;
-    }
+    if (eskiOgrenci() == nullptr) {
+        VeriTabani::veritabani().ogrenci().ekle(_ogrenci);
 
-    VeriTabani::veritabani().ogrenci().ekle(this->_ogrenci);
-    auto cevap = QMessageBox::question(this , "Öğrenci Kaydı Tamamlandı" , "Yeni Bir Öğrenci Tanımlamak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
-    if (cevap == QMessageBox::Yes) {
-        _ogrenci = VeriTabani::veritabani().ogrenci().yeni();
-        GorselGuncelle();
-        ui->lineEdit_OgrenciAdi->setFocus();
-        setDegisiklikVar(false);
+        if(ogrenci()->ogrenciNo() == 0 || ogrenci()->ogrenciAdi() == 0 || ogrenci()->ogrenciSoyadi() == 0 || ogrenci()->ogrenciAdresi() == 0) {
+            QMessageBox::critical(this , tr("HATA") , tr("EKSİK BİLGİ GİRİŞİ") , QMessageBox::Ok);
+            return;
+        }
+        VeriTabani::veritabani().ogrenci().ekle(_ogrenci);
+        auto cevap = QMessageBox::question(this , tr("ÖĞRENCİ KAYDI TAMAMLANDI") , tr("YENİ BİR ÖĞRENCİ TANIMLAK İSTER MİSİNİZ?") , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+
+        if(cevap == QMessageBox::Yes) {
+            _ogrenci = VeriTabani::veritabani().ogrenci().yeni();
+            GorselGuncelle();
+            ui->lineEdit_OgrenciAdi->setFocus();
+            setDegisiklikVar(false);
+        } else {
+            accept();
+        }
     } else {
-        accept();
+        VeriTabani::veritabani().ogrenci().duzenle(eskiOgrenci() , _ogrenci);
     }
 }
+
+
+
+
+
