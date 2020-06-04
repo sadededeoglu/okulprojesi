@@ -17,14 +17,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    analiz.cpp
+    analiz.cpp \
+    analiz_siniflari/ogrenci_analiz.cpp \
+    analiz_verileri/ogrenci_analiz_verileri.cpp
 
 HEADERS += \
     analiz_global.h \
-    analiz.h
+    analiz.h \
+    analiz_siniflari/ogrenci_analiz.h \
+    analiz_verileri/ogrenci_analiz_verileri.h
 
 # Default rules for deployment.
 unix {
     target.path = /usr/lib
 }
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../kutuphane/release/ -lkutuphane
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../kutuphane/debug/ -lkutuphane
+else:unix: LIBS += -L$$OUT_PWD/../kutuphane/ -lkutuphane
+
+INCLUDEPATH += $$PWD/../kutuphane
+DEPENDPATH += $$PWD/../kutuphane
