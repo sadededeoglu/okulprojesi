@@ -1,4 +1,5 @@
 #include "dersleryonetim.h"
+#include <QDataStream>
 
 DerslerYonetim::DerslerYonetim(QObject *parent) : QObject(parent)
 {

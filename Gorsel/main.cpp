@@ -13,9 +13,11 @@ int main(int argc, char *argv[])
 
     //TODO ders ekle kısmı çalışmıyor.
 
-    //TODO sil fonksiyonu doğru çalışmıyor.
+    //TODO öğretmen sil ve öğrenci sil fonksiyonları doğru çalışmıyor.
 
     //TODO eklenen öğrenci , öğrenci listesinde gözükmüyor.
+
+    //TODO eklenen öğretmen , öğretmen listesinde gözükmüyor.
 
     //TODO öğretmen eklendiği zaman 2 tane ekleniyor.
 }

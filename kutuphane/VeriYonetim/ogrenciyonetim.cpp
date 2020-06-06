@@ -1,4 +1,5 @@
 #include "ogrenciyonetim.h"
+#include <QDataStream>
 
 Ogrenciyonetim::Ogrenciyonetim(QObject *parent) : QObject(parent)
 {

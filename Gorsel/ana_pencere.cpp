@@ -62,7 +62,7 @@ void Ana_Pencere::on_actionnotEkle_triggered()
         on_actionOgrenciEkle_triggered();
 
         //ogrenci sayısını güncellemeden kapatmasın diye yeniden güncelliyorum
-        auto OgrenciSayisi = VeriTabani::veritabani().ogrenci().filtreyeUyanElemanSayisi(
+        OgrenciSayisi = VeriTabani::veritabani().ogrenci().filtreyeUyanElemanSayisi(
                     [](OgrenciProfil::ptr){return true;});
     }
     while (SinifSayisi==0) {
@@ -76,7 +76,7 @@ void Ana_Pencere::on_actionnotEkle_triggered()
         }
         on_actionsinifEkle_triggered();
 
-        auto SinifSayisi = VeriTabani::veritabani().okulSinif().filtreyeUyanElemanSayisi(
+        SinifSayisi = VeriTabani::veritabani().okulSinif().filtreyeUyanElemanSayisi(
                     [](Okul_sinif::ptr){return true;});
     }
     notGiris form;

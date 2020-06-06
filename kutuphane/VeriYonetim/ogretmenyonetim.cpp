@@ -1,4 +1,5 @@
 #include "ogretmenyonetim.h"
+#include <QDataStream>
 
 Ogretmenyonetim::Ogretmenyonetim(QObject *parent) : QObject(parent)
 {

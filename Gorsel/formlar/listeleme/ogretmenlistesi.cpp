@@ -1,4 +1,4 @@
-#include<QIcon>
+#include <QIcon>
 #include <QPushButton>
 #include <QStringList>
 #include <QMessageBox>
@@ -26,7 +26,7 @@ void OgretmenListesi::TabloGuncelle()
 {
     //ui->tableView_ogretmen->clear();
     QStringList Baslik;
-    Baslik << tr("No") <<tr("ogretmen adı")<<tr("soyadı")<<tr("sicil no")<<tr("sil")<<tr("düzenle");
+    Baslik << tr("No") <<tr("ogretmen adı")<<tr("soyadı")<<tr("sicil no")<<tr("düzenle")<<tr("sil");
 
     ui->tableWidget_ogretmen->setColumnCount(6);
     ui->tableWidget_ogretmen->setRowCount(this->_Ogretmenler.count());
@@ -60,27 +60,12 @@ void OgretmenListesi::TabloGuncelle()
         hucre->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_ogretmen->setItem(i,3,hucre);
 
-        auto SilmeButonu = new QPushButton(this);
-        SilmeButonu->setText(tr("Ogretmen sil"));
-        SilmeButonu->setIcon(SilmeSimgesi);
-        ui->tableWidget_ogretmen->setCellWidget(i,4,SilmeButonu);
-
         auto ogretmen = this->_Ogretmenler[i];
-        connect(SilmeButonu,&QPushButton::clicked,[ogretmen,this](){
-
-            auto cevap=
-
-                    QMessageBox::question(nullptr,tr("silme onayi"),tr("%1 %2 silmek istediğine emin misin")
-                                          .arg(ogretmen->ogretmenAdi()).arg(ogretmen->ogretmenSoyadi()));
-            if(cevap==QMessageBox::Yes){
-                VeriTabani::veritabani().ogretmen().sil(ogretmen);
-
-                this->filtreleme(); }});
 
         auto DuzenlemeButonu = new QPushButton(this);
-        DuzenlemeButonu->setText(tr("duzenle"));
+        DuzenlemeButonu->setText(tr("DÜZENLE"));
         DuzenlemeButonu->setIcon(DuzenlemeSimgesi);
-        ui->tableWidget_ogretmen->setCellWidget(i,5,DuzenlemeButonu);
+        ui->tableWidget_ogretmen->setCellWidget(i,4,DuzenlemeButonu);
 
         connect(DuzenlemeButonu, &QPushButton::clicked,[ogretmen,this]() {
         ogretmenGiris form(this,ogretmen);
@@ -88,7 +73,24 @@ void OgretmenListesi::TabloGuncelle()
         form.exec();
         this->filtreleme();
         });
-    }}
+
+        auto SilmeButonu = new QPushButton(this);
+        SilmeButonu->setText(tr("SİL"));
+        SilmeButonu->setIcon(SilmeSimgesi);
+        ui->tableWidget_ogretmen->setCellWidget(i,5,SilmeButonu);
+
+        connect(SilmeButonu,&QPushButton::clicked,[ogretmen,this](){
+
+            auto cevap=
+
+                    QMessageBox::question(nullptr,tr("SİLME ONAYI"),tr("%1 %2 Silmek İstediğine Emin Misin?")
+                                          .arg(ogretmen->ogretmenAdi()).arg(ogretmen->ogretmenSoyadi()));
+            if(cevap==QMessageBox::Yes){
+                VeriTabani::veritabani().ogretmen().sil(ogretmen);
+
+                this->filtreleme(); }});
+    }
+}
 
 void OgretmenListesi::filtreleme()//ekranda yapılan seçimlere göre yapar
 {
