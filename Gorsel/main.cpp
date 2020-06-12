@@ -20,4 +20,6 @@ int main(int argc, char *argv[])
     //TODO eklenen öğretmen , öğretmen listesinde gözükmüyor.
 
     //TODO öğretmen eklendiği zaman 2 tane ekleniyor.
+
+    //TODO öğrenci ve öğretmen listesindeki güncelle butonu çalışmıyor.
 }

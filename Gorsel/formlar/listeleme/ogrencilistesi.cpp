@@ -68,8 +68,8 @@ void ogrenciListesi::TabloGuncelle()
         DuzenlemeButonu->setIcon(DuzenlemeSimgesi);
         ui->tableWidget_ogrenci->setCellWidget(i,4,DuzenlemeButonu);
 
-        connect(DuzenlemeButonu, &QPushButton::clicked,[ogrenci,this]() {
-            yeniOgrenciGiris form(this,ogrenci);
+        connect(DuzenlemeButonu, &QPushButton::clicked,[ogrenci, this]() {
+            yeniOgrenciGiris form(this, ogrenci);
             form.setStyleSheet(this->styleSheet());
             form.exec();
             this->Filtrele();
@@ -80,7 +80,7 @@ void ogrenciListesi::TabloGuncelle()
         SilmeButonu->setIcon(SilmeSimgesi);
         ui->tableWidget_ogrenci->setCellWidget(i,5,SilmeButonu);
 
-        connect(SilmeButonu,&QPushButton::clicked,[ogrenci,this](){
+        connect(SilmeButonu, &QPushButton::clicked,[ogrenci,this](){
             auto cevap = QMessageBox::question(nullptr , tr("SİLME ONAYI") , tr("%1 %2 Silmek İstediğine Emin Misin?").arg(ogrenci->ogrenciAdi()).arg(ogrenci->ogrenciSoyadi()));
 
             if (cevap == QMessageBox::Yes) {
