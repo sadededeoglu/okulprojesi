@@ -14,6 +14,8 @@ public:
     typedef unsigned long long IdTuru;
     typedef unsigned int PozitifTamsayi;
     typedef int tamsayi;
+    //TODO ondalıklı kısmını sonradan yazdım.
+    typedef float ondalikli;
 
 public:
     explicit TemelVeriSinifi(QObject *parent = nullptr);
