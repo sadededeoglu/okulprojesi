@@ -2,7 +2,7 @@
 #define OGRENCI_ANALIZ_VERILERI_H
 
 #include <QObject>
-#include <Siniflar/dersler.h>
+#include <Siniflar/notlar.h>
 #include <Siniflar/ogrenciprofil.h>
 
 class ogrenci_analiz_verileri
@@ -20,27 +20,27 @@ public:
     OgrenciProfil::Metin ogrenciSoyadi() const;
     void setOgrenciSoyadi(const OgrenciProfil::Metin &ogrenciSoyadi);
 
-    OgrenciProfil::tamsayi dersSayisi() const;
-    void setDersSayisi(const OgrenciProfil::tamsayi &dersSayisi);
+    OgrenciProfil::tamsayi notSayisi() const;
+    void setNotSayisi(const OgrenciProfil::tamsayi &notSayisi);
 
-    OgrenciProfil::tamsayi dersToplami() const;
-    void setDersToplami(const OgrenciProfil::tamsayi &dersToplami);
+    OgrenciProfil::tamsayi notToplami() const;
+    void setNotToplami(const OgrenciProfil::tamsayi &notToplami);
 
-    OgrenciProfil::ondalikli dersOrtalamasi() const;
-    void setDersOrtalamasi(const OgrenciProfil::ondalikli &dersOrtalamasi);
+    OgrenciProfil::ondalikli notOrtalamasi() const;
+    void setNotOrtalamasi(const OgrenciProfil::ondalikli &notOrtalamasi);
 
-    OgrenciProfil::ondalikli dersStandartSapmasi() const;
-    void setDersStandartSapmasi(const OgrenciProfil::ondalikli &dersStandartSapmasi);
+    OgrenciProfil::ondalikli notStandartSapmasi() const;
+    void setNotStandartSapmasi(const OgrenciProfil::ondalikli &notStandartSapmasi);
 
 private:
 
     OgrenciProfil::IdTuru _ogrenciId;
     OgrenciProfil::Metin _ogrenciAdi;
     OgrenciProfil::Metin _ogrenciSoyadi;
-    OgrenciProfil::tamsayi _dersSayisi;
-    OgrenciProfil::tamsayi _dersToplami;
-    OgrenciProfil::ondalikli _dersOrtalamasi;
-    OgrenciProfil::ondalikli _dersStandartSapmasi;
+    OgrenciProfil::tamsayi _notSayisi;
+    OgrenciProfil::tamsayi _notToplami;
+    OgrenciProfil::ondalikli _notOrtalamasi;
+    OgrenciProfil::ondalikli _notStandartSapmasi;
 
 signals:
 

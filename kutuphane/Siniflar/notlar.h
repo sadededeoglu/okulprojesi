@@ -14,8 +14,20 @@ private:
     IdTuru _notId;
     IdTuru _sinifId;
     PozitifTamsayi _ogrenciNot;
+    PozitifTamsayi _ogrenciNotSayisi;
+
 signals:
     void OgrenciNotDegisti(const PozitifTamsayi &ogrenciNot);
+
+    void OgrenciNotSayisiDegisti(const PozitifTamsayi &ogrenciNotSayisi);
+
+    void OgrenciDersIdDegisti(const IdTuru &DerId);
+
+    void OgrenciIdDegisti(const IdTuru &ogrenciId);
+
+    void OgrenciNotIdDegisti(const IdTuru &notId);
+
+    void OgrenciSinifIdDegisti(const IdTuru &sinifId);
 
 public:
     typedef std::shared_ptr<Notlar>ptr;
@@ -39,6 +51,11 @@ public:
     PozitifTamsayi ogrenciNot() const;
     void setOgrenciNot(const PozitifTamsayi &ogrenciNot);
 
+    PozitifTamsayi ogrenciNotSayisi() const;
+    void setOgrenciNotSayisi(const PozitifTamsayi &ogrenciNotSayisi);
+
+    inline ondalikli toplamNot() {return _ogrenciNotSayisi * _ogrenciNot;};
+
      static ptr yeni() {return std::make_shared<Notlar>();}
 
      ptr Kopyala(){
@@ -48,6 +65,7 @@ public:
          kopyalanan->_ogrenciId=this->_ogrenciId;
          kopyalanan->_ogrenciNot=this->_ogrenciNot;
          kopyalanan->_sinifId = this->_sinifId;
+         kopyalanan->_ogrenciNotSayisi = this->_ogrenciNotSayisi;
 
          return kopyalanan;
      }
@@ -58,7 +76,9 @@ public:
          this->_ogrenciId=diger->_ogrenciId;
          this->_ogrenciNot=diger->_ogrenciNot;
          this->_sinifId = diger->_sinifId;
+         this->_ogrenciNotSayisi = diger->_ogrenciNotSayisi;
      }
+
 
 };
 

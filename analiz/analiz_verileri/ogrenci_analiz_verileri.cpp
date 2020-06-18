@@ -35,42 +35,43 @@ void ogrenci_analiz_verileri::setOgrenciSoyadi(const OgrenciProfil::Metin &ogren
     _ogrenciSoyadi = ogrenciSoyadi;
 }
 
-OgrenciProfil::tamsayi ogrenci_analiz_verileri::dersSayisi() const
+OgrenciProfil::tamsayi ogrenci_analiz_verileri::notSayisi() const
 {
-    return _dersSayisi;
+    return _notSayisi;
 }
 
-void ogrenci_analiz_verileri::setDersSayisi(const OgrenciProfil::tamsayi &dersSayisi)
+void ogrenci_analiz_verileri::setNotSayisi(const OgrenciProfil::tamsayi &notSayisi)
 {
-    _dersSayisi = dersSayisi;
+    _notSayisi = notSayisi;
 }
 
-OgrenciProfil::tamsayi ogrenci_analiz_verileri::dersToplami() const
+OgrenciProfil::tamsayi ogrenci_analiz_verileri::notToplami() const
 {
-    return _dersToplami;
+    return _notToplami;
 }
 
-void ogrenci_analiz_verileri::setDersToplami(const OgrenciProfil::tamsayi &dersToplami)
+void ogrenci_analiz_verileri::setNotToplami(const OgrenciProfil::tamsayi &notToplami)
 {
-    _dersToplami = dersToplami;
+    _notToplami = notToplami;
 }
 
-OgrenciProfil::ondalikli ogrenci_analiz_verileri::dersOrtalamasi() const
+OgrenciProfil::ondalikli ogrenci_analiz_verileri::notOrtalamasi() const
 {
-    return _dersOrtalamasi;
+    return _notOrtalamasi;
 }
 
-void ogrenci_analiz_verileri::setDersOrtalamasi(const OgrenciProfil::ondalikli &dersOrtalamasi)
+void ogrenci_analiz_verileri::setNotOrtalamasi(const OgrenciProfil::ondalikli &notOrtalamasi)
 {
-    _dersOrtalamasi = dersOrtalamasi;
+    _notOrtalamasi = notOrtalamasi;
 }
 
-OgrenciProfil::ondalikli ogrenci_analiz_verileri::dersStandartSapmasi() const
+OgrenciProfil::ondalikli ogrenci_analiz_verileri::notStandartSapmasi() const
 {
-    return _dersStandartSapmasi;
+    return _notStandartSapmasi;
 }
 
-void ogrenci_analiz_verileri::setDersStandartSapmasi(const OgrenciProfil::ondalikli &dersStandartSapmasi)
+void ogrenci_analiz_verileri::setNotStandartSapmasi(const OgrenciProfil::ondalikli &notStandartSapmasi)
 {
-    _dersStandartSapmasi = dersStandartSapmasi;
+    _notStandartSapmasi = notStandartSapmasi;
 }
+
