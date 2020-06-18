@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    formlar/analizFormlari/analizformlari.cpp \
     formlar/listeleme/ogrencilistesi.cpp \
     formlar/listeleme/ogretmenlistesi.cpp \
     formlar/veriGiris/dersgiris.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 
 HEADERS += \
     ana_pencere.h \
+    formlar/analizFormlari/analizformlari.h \
     formlar/listeleme/ogrencilistesi.h \
     formlar/listeleme/ogretmenlistesi.h \
     formlar/veriGiris/dersgiris.h \
@@ -38,6 +40,7 @@ HEADERS += \
 
 FORMS += \
     ana_pencere.ui \
+    formlar/analizFormlari/analizformlari.ui \
     formlar/listeleme/ogrencilistesi.ui \
     formlar/listeleme/ogretmenlistesi.ui \
     formlar/veriGiris/dersgiris.ui \
@@ -64,3 +67,17 @@ else:unix: LIBS += -L$$OUT_PWD/../kutuphane/ -lkutuphane
 
 INCLUDEPATH += $$PWD/../kutuphane
 DEPENDPATH += $$PWD/../kutuphane
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../kutuphane/release/ -lkutuphane
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../kutuphane/debug/ -lkutuphane
+else:unix: LIBS += -L$$OUT_PWD/../kutuphane/ -lkutuphane
+
+INCLUDEPATH += $$PWD/../kutuphane
+DEPENDPATH += $$PWD/../kutuphane
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../analiz/release/ -lanaliz
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../analiz/debug/ -lanaliz
+else:unix: LIBS += -L$$OUT_PWD/../analiz/ -lanaliz
+
+INCLUDEPATH += $$PWD/../analiz
+DEPENDPATH += $$PWD/../analiz
