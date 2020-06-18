@@ -5,6 +5,7 @@
 #include <veritabani.h>
 #include "ana_pencere.h"
 #include "ui_ana_pencere.h"
+#include <QStandardPaths>
 #include <formlar/veriGiris/notgiris.h>
 #include <formlar/veriGiris/dersgiris.h>
 #include <formlar/veriGiris/sinifgiris.h>
@@ -12,6 +13,7 @@
 #include <formlar/listeleme/ogrencilistesi.h>
 #include <formlar/listeleme/ogretmenlistesi.h>
 #include <formlar/veriGiris/yeniogrencigiris.h>
+#include <formlar/analizFormlari/analizformlari.h>
 
 Ana_Pencere::Ana_Pencere(QWidget *parent)
     : QMainWindow(parent)
@@ -41,7 +43,6 @@ void Ana_Pencere::close()
         QMainWindow::close();
     }
 }
-
 void Ana_Pencere::on_actionnotEkle_triggered()
 {//bu ikisi 0 ise hata vermeli
     auto OgrenciSayisi = VeriTabani::veritabani().ogrenci().filtreyeUyanElemanSayisi(
@@ -83,7 +84,6 @@ void Ana_Pencere::on_actionnotEkle_triggered()
     form.exec();
 
 }
-
 void Ana_Pencere::on_actionkaydet_triggered()
 {
     QString DosyaAdi=QFileDialog::getSaveFileName(this,tr("Dosya Seç"),
@@ -134,3 +134,10 @@ void Ana_Pencere::on_actiondersEkle_triggered()
     dersGiris form;
     form.exec();
 }
+
+void Ana_Pencere::on_actionistatistikler_triggered()
+{
+    analizFormlari form;
+    form.exec();
+}
+
