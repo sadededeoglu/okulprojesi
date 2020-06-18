@@ -1,13 +1,11 @@
 #ifndef OGRENCI_ANALIZ_VERILERI_H
 #define OGRENCI_ANALIZ_VERILERI_H
-
 #include <QObject>
 #include <Siniflar/notlar.h>
 #include <Siniflar/ogrenciprofil.h>
+#include <analiz_global.h>
 
-class ogrenci_analiz_verileri
-{
-    Q_OBJECT
+class ANALIZ_EXPORT ogrenci_analiz_verileri {
 public:
     explicit ogrenci_analiz_verileri(QObject *parent = nullptr);
 

@@ -1,6 +1,5 @@
 #ifndef OGRENCI_ANALIZ_H
 #define OGRENCI_ANALIZ_H
-
 #include <QObject>
 #include <QVector>
 #include <analiz_verileri/ogrenci_analiz_verileri.h>
@@ -21,9 +20,6 @@ public:
 
 private:
     AnalizSonuclari _analizSonucListesi;
-
-signals:
-
 };
 
 #endif // OGRENCI_ANALIZ_H

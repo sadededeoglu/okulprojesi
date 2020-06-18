@@ -1,16 +1,12 @@
 #ifndef ANALIZFORMLARI_H
 #define ANALIZFORMLARI_H
-
 #include <QDialog>
 
-namespace Ui {
-class analizFormlari;
-}
+namespace Ui { class analizFormlari; }
 
 class analizFormlari : public QDialog
 {
     Q_OBJECT
-
 public:
     explicit analizFormlari(QWidget *parent = nullptr);
     ~analizFormlari();
@@ -20,5 +16,4 @@ public:
 private:
     Ui::analizFormlari *ui;
 };
-
 #endif // ANALIZFORMLARI_H
