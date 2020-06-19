@@ -44,7 +44,7 @@ void dersGiris::GorselDegisti()
 void dersGiris::reject()
 {
     if(_degisiklikVar){
-        auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+        auto cevap = QMessageBox::question(this , "BİLGİ DEĞİŞİKLİĞİ ALGILANDI" , "Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
         if(cevap == QMessageBox::No){
             return;
         }
@@ -55,12 +55,12 @@ void dersGiris::on_pushButton_Ekle_clicked()
     VeriGuncelle();
 
     if(_ders->DersAdi() == 0 || _ders->yil() == 0 || _ders->donem() == 0){
-        QMessageBox::critical(this,tr("HATALI GİRİŞ") , tr("Ögrenci, sınıf veya ders seçilmedi") , QMessageBox::Ok);
+        QMessageBox::critical(this,tr("HATALI GİRİŞ!") , tr("Ögrenci, Sınıf Veya Ders Seçilmedi") , QMessageBox::Ok);
         return;
     }
 
     VeriTabani::veritabani().dersler().ekle(this->_ders);
-    auto cevap = QMessageBox::question(this , "Ders Kaydı Tamamlandı" , "Yeni Bir Ders Koymak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+    auto cevap = QMessageBox::question(this , "DERS KAYDI TAMAMLANDI" , "Yeni Bir Ders Koymak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
     if (cevap == QMessageBox::Yes){
         _ders = VeriTabani::veritabani().dersler().yeni();
         GorselGuncelle();

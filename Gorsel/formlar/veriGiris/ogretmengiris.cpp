@@ -54,7 +54,7 @@ void ogretmenGiris::setDegisiklik(bool Degisiklik)
 void ogretmenGiris::reject()
 {
     if(_Degisiklik){
-        auto cevap = QMessageBox::question(this ,tr("Bilgi Değişikliği Algılandı"),
+        auto cevap = QMessageBox::question(this ,tr("BİLGİ DEĞİŞİKLİĞİ ALGILANDI"),
                                            tr( "Değişiklikleri Kaydetmeden Çıkmak İstediğinize Emin Misiniz?"),
                                            QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
 
@@ -71,15 +71,15 @@ void ogretmenGiris::ekle(){
 
        if(_Ogretmenprofil->ogretmenAdi()==0 || _Ogretmenprofil->ogretmenSoyadi()==0 || _Ogretmenprofil->sicilNo()==0 || _Ogretmenprofil->ogretmenAdresi()==0)
        {
-           QMessageBox::critical(this,tr("hata"),
-                                 tr("eksik bilgi girişi"),
+           QMessageBox::critical(this,tr("HATA!"),
+                                 tr("Eksik Bilgi Girişi"),
                       QMessageBox::Ok);
            return;
        }
        VeriTabani::veritabani().ogretmen().ekle(_Ogretmenprofil);
 
-       auto cevap = QMessageBox::question(this ,tr("Ogretmen Kaydı Tamamlandı"),
-                                          tr( "Yeni Bir Ogretmen Tanımlamak İster misiniz?"),
+       auto cevap = QMessageBox::question(this ,tr("ÖĞRETMEN KAYDI TAMAMLANDI"),
+                                          tr("Yeni Bir Ogretmen Tanımlamak İster misiniz?"),
                                           QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
 
        if(cevap== QMessageBox::Yes){

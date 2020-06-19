@@ -44,7 +44,7 @@
    </widget>
    <widget class="QMenu" name="menudersler">
     <property name="title">
-     <string>dersler</string>
+     <string>Dersler</string>
     </property>
     <addaction name="actionDers_ekle"/>
    </widget>
@@ -56,7 +56,7 @@
    </widget>
    <widget class="QMenu" name="menu_renci">
     <property name="title">
-     <string>öğrenci</string>
+     <string>Öğrenci</string>
     </property>
     <addaction name="actionOgrenciEkle"/>
     <addaction name="actionOgrenci_Listesi"/>
@@ -70,13 +70,13 @@
    </widget>
    <widget class="QMenu" name="menus_n_f">
     <property name="title">
-     <string>sınıf</string>
+     <string>Sınıf</string>
     </property>
     <addaction name="actionsinifEkle"/>
    </widget>
    <widget class="QMenu" name="menuraporlar">
     <property name="title">
-     <string>raporlar</string>
+     <string>Raporlar</string>
     </property>
     <addaction name="actionistatistikler"/>
    </widget>
@@ -157,7 +157,7 @@
      <normaloff>../../simgeler/IconSet4/CD_add.png</normaloff>../../simgeler/IconSet4/CD_add.png</iconset>
    </property>
    <property name="text">
-    <string>kaydet</string>
+    <string>Kaydet</string>
    </property>
   </action>
   <action name="actioncik">
@@ -166,7 +166,7 @@
      <normaloff>:/resimler/cık.png</normaloff>:/resimler/cık.png</iconset>
    </property>
    <property name="text">
-    <string>cık</string>
+    <string>Çık</string>
    </property>
   </action>
   <action name="actionOgrenciEkle">
@@ -175,7 +175,7 @@
      <normaloff>:/resimler/resimler/resimler</normaloff>:/resimler/resimler/resimler</iconset>
    </property>
    <property name="text">
-    <string>OgrenciEkle</string>
+    <string>ÖgrenciEkle</string>
    </property>
   </action>
   <action name="actiondersEkle">
@@ -223,7 +223,7 @@
      <normaloff>../../simgeler/IconSet1/iconpool/table.png</normaloff>../../simgeler/IconSet1/iconpool/table.png</iconset>
    </property>
    <property name="text">
-    <string>ogretmen listesi</string>
+    <string>Öğretmen listesi</string>
    </property>
   </action>
   <action name="actionOgrenci_Listesi">
@@ -232,7 +232,7 @@
      <normaloff>../../simgeler/IconSet1/iconpool/table_merge_cells.png</normaloff>../../simgeler/IconSet1/iconpool/table_merge_cells.png</iconset>
    </property>
    <property name="text">
-    <string>Ogrenci Listesi</string>
+    <string>Ögrenci Listesi</string>
    </property>
   </action>
   <action name="actionsinif_listesi">
@@ -259,7 +259,7 @@
      <normaloff>:/resimler/resimler/3d bar chart.png</normaloff>:/resimler/resimler/3d bar chart.png</iconset>
    </property>
    <property name="text">
-    <string>istatistikler</string>
+    <string>İstatistikler</string>
    </property>
   </action>
  </widget>

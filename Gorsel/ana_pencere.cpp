@@ -36,7 +36,7 @@ void Ana_Pencere::close()
 {
     //close yapınca aniden kapatılmasın diye yazıldı
 
-    auto cevap= QMessageBox::question(this,tr("çıkış onayı"),tr("çıkacak mısın"),
+    auto cevap= QMessageBox::question(this,tr("ÇIKIŞ ONAYI"),tr("Çıkmak İstediğine Emin Misin?"),
                                       QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
     if(cevap==QMessageBox::Yes){
         //ata sınıfa ulasabilmek için;
@@ -52,10 +52,10 @@ void Ana_Pencere::on_actionnotEkle_triggered()
                 [](Okul_sinif::ptr){return true;});
 
     while (OgrenciSayisi==0) {
-        auto cevap= QMessageBox::question(this,tr("öğrenci yok"),tr("yeni öğrenci tanımla"),
+        auto cevap= QMessageBox::question(this,tr("ÖĞRENCİ BULUNAMADI"),tr("Yeni Öğrenci Tanımlamak İster Misin?"),
                                           QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
         if(cevap==QMessageBox::No){
-            QMessageBox::critical(this,tr("kapatılıyor"),tr("öğrenci yok"),
+            QMessageBox::critical(this,tr("HATA!"),tr("Öğrenci Bulunamadı"),
                                   QMessageBox::Ok,
                                   QMessageBox::Ok);
             return;
@@ -67,10 +67,10 @@ void Ana_Pencere::on_actionnotEkle_triggered()
                     [](OgrenciProfil::ptr){return true;});
     }
     while (SinifSayisi==0) {
-        auto cevap= QMessageBox::question(this,tr("sınıf yok"),tr("yeni sınıf tanımla"),
+        auto cevap= QMessageBox::question(this,tr("SINIF BULUNAMADI"),tr("Yeni Sınıf Tanımlamak İster Misin?"),
                                           QMessageBox::Yes | QMessageBox::No,QMessageBox::No );
         if(cevap==QMessageBox::No){
-            QMessageBox::critical(this,tr("kapatılıyor"),tr("sınıf yok"),
+            QMessageBox::critical(this,tr("HATA!"),tr("Sınıf Bulunamadı"),
                                   QMessageBox::Ok,
                                   QMessageBox::Ok);
             return;

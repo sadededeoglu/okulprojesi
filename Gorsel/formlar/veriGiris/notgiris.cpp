@@ -151,20 +151,20 @@ void notGiris::VeriGuncelle()
     _Notlar->setDersId(dersId);
 
     if (ogrenciId == 0) {
-      QMessageBox::critical(this, tr("Öğrenci Seçilmedi"),
-                            tr("Öğrenci seçimi yapılmadan not girilemez!"));
+      QMessageBox::critical(this, tr("ÖĞRENCİ SEÇİLMEDİ!"),
+                            tr("Öğrenci Seçimi Yapılmadan Not Girilemez"));
       return;
     }
 
     if (sinifId == 0) {
-      QMessageBox::critical(this, tr("Sınıf Seçilmedi"),
-                            tr("Sınıf seçimi yapılmadan not girilemez!"));
+      QMessageBox::critical(this, tr("SINIF SEÇİLMEDİ!"),
+                            tr("Sınıf Seçimi Yapılmadan Not Girilemez"));
       return;
     }
 
     if (dersId == 0) {
-      QMessageBox::critical(this, tr("Ders Seçilmedi"),
-                            tr("Ders seçimi yapılmadan not girilemez!"));
+      QMessageBox::critical(this, tr("DERS SEÇİLMEDİ!"),
+                            tr("Ders Seçimi Yapılmadan Not Girilemez"));
       return;
     }
 }
@@ -180,13 +180,13 @@ void notGiris::on_QPushButton_ekle_clicked()
 {
     VeriGuncelle();//altta ki hata okul sınıf i notlar içinde tanımlamamısız neden
     if(_Notlar->ogrenciId()==0 || _Notlar->sinifId()==0 || _Notlar->dersId()==0){//bu diğer taraflarda da yapılacak
-        QMessageBox::critical(this,tr("HATALI GİRİŞ"),
-                              tr("Ögrenci, sınıf veya ders seçilmedi"),
+        QMessageBox::critical(this,tr("HATALI GİRİŞ!"),
+                              tr("Ögrenci, Sınıf Veya Ders Seçilmedi"),
                               QMessageBox::Ok);
         return;
     }
     VeriTabani::veritabani().notlar().ekle(this->_Notlar);
-    auto cevap = QMessageBox::question(this , "Ders Kaydı Tamamlandı" , "Yeni Bir Ders Koymak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+    auto cevap = QMessageBox::question(this , "DERS KAYDI TAMAMLANDI" , "Yeni Bir Ders Koymak İster Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
     if (cevap == QMessageBox::Yes){
         _Notlar = VeriTabani::veritabani().notlar().yeni();
         GorselGuncelle();

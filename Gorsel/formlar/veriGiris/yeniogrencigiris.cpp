@@ -80,7 +80,7 @@ void yeniOgrenciGiris::GorselDegisti()
 void yeniOgrenciGiris::reject()
 {
     if(_degisiklikVar){
-        auto cevap = QMessageBox::question(this , "Bilgi Değişikliği Algılandı" , "Değişiklikleri Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
+        auto cevap = QMessageBox::question(this , "BİLGİ DEĞİŞİKLİĞİ ALGILANDI" , "Değişiklikleri Kaydetmeden Çıkmak İstediğinize Emin Misiniz?" , QMessageBox::Yes | QMessageBox::No , QMessageBox::No);
         if (cevap == QMessageBox::No) {
             return;
         }
@@ -107,11 +107,11 @@ void yeniOgrenciGiris::on_pushButton_Ekle_clicked()
         VeriTabani::veritabani().ogrenci().ekle(_ogrenci);
 
         if(ogrenci()->ogrenciNo() == 0 || ogrenci()->ogrenciAdi() == 0 || ogrenci()->ogrenciSoyadi() == 0 || ogrenci()->ogrenciAdresi() == 0) {
-            QMessageBox::critical(this , tr("HATA") , tr("EKSİK BİLGİ GİRİŞİ") , QMessageBox::Ok);
+            QMessageBox::critical(this , tr("HATA!") , tr("EKSİK BİLGİ GİRİŞİ") , QMessageBox::Ok);
             return;
         }
         VeriTabani::veritabani().ogrenci().ekle(_ogrenci);
-        auto cevap = QMessageBox::question(this , tr("ÖĞRENCİ KAYDI TAMAMLANDI") , tr("YENİ BİR ÖĞRENCİ TANIMLAK İSTER MİSİNİZ?") , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
+        auto cevap = QMessageBox::question(this , tr("ÖĞRENCİ KAYDI TAMAMLANDI") , tr("Yeni Bir Öğrenci Tanımlamak İster Misiniz?") , QMessageBox::Yes | QMessageBox::No , QMessageBox::Yes);
 
         if(cevap == QMessageBox::Yes) {
             _ogrenci = VeriTabani::veritabani().ogrenci().yeni();
