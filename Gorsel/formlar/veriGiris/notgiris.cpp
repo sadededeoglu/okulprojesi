@@ -138,7 +138,6 @@ void notGiris::GorselGuncelle()//baska yerlerden bilgi aktarımı için bu iyi
 }
 void notGiris::VeriGuncelle()
 {
-        //TODO bunların yazılması gerekiyor muydu
     _Notlar->setOgrenciId(ui->comboBox_ogrenci->currentData().toInt());
     _Notlar->setSinifId(ui->comboBox_sinif->currentData().toInt());
     _Notlar->setDersId(ui->comboBox_ders->currentData().toInt());

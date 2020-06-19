@@ -7,7 +7,9 @@
 analizFormlari::analizFormlari(QWidget *parent) :
     QDialog(parent),
 
-    ui(new Ui::analizFormlari){ui->setupUi(this);}
+    ui(new Ui::analizFormlari){ui->setupUi(this);
+        this->tabloGuncelle();
+    }
 
     analizFormlari::~analizFormlari(){delete ui;}
 
